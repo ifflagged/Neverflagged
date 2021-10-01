@@ -25,11 +25,11 @@ NetfilixCheck = type=generic,timeout=5,script-path=https://github.com/ifflagged/
 YoutubePremiumCheck = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js
 
 [Panel]
-Net-Info-Panel = script-name=Net-Info-Panel, title="Network", content="Refresh", style=info
-IPCheck = script-name=IPCheck, title="IP", content="Refresh", style=info, update-interval=60
+Net-Info-Panel = script-name=Net-Info-Panel, title="Network Check", content="Refresh", style=info
+IPCheck = script-name=IPCheck, title="IP Check", content="Refresh", style=info, update-interval=60
 flushDNS = script-name=flushDNS, icon=arrow.clockwise, update-interval=600
-NetfilixCheck = script-name=NetfilixCheck, title="Netflix", content="Refresh", update-interval=10
-YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium", update-interval=10
+NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=10
+YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=10
 
 [MITM]
 hostname = %APPEND% weather-data.apple.com, sub.store
