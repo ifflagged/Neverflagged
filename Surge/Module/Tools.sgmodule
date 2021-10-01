@@ -24,12 +24,16 @@ flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/
 nf_check = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetfilixCheck.js
 ytb_check = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js
 
+Test = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/Test.js
+
 [Panel]
 net-info-panel = script-name=net-info-panel, title="Network", content="Refresh", style=info
 ipcheck = script-name=ipcheck, title="IP", content="Refresh", style=info, update-interval=60
 flushDNS = script-name=flushDNS, icon=arrow.clockwise, update-interval=600
 nf_check = script-name=nf_check, title="Netflix", content="Refresh", update-interval=10
 ytb_check = script-name=ytb_check, title="YouTube Premium", update-interval=10
+
+Test = script-name=Test, title="Test", content="Refresh", style=info
 
 [MITM]
 hostname = %APPEND% weather-data.apple.com, sub.store
