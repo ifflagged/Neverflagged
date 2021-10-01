@@ -18,11 +18,11 @@ Netflix 单集评分 = type=http-response, pattern=^https?://ios\.prod\.ftl\.net
 Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js,requires-body=true,timeout=120,max-size=131072
 微博通知 = type=cron,cronexp="0 * * * *",wake-system=1,timeout=200,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js
 
-net-info-panel = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/Panels/NetInfo/net-info-panel.js
-ipcheck = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/congcong0806/surge-list/master/Script/ipcheck.js
+net-info-panel = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/Net-Info-Panel.js
+ipcheck = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/IPCheck.js
 flushDNS = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/flushDNS.js,argument=title=DNS FLush&icon=arrow.clockwise&color=#3d3d5b
-nf_check = type=generic,timeout=5,script-path=https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js
-ytb_check = type=generic,timeout=5,script-path=https://gist.githubusercontent.com/Hyseen/5ae36a6a5cb5690b1f2bff4aa19c766f/raw/youtube_premium_check.js
+nf_check = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetfilixCheck.js
+ytb_check = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js
 
 [Panel]
 net-info-panel = script-name=net-info-panel, title="Network", content="Refresh", style=info
