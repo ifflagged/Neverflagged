@@ -8,7 +8,7 @@ $httpClient.get(url, function(error, response, data){
     let city = jsonData.city
     let isp = jsonData.isp
   body = {
-    title: "IP",
+    title: "IP Check",
     content: `IP: ${ip}\nISP: ${isp}\nLocation: ${emoji}${country} - ${city}`,
     icon: "network"
   }
