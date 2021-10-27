@@ -31,11 +31,11 @@ const FILM_ID = 81215567
 const AREA_TEST_FILM_ID = 80018499
 const DEFAULT_OPTIONS = {
   title: 'Netflix Check',
-  fullContent: 'Full Netflix, Available:#REGION_FLAG# #REGION_NAME_EN#',
+  fullContent: 'Full Netflixv, Region:#REGION_FLAG# #REGION_NAME_EN#',
   fullIcon: '',
   fullIconColor: '',
   fullStyle: 'good',
-  onlyOriginalContent: 'Netflix Only, Available:#REGION_FLAG# #REGION_NAME_EN#',
+  onlyOriginalContent: 'Netflix Only, Region:#REGION_FLAG# #REGION_NAME_EN#',
   onlyOriginalIcon: '',
   onlyOriginalIconColor: '',
   onlyOriginalStyle: 'info',
@@ -43,7 +43,7 @@ const DEFAULT_OPTIONS = {
   notAvailableIcon: '',
   notAvailableIconColor: '',
   notAvailableStyle: 'alert',
-  errorContent: 'Check Failed，Refresh',
+  errorContent: 'Check Failed, Refresh',
   errorIcon: '',
   errorIconColor: '',
   errorStyle: 'error',
