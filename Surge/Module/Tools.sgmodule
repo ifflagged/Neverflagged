@@ -26,4 +26,4 @@ NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refre
 YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=10
 
 [MITM]
-hostname = %APPEND% weather-data.apple.com, sub.store
+hostname = %APPEND% sub.store
