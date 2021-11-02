@@ -22,8 +22,8 @@ NetfilixCheck = type=generic, script-path=script-path=https://github.com/ifflagg
 YoutubePremiumCheck = type=generic, script-path==https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js?version=1633074636264, argument=title=YouTube Premium Check
 
 [Panel]
-NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=1
-YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=1
+NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=10
+YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=10
 
 [MITM]
 hostname = %APPEND% sub.store
