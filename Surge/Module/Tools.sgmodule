@@ -18,12 +18,12 @@ Netflix 单集评分 = type=http-response, pattern=^https?://ios\.prod\.ftl\.net
 Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.js,requires-body=true,timeout=120,max-size=131072
 微博通知 = type=cron,cronexp="0 * * * *",wake-system=1,timeout=200,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Weibo/Weibo.js
 
-NetfilixCheck = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetfilixCheck.js
-YoutubePremiumCheck = type=generic,timeout=5,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js
+NetfilixCheck = type=generic, script-path=script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetfilixCheck.js?version=1633074636264, argument=title=Netflix Check
+YoutubePremiumCheck = type=generic, script-path==https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js?version=1633074636264, argument=title=YouTube Premium Check
 
 [Panel]
-NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=10
-YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=10
+NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=1
+YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=1
 
 [MITM]
 hostname = %APPEND% sub.store
