@@ -183,7 +183,7 @@ groupName = (await httpAPI("/v1/policy_groups/select?group_name=" + encodeURICom
     panel['icon'] = params.icon1
     panel['icon-color'] = params.color1
   } else if (onlyOriginal.includes(rootName)) {
-    panel['content'] = `Support Netflix Only`
+    panel['content'] = `Support Netflix Original Series`
     panel['icon'] = params.icon2
     panel['icon-color'] = params.color2
   } else {
