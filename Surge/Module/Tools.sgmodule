@@ -26,6 +26,7 @@ NetflixChecker = type=cron,cronexp=10 * * * *,wake-system=0,timeout=3600,script-
 
 [Panel]
 NetfilixCheck = script-name=NetfilixCheck, title="Netflix Check", content="Refresh", update-interval=1
+NetflixController = script-name=NetflixController, update-interval=600 
 YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=1
 
 [MITM]
