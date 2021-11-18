@@ -3,7 +3,9 @@
 #!system=ios
 
 [Script]
-京东比价 = type=http-response, pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item), requires-body=1, script-path=https://github.com/Tartarus2014/Script/raw/master/jdjf_price.js
+
+京东比价 = type=http-response, pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), requires-body=1, script-path=https://service.2ti.st/QuanX/Script/jd_tb_price/main.js
+京东比价返利 = type=http-response, pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item), requires-body=1, script-path=https://github.com/Tartarus2014/Script/raw/master/jdjf_price.js
 淘宝比价 = type=http-request, pattern=^http://.+/amdc/mobileDispatch, requires-body=1,script-path=https://service.2ti.st/QuanX/Script/jd_tb_price/main.js
 淘宝比价 = type=http-response, pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail, requires-body=1,script-path=https://service.2ti.st/QuanX/Script/jd_tb_price/main.js
 Netflix 评分 = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
@@ -23,4 +25,4 @@ YoutubePremiumCheck = type=generic, script-path=https://github.com/ifflagged/Nev
 YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=1
 
 [MITM]
-hostname = %APPEND% sub.store
+hostname = %APPEND% sub.store, trade-acs.m.taobao.com
