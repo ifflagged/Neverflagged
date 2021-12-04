@@ -9,6 +9,6 @@ DisneyPlusUnlockCheck = script-name=Disney+UnlockCheck,title="Disney+ Unlock Che
 YoutubePremiumCheck = script-name=YoutubePremiumCheck, title="YouTube Premium Check", update-interval=1
 
 [Script]
-NetflixUnlockCheck = type=generic, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetflixCheck.js, argument=title=Netflix Unlock Check
+NetflixUnlockCheck = type=generic, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/NetflixUnlockCheck.js, argument=title=Netflix Unlock Check
 Disney+UnlockCheck = type=generic,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/Disney%2BUnlockCheck.js
 YoutubePremiumCheck = type=generic, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/YoutubePremiumCheck.js, argument=title=YouTube Premium Check
