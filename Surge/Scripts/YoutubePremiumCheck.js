@@ -26,7 +26,7 @@ const BASE_URL = 'https://www.youtube.com/premium'
 
 const DEFAULT_OPTIONS = {
   title: 'YouTube Premium Check',
-  availableContent: 'Premium Available In #REGION_CODE# #REGION_FLAG#',
+  availableContent: 'Premium Available in #REGION_FLAG# #REGION_NAME_EN#',
   availableIcon: '',
   availableIconColor: '',
   availableStyle: 'good',
