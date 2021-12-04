@@ -43,11 +43,11 @@ const STATUS_ERROR = -2
 
 const DEFAULT_OPTIONS = {
   title: 'Disney+ Unlock Check',
-  availableContent: 'Disney+ Available in #REGION_FLAG# #REGION_NAME_EN#',
+  availableContent: 'Disney+ available in #REGION_FLAG# #REGION_NAME_EN#',
   availableIcon: undefined,
   availableIconColor: undefined,
   availableStyle: 'good',
-  comingContent: 'Coming Soon ➟ #REGION_FLAG# #REGION_NAME_EN#',
+  comingContent: 'Coming Soon in #REGION_FLAG# #REGION_NAME_EN#',
   comingIcon: undefined,
   comingIconColor: undefined,
   comingStyle: 'info',
