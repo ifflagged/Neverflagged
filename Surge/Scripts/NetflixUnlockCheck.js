@@ -35,7 +35,7 @@ const DEFAULT_OPTIONS = {
   fullIcon: '',
   fullIconColor: '',
   fullStyle: 'good',
-  onlyOriginalContent: 'Netflix Only in #REGION_FLAG# #REGION_NAME_EN#',
+  onlyOriginalContent: 'Original Netflix in #REGION_FLAG# #REGION_NAME_EN#',
   onlyOriginalIcon: '',
   onlyOriginalIconColor: '',
   onlyOriginalStyle: 'info',
