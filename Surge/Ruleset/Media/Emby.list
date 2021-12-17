@@ -1,13 +1,12 @@
-# > 流媒体终点站服务器
+# > 终点站
 DOMAIN,pub1.emby.wtf
 DOMAIN,pub1cm1.emby.wtf
 DOMAIN,pub2.emby.wtf
 DOMAIN,pub2cm1.emby.wtf
 DOMAIN,pub3.emby.wtf
 DOMAIN,pub3cm1.emby.wtf
-# > 流媒体跑车
-DOMAIN,emby.cjpc.cc
-# > 流媒体普拉斯影业服务器
+
+# > 普拉斯
 DOMAIN,emby.plusmedia.site
 DOMAIN,emby-sg.plusmedia.site
 DOMAIN,emby-cf.plusmedia.site
