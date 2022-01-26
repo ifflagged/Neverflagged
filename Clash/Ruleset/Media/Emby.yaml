@@ -7,11 +7,9 @@ payload:
   - DOMAIN,pub3.emby.wtf
   - DOMAIN,pub3cm1.emby.wtf
 
-  # > 普拉斯
-  - DOMAIN,emby.plusmedia.site
-  - DOMAIN,emby-sg.plusmedia.site
-  - DOMAIN,emby-cf.plusmedia.site
-  - DOMAIN,emby.xeton.dev
-  - DOMAIN,jellyfin.xeton.dev
-  - DOMAIN,movie.xeton.dev
-  - DOMAIN,servers.xeton.dev
+# > 卷毛鼠
+  - DOMAIN,sg1.jmsooo.com
+  - DOMAIN,sg2.jmsooo.com
+  - DOMAIN,usa1.jmsooo.com
+  - DOMAIN,usa2.jmsooo.com
+  - DOMAIN,usa3.jmsooo.com
