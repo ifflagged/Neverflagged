@@ -83,7 +83,7 @@ let result = {
     result["Disney"] = "<b>Disneyᐩ:</b> Check Failed"
   }
 
-  let content = "----------------------</br>"+([,result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
+  let content = "----------------------</br>"+([,result["Disney"],result["Netflix"],result["YouTube"]]).join("</br>")
   content = content + "</br>----------------------</br>"+"<font color=#CD5C5C>"+"<b>Current node: " + nodeName+ "</font>"
   content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     // $notify(typeof(output),output)
