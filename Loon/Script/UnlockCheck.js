@@ -80,16 +80,16 @@ let result = {
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
     //console.log(1)
-    result["Disney"] = "<b>Disneyᐩ:</b>Coming Soon in "+'⟦'+flags.get(region.toUpperCase())+"⟧"
+    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(region.toUpperCase())
   } else if (status==STATUS_AVAILABLE){
     //console.log(2)
-    result["Disney"] = "<b>Disneyᐩ:</b>Available in"+'⟦'+flags.get(region.toUpperCase())+"⟧ 🎉"
+    result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(region.toUpperCase())
     console.log(result["Disney"])
   } else if (status==STATUS_NOT_AVAILABLE) {
     //console.log(3)
-    result["Disney"] = "<b>Disneyᐩ:</b>Unavailable"
+    result["Disney"] = "<b>Disneyᐩ:</b> Unavailable"
   } else if (status==STATUS_TIMEOUT) {
-    result["Disney"] = "<b>Disneyᐩ:</b>Check Failed"
+    result["Disney"] = "<b>Disneyᐩ:</b> Check Failed"
   }
 
   let content = "--------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
@@ -254,7 +254,7 @@ function testNf(filmId) {
 
     $httpClient.get(option, (error, response, data) => {
         if (error) {
-            result["Netflix"] = "<b>Netflix: </b>Check Failed"
+            result["Netflix"] = "<b>Netflix: </b> Check Failed"
             console.log(result["Netflix"])
             resolve("timeout")
             return
@@ -262,13 +262,13 @@ function testNf(filmId) {
 
         console.log("nf:"+response.status)
         if (response.status === 404) {
-            result["Netflix"] = "<b>Netflix: </b>Original Netflix"
+            result["Netflix"] = "<b>Netflix: </b> Original Netflix"
             console.log("nf:"+result["Netflix"])
             resolve('Not Found')
             return 
         } else if (response.status === 403) {
             //console.log("nfnf")
-            result["Netflix"] = "<b>Netflix: </b>Unavailable"
+            result["Netflix"] = "<b>Netflix: </b> Unavailable"
             console.log("nf:"+result["Netflix"])
             //$notify("nf:"+result["Netflix"])
             resolve('Not Available')
@@ -284,7 +284,7 @@ function testNf(filmId) {
               }
             }
             console.log("nf:"+region)
-            result["Netflix"] = "<b>Netflix: </b>Full Netflix"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+            result["Netflix"] = "<b>Netflix: </b> Full Netflix in "+flags.get(region.toUpperCase())
             //$notify("nf:"+result["Netflix"])
             resolve("nf:"+result["Netflix"])
             return 
@@ -307,17 +307,17 @@ function testYTB() {
 
     $httpClient.get(option, (error, response, data) => {
         if (error) {
-            result["YouTube"] = "<b>YouTube Premium: </b>Timeout"
+            result["YouTube"] = "<b>YouTube Premium: </b> Timeout"
             //resolve("timeout")
             return
         }
         console.log("ytb:"+response.status)
         if (response.status !== 200) {
             //reject('Error')
-            result["YouTube"] = "<b>YouTube Premium: </b>Check Failed"
+            result["YouTube"] = "<b>YouTube Premium: </b> Check Failed"
         } else if (data.indexOf('Premium is not available in your country') !== -1) {
             //resolve('Not Available')
-            result["YouTube"] = "<b>YouTube Premium: </b>Unavailable"
+            result["YouTube"] = "<b>YouTube Premium: </b> Unavailable"
         } else if (data.indexOf('Premium is not available in your country') == -1) {//console.log(data.split("countryCode")[1])
             let region = ''
             let re = new RegExp('"GL":"(.*?)"', 'gm')
@@ -330,7 +330,7 @@ function testYTB() {
                 region = 'US'
             }
             //resolve(region)
-            result["YouTube"] = "<b>YouTube Premium: </b>Available in"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+            result["YouTube"] = "<b>YouTube Premium: </b> Available in"+flags.get(region.toUpperCase())
             console.log("ytb:"+region+ result["YouTube"])
         }
     });
@@ -366,7 +366,7 @@ function testDazn() {
     // let header = JSON.stringify(response.headers)
     console.log("Dazn:"+response.status)
     if (response.status !== 200) {
-        result["Dazn"] = "<b>Dazn: </b>Check Failed"
+        result["Dazn"] = "<b>Dazn: </b> Check Failed"
     } else if (response.statusCode == 200) {
         //console.log(data)
         let region = ''
@@ -374,9 +374,9 @@ function testDazn() {
         let ret = re.exec(data)
         if (ret != null && ret.length === 2) {
             region = ret[1]
-            result["Dazn"] = "<b>Dazn: </b>Available in"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
+            result["Dazn"] = "<b>Dazn: </b> Available in"+flags.get(region.toUpperCase())
         } else {
-            result["Dazn"] = "<b>Dazn: </b>Unavailable"
+            result["Dazn"] = "<b>Dazn: </b> Unavailable"
 
         }
         //resolve(region)
@@ -397,16 +397,16 @@ function testParam() {
 
   $httpClient.get(option, (error, response, data) => {
     if (error) {
-        result["Paramount"] = "<b>Paramountᐩ: </b>Timeout"
+        result["Paramount"] = "<b>Paramountᐩ: </b> Timeout"
         return
     }
     console.log("Paramountᐩ:"+response.status)
     if (response.status == 200) {
         //reject('Error')
-      result["Paramount"] = "<b>Paramountᐩ: </b>Available"
+      result["Paramount"] = "<b>Paramountᐩ: </b> Available"
     } else if (response.status == 302) {
         //resolve('Not Available')
-      result["Paramount"] = "<b>Paramountᐩ: </b>Unavailable"
+      result["Paramount"] = "<b>Paramountᐩ: </b> Unavailable"
     } else {
         console.log("Paramountᐩ:"+ result["Paramount"])
     }
@@ -460,12 +460,12 @@ function testDiscovery() {
             data = JSON.parse(data)
             let locationd = data["data"]["attributes"]["currentLocationTerritory"]
             if (locationd == "us") {
-            result["Discovery"] = "<b>Discoveryᐩ: </b>Available"
+            result["Discovery"] = "<b>Discoveryᐩ: </b> Available"
             console.log("支持Discoveryᐩ")
             resolve("支持Discoveryᐩ")
             return
             } else {
-            result["Discovery"] = "<b>Discoveryᐩ: </b>Unavailable"
+            result["Discovery"] = "<b>Discoveryᐩ: </b> Unavailable"
             console.log("不支持Discoveryᐩ")
             resolve("不支持Discoveryᐩ")
             return
