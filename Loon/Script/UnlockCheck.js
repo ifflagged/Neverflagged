@@ -93,7 +93,7 @@ let result = {
   }
 
   let content = "--------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
-  content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>Node: " + nodeName+ "</font>"
+  content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>Current node: " + nodeName+ "</font>"
   content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     // $notify(typeof(output),output)
   // console.log("done---------------------");
