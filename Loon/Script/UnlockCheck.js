@@ -80,10 +80,10 @@ let result = {
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
     //console.log(1)
-    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(region.toUpperCase())""
+    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(region.toUpperCase())
   } else if (status==STATUS_AVAILABLE){
     //console.log(2)
-    result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(region.toUpperCase())""
+    result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(region.toUpperCase())
     console.log(result["Disney"])
   } else if (status==STATUS_NOT_AVAILABLE) {
     //console.log(3)
@@ -284,7 +284,7 @@ function testNf(filmId) {
               }
             }
             console.log("nf:"+region)
-            result["Netflix"] = "<b>Netflix: </b> Full Netflix in "+flags.get(region.toUpperCase())""
+            result["Netflix"] = "<b>Netflix: </b> Full Netflix in "+flags.get(region.toUpperCase())
             //$notify("nf:"+result["Netflix"])
             resolve("nf:"+result["Netflix"])
             return 
@@ -330,7 +330,7 @@ function testYTB() {
                 region = 'US'
             }
             //resolve(region)
-            result["YouTube"] = "<b>YouTube Premium: </b> Available in "+flags.get(region.toUpperCase())""
+            result["YouTube"] = "<b>YouTube Premium: </b> Available in "+flags.get(region.toUpperCase())
             console.log("ytb:"+region+ result["YouTube"])
         }
     });
@@ -374,7 +374,7 @@ function testDazn() {
         let ret = re.exec(data)
         if (ret != null && ret.length === 2) {
             region = ret[1]
-            result["Dazn"] = "<b>Dazn: </b> Available in "+flags.get(region.toUpperCase())""
+            result["Dazn"] = "<b>Dazn: </b> Available in "+flags.get(region.toUpperCase())
         } else {
             result["Dazn"] = "<b>Dazn: </b> Unavailable"
 
