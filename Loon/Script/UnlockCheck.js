@@ -83,8 +83,8 @@ let result = {
     result["Disney"] = "<b>Disneyᐩ:</b> Check Failed"
   }
 
-  let content = "----------------------</br>"+([,result["Disney"],result["Netflix"],result["YouTube"]]).join("</br>")
-  content = content + "</br>----------------------</br>"+"<font color=#CD5C5C>"+"<b>Current node: " + nodeName+ "</font>"
+  let content = "-----------------------------------</br>"+([result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
+  content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+"<b>Current node: " + nodeName+ "</font>"
   content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     // $notify(typeof(output),output)
   // console.log("done---------------------");
@@ -266,12 +266,12 @@ function testNf(filmId) {
             return
         } else if (response.status === 200) {
             let url = response.headers["XOriginatingURL"]
-            let region = 'us'
+            let region = 'sg'
             if (url != undefined) {
               region = url.split('/')[3]
               region = region.split('-')[0]
               if (region == 'title') {
-                region = 'us'
+                region = 'sg'
               }
             }
             console.log("nf:"+region)
