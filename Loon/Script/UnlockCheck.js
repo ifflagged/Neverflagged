@@ -21,8 +21,6 @@ const FILM_ID = 81215567
 const link = { "media-url": "https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/img/southpark/7.png" } 
 const policy_name = "Netflix" //填入你的 netflix 策略组名
 
-const arrow = " ➟ "
-
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36'
 
 // 即将登陆
@@ -84,8 +82,8 @@ let result = {
   }
 
   let content = "-----------------------------------</br>"+([result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
-  content = content+"</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+"<b>Current node: "+nodeName+"</font>"
-  content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+content`</p>`
+  content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+ nodeName+"</font>"
+  content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content +`</p>`
     // $notify(typeof(output),output)
   // console.log("done---------------------");
   console.log(content);
@@ -93,9 +91,8 @@ let result = {
 
 })()
 .finally(() => {
-    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"Check Failed"+'</br></br>----------------------</br>'+ nodeName + `</p>`})
+    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"Check Failed"+'</br></br>----------------------</br>'+ nodeName +`</p>`})
 });
-
 
 async function testDisneyPlus() {
   try {
