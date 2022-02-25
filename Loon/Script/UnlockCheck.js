@@ -3,12 +3,11 @@
 Thanks to & modified from 
 1. https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js
 2. https://raw.githubusercontent.com/Tartarus2014/Script/master/stream-ui-check.js
-
 For Loon 344+ ONLY!!
 
 [script]
 
-generic script-path= https://raw.githubusercontent.com/Tartarus2014/Script/master/stream-ui-check.js, tag=流媒体-解锁查询, img-url=checkmark.seal.system, enabled=true
+generic script-path= https://github.com/ifflagged/Neverflagged/raw/main/Loon/Script/UnlockCheck.js, tag=Unlock Check, img-url=checkmark.seal.system, enabled=true
 
 @XIAO_KOP
 
@@ -81,16 +80,16 @@ let result = {
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
     //console.log(1)
-    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+'⟦'+flags.get(region.toUpperCase())+"⟧"
+    result["Disney"] = "<b>Disneyᐩ:</b>Coming Soon in "+'⟦'+flags.get(region.toUpperCase())+"⟧"
   } else if (status==STATUS_AVAILABLE){
     //console.log(2)
-    result["Disney"] = "<b>Disneyᐩ:</b> Disney+ available in "+'⟦'+flags.get(region.toUpperCase())+"⟧ 🎉"
+    result["Disney"] = "<b>Disneyᐩ:</b>Available in"+'⟦'+flags.get(region.toUpperCase())+"⟧ 🎉"
     console.log(result["Disney"])
   } else if (status==STATUS_NOT_AVAILABLE) {
     //console.log(3)
-    result["Disney"] = "<b>Disneyᐩ:</b> Unavailable"
+    result["Disney"] = "<b>Disneyᐩ:</b>Unavailable"
   } else if (status==STATUS_TIMEOUT) {
-    result["Disney"] = "<b>Disneyᐩ:</b> Check Failed"
+    result["Disney"] = "<b>Disneyᐩ:</b>Check Failed"
   }
 
   let content = "--------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
@@ -285,7 +284,7 @@ function testNf(filmId) {
               }
             }
             console.log("nf:"+region)
-            result["Netflix"] = "<b>Netflix: </b>Full Netflix in +flags.get(region.toUpperCase())
+            result["Netflix"] = "<b>Netflix: </b>Full Netflix"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
             //$notify("nf:"+result["Netflix"])
             resolve("nf:"+result["Netflix"])
             return 
@@ -308,14 +307,14 @@ function testYTB() {
 
     $httpClient.get(option, (error, response, data) => {
         if (error) {
-            result["YouTube"] = "<b>YouTube Premium: </b>Check Failed"
+            result["YouTube"] = "<b>YouTube Premium: </b>Timeout"
             //resolve("timeout")
             return
         }
         console.log("ytb:"+response.status)
         if (response.status !== 200) {
             //reject('Error')
-            result["YouTube"] = "<b>YouTube Premium: </b>Check Failed
+            result["YouTube"] = "<b>YouTube Premium: </b>Check Failed"
         } else if (data.indexOf('Premium is not available in your country') !== -1) {
             //resolve('Not Available')
             result["YouTube"] = "<b>YouTube Premium: </b>Unavailable"
@@ -331,7 +330,7 @@ function testYTB() {
                 region = 'US'
             }
             //resolve(region)
-            result["YouTube"] = "<b>YouTube Premium: </b>Premium available in "+flags.get(region.toUpperCase())
+            result["YouTube"] = "<b>YouTube Premium: </b>Available in"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
             console.log("ytb:"+region+ result["YouTube"])
         }
     });
@@ -361,7 +360,7 @@ function testDazn() {
 
   $httpClient.post(option, (error, response, data) => {
     if (error) {
-        result["Dazn"] = "<b>Dazn: </b>Check Failed"
+        result["Dazn"] = "<b>Dazn: </b>Timeout"
         return
     }
     // let header = JSON.stringify(response.headers)
@@ -375,7 +374,7 @@ function testDazn() {
         let ret = re.exec(data)
         if (ret != null && ret.length === 2) {
             region = ret[1]
-            result["Dazn"] = "<b>Dazn: </b>available in "+flags.get(region.toUpperCase())
+            result["Dazn"] = "<b>Dazn: </b>Available in"+arrow+ "⟦"+flags.get(region.toUpperCase())+"⟧ 🎉"
         } else {
             result["Dazn"] = "<b>Dazn: </b>Unavailable"
 
@@ -398,7 +397,7 @@ function testParam() {
 
   $httpClient.get(option, (error, response, data) => {
     if (error) {
-        result["Paramount"] = "<b>Paramountᐩ: </b>Check Failed"
+        result["Paramount"] = "<b>Paramountᐩ: </b>Timeout"
         return
     }
     console.log("Paramountᐩ:"+response.status)
@@ -461,12 +460,12 @@ function testDiscovery() {
             data = JSON.parse(data)
             let locationd = data["data"]["attributes"]["currentLocationTerritory"]
             if (locationd == "us") {
-            result["Discovery"] = "<b>Discoveryᐩ: </b>支持 🎉 "
+            result["Discovery"] = "<b>Discoveryᐩ: </b>Available"
             console.log("支持Discoveryᐩ")
             resolve("支持Discoveryᐩ")
             return
             } else {
-            result["Discovery"] = "<b>Discoveryᐩ: </b>未支持 🚫"
+            result["Discovery"] = "<b>Discoveryᐩ: </b>Unavailable"
             console.log("不支持Discoveryᐩ")
             resolve("不支持Discoveryᐩ")
             return
