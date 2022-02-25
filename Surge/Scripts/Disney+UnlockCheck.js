@@ -28,7 +28,7 @@
  * timeout: 超时时间，毫秒，默认为 3000
  */
 
-const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36'
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36'
 
 // 即将登陆
 const STATUS_COMING = 2
@@ -221,13 +221,20 @@ function getLocationInfo() {
         return
       }
 
+      data = JSON.parse(data)
+      if(data?.errors){
+        console.log('getLocationInfo: ' + data)
+        reject('Not Available')
+        return
+      }
+
       let {
         token: { accessToken },
         session: {
           inSupportedLocation,
           location: { countryCode },
         },
-      } = JSON.parse(data)?.extensions?.sdk
+      } = data?.extensions?.sdk
       resolve({ inSupportedLocation, countryCode, accessToken })
     })
   })
