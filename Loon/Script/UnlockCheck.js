@@ -57,12 +57,12 @@ var flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
   "title": 'Unlock Check',
-  "YouTube": '<b>YouTube: </b>Check Failed',
-  "Netflix": '<b>Netflix: </b>Check Failed',
-  "Dazn": "<b>Dazn: </b>Check Failed",
-  "Disney": "<b>Disneyᐩ: </b>Check Failed",
-  "Paramount" : "<b>Paramountᐩ: </b>Check Failed",
-  "Discovery" : "<b>Discoveryᐩ: </b>Check Failed",
+  "YouTube": '<b>YouTube: </b> Check Failed',
+  "Netflix": '<b>Netflix: </b> Check Failed',
+  "Dazn": "<b>Dazn: </b> Check Failed",
+  "Disney": "<b>Disneyᐩ: </b> Check Failed",
+  "Paramount" : "<b>Paramountᐩ: </b> Check Failed",
+  "Discovery" : "<b>Discoveryᐩ: </b> Check Failed",
   //"Google": "Google Location: Check Failed"
 
 }
@@ -80,10 +80,10 @@ let result = {
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
     //console.log(1)
-    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(region.toUpperCase())
+    result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(region.toUpperCase())""
   } else if (status==STATUS_AVAILABLE){
     //console.log(2)
-    result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(region.toUpperCase())
+    result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(region.toUpperCase())""
     console.log(result["Disney"])
   } else if (status==STATUS_NOT_AVAILABLE) {
     //console.log(3)
@@ -93,7 +93,7 @@ let result = {
   }
 
   let content = "--------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["Netflix"],result["YouTube"]]).join("</br></br>")
-  content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
+  content = content + "</br>--------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>Node: " + nodeName+ "</font>"
   content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     // $notify(typeof(output),output)
   // console.log("done---------------------");
@@ -102,7 +102,7 @@ let result = {
 
 })()
 .finally(() => {
-    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"🚥 检测异常"+'</br></br>----------------------</br>'+ nodeName + `</p>`})
+    $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"Check Failed"+'</br></br>----------------------</br>'+ nodeName + `</p>`})
 });
 
 
@@ -284,7 +284,7 @@ function testNf(filmId) {
               }
             }
             console.log("nf:"+region)
-            result["Netflix"] = "<b>Netflix: </b> Full Netflix in "+flags.get(region.toUpperCase())
+            result["Netflix"] = "<b>Netflix: </b> Full Netflix in "+flags.get(region.toUpperCase())""
             //$notify("nf:"+result["Netflix"])
             resolve("nf:"+result["Netflix"])
             return 
@@ -330,7 +330,7 @@ function testYTB() {
                 region = 'US'
             }
             //resolve(region)
-            result["YouTube"] = "<b>YouTube Premium: </b> Available in"+flags.get(region.toUpperCase())
+            result["YouTube"] = "<b>YouTube Premium: </b> Available in "+flags.get(region.toUpperCase())""
             console.log("ytb:"+region+ result["YouTube"])
         }
     });
@@ -374,7 +374,7 @@ function testDazn() {
         let ret = re.exec(data)
         if (ret != null && ret.length === 2) {
             region = ret[1]
-            result["Dazn"] = "<b>Dazn: </b> Available in"+flags.get(region.toUpperCase())
+            result["Dazn"] = "<b>Dazn: </b> Available in "+flags.get(region.toUpperCase())""
         } else {
             result["Dazn"] = "<b>Dazn: </b> Unavailable"
 
