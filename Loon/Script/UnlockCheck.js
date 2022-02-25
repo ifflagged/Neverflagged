@@ -90,7 +90,6 @@ let result = {
   // console.log("done---------------------");
   console.log(content);
   $done({"title":result["title"],"htmlMessage":content})
-
 })()
 .finally(() => {
     $done({"title":result["title"],"htmlMessage":`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">`+'----------------------</br></br>'+"Check Failed"+'</br></br>----------------------</br>'+ nodeName + `</p>`})
