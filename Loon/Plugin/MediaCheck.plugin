@@ -1,0 +1,12 @@
+#!name=Media Unlock Check
+#!desc=Media Unlock Check
+#!author=Loon
+#!homepage=https://github.com/Loon0x00/LoonExampleConfig
+#!icon=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Media.png
+
+[script]
+generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck/YoutubePremiumCheck.js, tag=YouTube Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/YouTube.png
+generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck/NetflixUnlockCheck.js, tag=Netflix Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Netflix_Letter.pn
+generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck/Disney+UnlockCheck.js, tag=Disney+ Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Disney+.png
+
+generic script-path=https://raw.githubusercontent.com/ifflagged/Neverflagged/main/Loon/Script/UnlockCheck.js, tag=Unlock Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/YouTube_Music.ng
