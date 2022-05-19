@@ -20,3 +20,8 @@ payload:
 
 # > 小宝
   - DOMAIN,emby.kim
+   
+# > Misty
+  - DOMAIN,aaa.ax
+  - DOMAIN,us.aaa.ax
+  - DOMAIN,jp.aaa.ax
