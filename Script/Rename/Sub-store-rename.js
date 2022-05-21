@@ -118,7 +118,7 @@ function ftPYStr() {
 function simplify(cc) {
   let str = '';
   for (let i = 0; i < cc.length; i++) {
-    if (ftPYStr().indexOf(cc.charAt(i)) !== -1) str +=charPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)));
+    if (ftPYStr().indexOf(cc.charAt(i)) !== -1) str += charPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)));
     else str+=cc.charAt(i);
   }
   return str;
