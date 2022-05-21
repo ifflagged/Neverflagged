@@ -119,7 +119,7 @@ function simplify(cc) {
   let str = '';
   for (let i = 0; i < cc.length; i++) {
     if (ftPYStr().indexOf(cc.charAt(i)) !== -1) str += charPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)));
-    else str+=cc.charAt(i);
+    else str += cc.charAt(i);
   }
   return str;
 }
@@ -131,7 +131,7 @@ function operator(proxies) {
     var matched = false
     for (const elem of Object.keys(countries)) {
       if (simplify(res.name).indexOf(elem) !== -1) {
-        countries[elem][1]+=1;
+        countries[elem][1] += 1;
         resultArray.push(countries[elem][0], countries[elem][1]);
         console.log(resultArray);
         matched = true
