@@ -118,8 +118,8 @@ function ftPYStr() {
 function simplify(cc) {
   let str = '';
   for (let i = 0; i < cc.length; i++) {
-    if (ftPYStr().indexOf(cc.charAt(i)) !== -1) str += charPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)));
-    else str += cc.charAt(i);
+    if (ftPYStr().indexOf(cc.charAt(i)) !== -1) str +=charPYStr().charAt(ftPYStr().indexOf(cc.charAt(i)));
+    else str+=cc.charAt(i);
   }
   return str;
 }
@@ -146,7 +146,7 @@ function operator(proxies) {
         resultArray.splice(2, 0, others[elem]);
       }
     });
-    res.name = resultArray.join(' ');
+    res.name = resultArray.join('');
   });
   if ($arguments.del1) {
     stripOnes();
