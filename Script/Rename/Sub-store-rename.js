@@ -146,7 +146,7 @@ function operator(proxies) {
         resultArray.splice(2, 0, others[elem]);
       }
     });
-    res.name = resultArray.join('');
+    res.name = resultArray.join(' ');
   });
   if ($arguments.del1) {
     stripOnes();
