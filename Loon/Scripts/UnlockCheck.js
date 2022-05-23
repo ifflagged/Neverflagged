@@ -2,7 +2,7 @@
  * Thanks to & modified from 
  * https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
  * 
- * 脚本功能：检查节点是否支持以下流媒体服务：NetFlix、Disney、YouTuBe
+ * 脚本功能：检查节点是否支持以下流媒体服务：NetFlix、Disney、YouTuBe、Param
  * For Loon 373+ Only, 小于373版本会有bug
  * 更新于：2022-04-11
  * 脚本使用方式：将以下配置粘贴于Loon配置文件中的[Script]模块下，也可以进行UI添加脚本，添加后需开启Loon代理，在策略组或者所有节点页面，选择一个节点长按，出现菜单后进行测试
@@ -14,7 +14,7 @@
 const NF_BASE_URL = "https://www.netflix.com/title/81215567";
 const DISNEY_BASE_URL = 'https://www.disneyplus.com';
 const DISNEY_LOCATION_BASE_URL = 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql';
-const YTB_BASE_URL = "https://www.youtube.com/premium";
+const YTB_BASE_URL = "https://www.youtube.com/premium"
 
 var inputParams = $environment.params;
 var nodeName = inputParams.node;
@@ -22,23 +22,23 @@ var nodeName = inputParams.node;
 let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦🇫" ] , [ "AI" , "🇦🇮" ] , [ "AL" , "🇦🇱" ] , [ "AM" , "🇦🇲" ] , [ "AQ" , "🇦🇶" ] , [ "AR" , "🇦🇷" ] , [ "AS" , "🇦🇸" ] , [ "AT" , "🇦🇹" ] , [ "AU" , "🇦🇺" ] , [ "AW" , "🇦🇼" ] , [ "AX" , "🇦🇽" ] , [ "AZ" , "🇦🇿" ] , ["BA", "🇧🇦"], [ "BB" , "🇧🇧" ] , [ "BD" , "🇧🇩" ] , [ "BE" , "🇧🇪" ] , [ "BF" , "🇧🇫" ] , [ "BG" , "🇧🇬" ] , [ "BH" , "🇧🇭" ] , [ "BI" , "🇧🇮" ] , [ "BJ" , "🇧🇯" ] , [ "BM" , "🇧🇲" ] , [ "BN" , "🇧🇳" ] , [ "BO" , "🇧🇴" ] , [ "BR" , "🇧🇷" ] , [ "BS" , "🇧🇸" ] , [ "BT" , "🇧🇹" ] , [ "BV" , "🇧🇻" ] , [ "BW" , "🇧🇼" ] , [ "BY" , "🇧🇾" ] , [ "BZ" , "🇧🇿" ] , [ "CA" , "🇨🇦" ] , [ "CF" , "🇨🇫" ] , [ "CH" , "🇨🇭" ] , [ "CK" , "🇨🇰" ] , [ "CL" , "🇨🇱" ] , [ "CM" , "🇨🇲" ] , [ "CN" , "🇨🇳" ] , [ "CO" , "🇨🇴" ] , [ "CP" , "🇨🇵" ] , [ "CR" , "🇨🇷" ] , [ "CU" , "🇨🇺" ] , [ "CV" , "🇨🇻" ] , [ "CW" , "🇨🇼" ] , [ "CX" , "🇨🇽" ] , [ "CY" , "🇨🇾" ] , [ "CZ" , "🇨🇿" ] , [ "DE" , "🇩🇪" ] , [ "DG" , "🇩🇬" ] , [ "DJ" , "🇩🇯" ] , [ "DK" , "🇩🇰" ] , [ "DM" , "🇩🇲" ] , [ "DO" , "🇩🇴" ] , [ "DZ" , "🇩🇿" ] , [ "EA" , "🇪🇦" ] , [ "EC" , "🇪🇨" ] , [ "EE" , "🇪🇪" ] , [ "EG" , "🇪🇬" ] , [ "EH" , "🇪🇭" ] , [ "ER" , "🇪🇷" ] , [ "ES" , "🇪🇸" ] , [ "ET" , "🇪🇹" ] , [ "EU" , "🇪🇺" ] , [ "FI" , "🇫🇮" ] , [ "FJ" , "🇫🇯" ] , [ "FK" , "🇫🇰" ] , [ "FM" , "🇫🇲" ] , [ "FO" , "🇫�" ] , [ "FR" , "🇫🇷" ] , [ "GA" , "🇬🇦" ] , [ "GB" , "🇬🇧" ] , [ "HK" , "🇭🇰" ] ,["HU","🇭🇺"], [ "ID" , "🇮🇩" ] , [ "IE" , "🇮🇪" ] , [ "IL" , "🇮🇱" ] , [ "IM" , "🇮🇲" ] , [ "IN" , "🇮🇳" ] , [ "IS" , "🇮🇸" ] , [ "IT" , "🇮🇹" ] , [ "JP" , "🇯🇵" ] , [ "KR" , "🇰🇷" ] , [ "LU" , "🇱🇺" ] , [ "MO" , "🇲🇴" ] , [ "MX" , "🇲🇽" ] , [ "MY" , "🇲🇾" ] , [ "NL" , "🇳🇱" ] , [ "PH" , "🇵🇭" ] , [ "RO" , "🇷🇴" ] , [ "RS" , "🇷🇸" ] , [ "RU" , "🇷🇺" ] , [ "RW" , "🇷🇼" ] , [ "SA" , "🇸🇦" ] , [ "SB" , "��🇧" ] , [ "SC" , "🇸🇨" ] , [ "SD" , "🇸🇩" ] , [ "SE" , "🇸🇪" ] , [ "SG" , "🇸🇬" ] , [ "TH" , "🇹🇭" ] , [ "TN" , "🇹🇳" ] , [ "TO" , "🇹🇴" ] , [ "TR" , "🇹🇷" ] , [ "TV" , "🇹🇻" ] , [ "TW" , "🇨🇳" ] , [ "UK" , "🇬🇧" ] , [ "UM" , "🇺🇲" ] , [ "US" , "🇺🇸" ] , [ "UY" , "🇺🇾" ] , [ "UZ" , "🇺🇿" ] , [ "VA" , "🇻🇦" ] , [ "VE" , "🇻🇪" ] , [ "VG" , "🇻🇬" ] , [ "VI" , "🇻🇮" ] , [ "VN" , "🇻🇳" ] , [ "ZA" , "🇿🇦"]])
 
 let result = {
-    "title": 'Media Unlock Check',
+    "title": 'Media Unlock Check,
+    "YouTube": '<b>YouTube: </b>Check Failed',
     "Netflix": '<b>Netflix: </b>Check Failed',
     "Disney": "<b>Disneyᐩ: </b>Check Failed",
-    "YouTube": '<b>YouTube: </b>Check Failed',
 }
 
 let arrow = " ➟ "
 
-Promise.all([ytbTest(),disneyLocation(),nfTest()]).then(value => {
-    let content = "-----------------------------------</br>"+(result["Netflix"],result["Disney"],result["YouTube"]).join("</br></br>")
+Promise.all([ytbTest(),disneyLocation(),nfTest()).then(value => {
+    let content = "-----------------------------------</br>"+(result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+ nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     console.log(content);
     $done({"title":result["title"],"htmlMessage":content})
 }).catch (values => {
     console.log("reject:" + values);
-    let content = "-----------------------------------</br>"+(result["Netflix"],result["Disney"],result["YouTube"]).join("</br></br>")
+    let content = "-----------------------------------</br>"+(result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+ nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
     $done({"title":result["title"],"htmlMessage":content})
@@ -180,7 +180,7 @@ function ytbTest() {
                     resolve(region);
                 }
             } else {
-                result["YouTube"] = "<b>YouTube Premium: </b>Check Failed";
+                result["YouTube"] = "<b>YouTube Premium: </b> Check Failed";
                 resolve(response.status);
             }
         })
@@ -225,7 +225,7 @@ function nfTest() {
                 result["Netflix"] = "<b>Netflix: </b>Full Netflix in "+arrow+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
-                result["Netflix"] = "<b>Netflix: </b>Check Failed";
+                result["Netflix"] = "<b>Netflix: </b> Check Failed";
                 resolve(response.status)
             }
         })
