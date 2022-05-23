@@ -2,7 +2,7 @@
  * Thanks to & modified from 
  * https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
  * 
- * 脚本功能：检查节点是否支持以下流媒体服务：NetFlix、Disney、YouTuBe、Param
+ * 脚本功能：检查节点是否支持以下流媒体服务：NetFlix、Disney、YouTuBe
  * For Loon 373+ Only, 小于373版本会有bug
  * 更新于：2022-04-11
  * 脚本使用方式：将以下配置粘贴于Loon配置文件中的[Script]模块下，也可以进行UI添加脚本，添加后需开启Loon代理，在策略组或者所有节点页面，选择一个节点长按，出现菜单后进行测试
@@ -23,9 +23,9 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": 'Media Unlock Check,
-    "YouTube": '<b>YouTube: </b>Check Failed',
     "Netflix": '<b>Netflix: </b>Check Failed',
     "Disney": "<b>Disneyᐩ: </b>Check Failed",
+    "YouTube": '<b>YouTube: </b>Check Failed',
 }
 
 let arrow = " ➟ "
