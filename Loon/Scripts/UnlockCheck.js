@@ -23,9 +23,9 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": 'Media Unlock Check',
-    "Netflix": '<b>Netflix: </b>Check Failed',
-    "Disney": "<b>Disneyᐩ: </b>Check Failed",
-    "YouTube": '<b>YouTube: </b>Check Failed',
+    "Netflix": '<b>Netflix: </b>❗️ Check Failed',
+    "Disney": "<b>Disneyᐩ: </b>❗️ Check Failed",
+    "YouTube": '<b>YouTube: </b>❗️ Check Failed',
 }
 
 Promise.all([ytbTest(),disneyLocation(),nfTest()]).then(value => {
@@ -90,18 +90,18 @@ function disneyLocation() {
                         location: { countryCode },
                     } = resData?.extensions?.sdk?.session
                     if (inSupportedLocation == false) {
-                        result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "<b>Disneyᐩ:</b> ⚠️ Coming Soon in "+flags.get(countryCode.toUpperCase())
                         resolve();
                     } else {
-                        result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "<b>Disneyᐩ:</b> ✅ Available in "+flags.get(countryCode.toUpperCase())
                         resolve({ inSupportedLocation, countryCode });
                     }
                 } else {
-                    result["Disney"] = "<b>Disneyᐩ:</b> Unavailable";
+                    result["Disney"] = "<b>Disneyᐩ:</b> ❎ Unavailable";
                     resolve();
                 }
             } else {
-                result["Disney"] = "<b>Disneyᐩ:</b> Check Failed";
+                result["Disney"] = "<b>Disneyᐩ:</b> ❗️ Check Failed";
                 resolve();
             }
         })
@@ -161,7 +161,7 @@ function ytbTest() {
             if (response.status == 200) {
                 console.log("YTB request data:" + response.status);
                 if (data.indexOf('Premium is not available in your country') !== -1) {
-                    result["YouTube"] = "<b>YouTube Premium: </b>Unavailable"
+                    result["YouTube"] = "<b>YouTube Premium: </b>❎ Unavailable"
                     resolve("YTB test failed");
                 } else {
                     let region = ''
@@ -174,11 +174,11 @@ function ytbTest() {
                     } else {
                         region = 'US'
                     }
-                    result["YouTube"] = "<b>YouTube Premium: </b>Aavailable in "+flags.get(region.toUpperCase())
+                    result["YouTube"] = "<b>YouTube Premium: </b>✅ Aavailable in "+flags.get(region.toUpperCase())
                     resolve(region);
                 }
             } else {
-                result["YouTube"] = "<b>YouTube Premium: </b> Check Failed";
+                result["YouTube"] = "<b>YouTube Premium: </b>❗️ Check Failed";
                 resolve(response.status);
             }
         })
@@ -203,10 +203,10 @@ function nfTest() {
                 return;
             }
             if (response.status == 403) {
-                result["Netflix"] = "<b>Netflix: </b>Unavailable"
+                result["Netflix"] = "<b>Netflix: </b>❎ Unavailable"
                 resolve("403 Not Available");
             } else if (response.status == 404) {
-                result["Netflix"] = "<b>Netflix: </b>Original Netflix"
+                result["Netflix"] = "<b>Netflix: </b>⚠️ Original Netflix"
                 resolve("404 Not Found");
             } else if (response.status == 200) {
                 console.log("NF request result:" + JSON.stringify(response.headers));
@@ -220,10 +220,10 @@ function nfTest() {
                 if (region == 'title') {
                     region = 'us'
                 }
-                result["Netflix"] = "<b>Netflix: </b>Full Netflix in "+flags.get(region.toUpperCase())
+                result["Netflix"] = "<b>Netflix: </b>✅ Full Netflix in "+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
-                result["Netflix"] = "<b>Netflix: </b> Check Failed";
+                result["Netflix"] = "<b>Netflix: </b>❗️ Check Failed";
                 resolve(response.status)
             }
         })
