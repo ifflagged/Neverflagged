@@ -58,7 +58,7 @@ function ytbTest() {
             if (response.status == 200) {
                 console.log("YTB request data:" + response.status);
                 if (data.indexOf('Premium is not available in your country') !== -1) {
-                    result["YouTube"] = "<b>YouTube Premium: </b>Unavailable"
+                    result["YouTube"] = "<b>❎ </b>Unavailable"
                     resolve("YTB test failed");
                 } else {
                     let region = ''
@@ -71,11 +71,11 @@ function ytbTest() {
                     } else {
                         region = 'US'
                     }
-                    result["YouTube"] = "<b>YouTube Premium: </b>Available in "+flags.get(region.toUpperCase())
+                    result["YouTube"] = "<b>✅ </b>Available in "+flags.get(region.toUpperCase())
                     resolve(region);
                 }
             } else {
-                result["YouTube"] = "<b>YouTube Premium: </b>Check Failed";
+                result["YouTube"] = "<b>❗️ </b>Check Failed";
                 resolve(response.status);
             }
         })
