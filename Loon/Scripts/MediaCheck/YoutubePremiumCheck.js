@@ -18,7 +18,7 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": 'YouTube Premium Check',
-    "YouTube": '<b>YouTube: </b>Check Failed',
+    "YouTube": '❗️ Check Failed',
 }
 
 let arrow = " ➟ "
@@ -58,7 +58,7 @@ function ytbTest() {
             if (response.status == 200) {
                 console.log("YTB request data:" + response.status);
                 if (data.indexOf('Premium is not available in your country') !== -1) {
-                    result["YouTube"] = "<b>❎ </b>Unavailable"
+                    result["YouTube"] = "❎ Unavailable"
                     resolve("YTB test failed");
                 } else {
                     let region = ''
@@ -71,11 +71,11 @@ function ytbTest() {
                     } else {
                         region = 'US'
                     }
-                    result["YouTube"] = "<b>✅ </b>Available in "+flags.get(region.toUpperCase())
+                    result["YouTube"] = "✅ Available in "+flags.get(region.toUpperCase())
                     resolve(region);
                 }
             } else {
-                result["YouTube"] = "<b>❗️ </b>Check Failed";
+                result["YouTube"] = "❗️ Check Failed";
                 resolve(response.status);
             }
         })
