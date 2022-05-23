@@ -89,10 +89,10 @@ function disneyLocation() {
                         location: { countryCode },
                     } = resData?.extensions?.sdk?.session
                     if (inSupportedLocation == false) {
-                        result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in"+'⟦'+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "<b>Disneyᐩ:</b> Coming Soon in "+flags.get(countryCode.toUpperCase())
                         resolve();
                     } else {
-                        result["Disney"] = "<b>Disneyᐩ:</b> Available in"+'⟦'+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "<b>Disneyᐩ:</b> Available in "+flags.get(countryCode.toUpperCase())
                         resolve({ inSupportedLocation, countryCode });
                     }
                 } else {
