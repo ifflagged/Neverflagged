@@ -21,7 +21,7 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": 'Disney+ Check',
-    "Disney": "<b>Disneyᐩ: </b>Check Failed",
+    "Disney": "❗️ Check Failed",
 }
 
 let arrow = " ➟ "
@@ -89,18 +89,18 @@ function disneyLocation() {
                         location: { countryCode },
                     } = resData?.extensions?.sdk?.session
                     if (inSupportedLocation == false) {
-                        result["Disney"] = "<b>⚠️</b> Coming Soon in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "⚠️ Coming Soon in "+flags.get(countryCode.toUpperCase())
                         resolve();
                     } else {
-                        result["Disney"] = "<b>✅</b> Available in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "✅ Available in "+flags.get(countryCode.toUpperCase())
                         resolve({ inSupportedLocation, countryCode });
                     }
                 } else {
-                    result["Disney"] = "<b>❎</b> Unavailable";
+                    result["Disney"] = "❎ Unavailable";
                     resolve();
                 }
             } else {
-                result["Disney"] = "<b>❗️</b> Check Failed";
+                result["Disney"] = "❗️ Check Failed";
                 resolve();
             }
         })
