@@ -57,10 +57,10 @@ function nfTest() {
                 return;
             }
             if (response.status == 403) {
-                result["Netflix"] = "Unavailable"
+                result["Netflix"] = "<b>❎ </b> Unavailable"
                 resolve("403 Not Available");
             } else if (response.status == 404) {
-                result["Netflix"] = "Original Netflix"
+                result["Netflix"] = "<b>⚠️ </b> Original Netflix"
                 resolve("404 Not Found");
             } else if (response.status == 200) {
                 console.log("NF request result:" + JSON.stringify(response.headers));
@@ -74,10 +74,10 @@ function nfTest() {
                 if (region == 'title') {
                     region = 'us'
                 }
-                result["Netflix"] = "Full Netflix in "+flags.get(region.toUpperCase())
+                result["Netflix"] = "<b>✅ </b> Full Netflix in "+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
-                result["Netflix"] = "Check Failed";
+                result["Netflix"] = "<b>❗️ </b> Check Failed";
                 resolve(response.status)
             }
         })
