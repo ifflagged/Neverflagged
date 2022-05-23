@@ -28,8 +28,6 @@ let result = {
     "YouTube": '<b>YouTube: </b>Check Failed',
 }
 
-let arrow = " ➟ "
-
 Promise.all([ytbTest(),disneyLocation(),nfTest()]).then(value => {
     let content = "-----------------------------------</br>"+([result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+ nodeName+ "</font>"
@@ -176,7 +174,7 @@ function ytbTest() {
                     } else {
                         region = 'US'
                     }
-                    result["YouTube"] = "<b>YouTube Premium: </b>Aavailable in "+arrow+flags.get(region.toUpperCase())
+                    result["YouTube"] = "<b>YouTube Premium: </b>Aavailable in "+flags.get(region.toUpperCase())
                     resolve(region);
                 }
             } else {
@@ -222,7 +220,7 @@ function nfTest() {
                 if (region == 'title') {
                     region = 'us'
                 }
-                result["Netflix"] = "<b>Netflix: </b>Full Netflix in "+arrow+flags.get(region.toUpperCase())
+                result["Netflix"] = "<b>Netflix: </b>Full Netflix in "+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
                 result["Netflix"] = "<b>Netflix: </b> Check Failed";
