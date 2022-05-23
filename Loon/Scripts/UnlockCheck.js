@@ -24,13 +24,13 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 let result = {
     "title": 'Media Unlock Check,
     "Netflix": '<b>Netflix: </b>Check Failed',
-    "Disney": '<b>Disneyᐩ: </b>Check Failed',
+    "Disney": "<b>Disneyᐩ: </b>Check Failed",
     "YouTube": '<b>YouTube: </b>Check Failed',
 }
 
 let arrow = " ➟ "
 
-Promise.all([ytbTest(),disneyLocation(),nfTest()).then(value => {
+Promise.all([ytbTest(),disneyLocation(),nfTest()]).then(value => {
     let content = "-----------------------------------</br>"+(result["Netflix"],result["Disney"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>-----------------------------------</br>"+"<font color=#CD5C5C>"+ nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
