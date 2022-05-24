@@ -24,7 +24,7 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 let result = {
     "title": 'Media Unlock Check',
     "Netflix": '❗️ <b>Netflix: </b>Check Failed',
-    "Disney": "❗️ <b>Disneyᐩ: </b>Check Failed",
+    "Disney": "❗️ <b>Disney+: </b>Check Failed",
     "YouTube": '❗️ <b>YouTube: </b>Check Failed',
 }
 
@@ -90,18 +90,18 @@ function disneyLocation() {
                         location: { countryCode },
                     } = resData?.extensions?.sdk?.session
                     if (inSupportedLocation == false) {
-                        result["Disney"] = "⚠️ Disneyᐩ coming Soon in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "⚠️ Disney+ coming Soon in "+flags.get(countryCode.toUpperCase())
                         resolve();
                     } else {
-                        result["Disney"] = "✅ Disneyᐩ available in "+flags.get(countryCode.toUpperCase())
+                        result["Disney"] = "✅ Disney+ available in "+flags.get(countryCode.toUpperCase())
                         resolve({ inSupportedLocation, countryCode });
                     }
                 } else {
-                    result["Disney"] = "❎ Disneyᐩ unavailable";
+                    result["Disney"] = "❎ Disney+ unavailable";
                     resolve();
                 }
             } else {
-                result["Disney"] = "❗️ Disneyᐩ check failed";
+                result["Disney"] = "❗️ Disney+ check failed";
                 resolve();
             }
         })
