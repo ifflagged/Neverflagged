@@ -220,7 +220,7 @@ function nfTest() {
                 if (region == 'title') {
                     region = 'us'
                 }
-                result["Netflix"] = "✅ Full Netflix in "+flags.get(region.toUpperCase())
+                result["Netflix"] = "✅ Full Netflix available in "+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
                 result["Netflix"] = "❗️ Netflix check failed";
