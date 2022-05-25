@@ -23,9 +23,9 @@ let flags = new Map([[ "AC" , "🇦🇨" ] ,["AE","🇦🇪"], [ "AF" , "🇦�
 
 let result = {
     "title": 'Media Check',
-    "Netflix": '❗️ <b>Netflix: </b>Check Failed',
-    "Disney": "❗️ <b>Disney+: </b>Check Failed",
-    "YouTube": '❗️ <b>YouTube: </b>Check Failed',
+    "Netflix": '❗️<b>Netflix: </b>Check Failed',
+    "Disney": "❗️<b>Disney+: </b>Check Failed",
+    "YouTube": '❗️<b>YouTube: </b>Check Failed',
 }
 
 Promise.all([ytbTest(),disneyLocation(),nfTest()]).then(value => {
@@ -101,7 +101,7 @@ function disneyLocation() {
                     resolve();
                 }
             } else {
-                result["Disney"] = "❗️ Disney+ check failed";
+                result["Disney"] = "❗️Disney+ check failed";
                 resolve();
             }
         })
@@ -178,7 +178,7 @@ function ytbTest() {
                     resolve(region);
                 }
             } else {
-                result["YouTube"] = "❗️ YouTube Premium check failed";
+                result["YouTube"] = "❗️YouTube Premium check failed";
                 resolve(response.status);
             }
         })
@@ -223,7 +223,7 @@ function nfTest() {
                 result["Netflix"] = "✅ Full Netflix available in "+flags.get(region.toUpperCase())
                 resolve(region);
             } else {
-                result["Netflix"] = "❗️ Netflix check failed";
+                result["Netflix"] = "❗️Netflix check failed";
                 resolve(response.status)
             }
         })
