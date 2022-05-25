@@ -5,7 +5,7 @@
 #!icon=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Media.png
 
 [script]
-generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck.js, tag=Media Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/YouTube_Music.png
+generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck.js, tag=Media Check, img-url=checkmark.seal.system
 
 generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck/NetflixCheck.js, tag=Netflix Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Netflix_Letter.png
 generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck/Disney+Check.js, tag=Disney+ Check, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Disney+.png
