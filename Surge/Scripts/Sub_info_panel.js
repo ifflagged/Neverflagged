@@ -30,7 +30,7 @@ let args = getArgs();
   let content = [`Used：${bytesToSize(used)} | ${bytesToSize(total)}`];
 
   if (resetDayLeft) {
-    content.push(`Reset：remaining${resetDayLeft}days`);
+    content.push(`Reset：${resetDayLeft} day(s)`);
   }
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
@@ -133,5 +133,5 @@ function formatTime(time) {
   let year = dateObj.getFullYear();
   let month = dateObj.getMonth() + 1;
   let day = dateObj.getDate();
-  return year + "-" + month + "-" + day + "-";
+  return year + "-" + month + "-" + day;
 }
