@@ -40,7 +40,7 @@ let args = getArgs();
   let now = new Date();
   let hour = now.getHours()%12;
   let minutes = now.getHours();
-  hour = hour > 9 ? hour : "0" + hour;
+  # hour = hour > 9 ? hour : "0" + hour;
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
