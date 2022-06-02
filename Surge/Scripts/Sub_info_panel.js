@@ -41,8 +41,6 @@ let args = getArgs();
   let hour = now.getHours();
   let minutes = now.getMinutes();
   hour = hour > 9 ? hour : "0" + hour;
-  hour = hour > 12 ? hour : hour - 12;
-  hour = hour == 0 ? hour : hour = 12;
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
