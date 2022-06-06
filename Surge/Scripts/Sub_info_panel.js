@@ -33,8 +33,9 @@ let args = getArgs();
     content.push(`重置：剩余${resetDayLeft}天`);
   }
   if (expire && expire !== "false") {
+    let diff = (new Date(expire) - now) / (1000 * 3600 * 24);
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`到期：${formatTime(expire)}`);
+    content.push(`expires：${formatTime(expire)} | in ${Math.ceil(diff)} Days`);
   }
 
   let now = new Date();
