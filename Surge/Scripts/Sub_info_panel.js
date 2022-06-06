@@ -35,7 +35,6 @@ let args = getArgs();
   }
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Expires in ${formatTime(expire)}`);
   }
   
   let now = new Date();
@@ -44,7 +43,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} expires in ${getRmainingDays(resetDay)}`,
+    title: `${args.title} expires in ${formatTime(expire)}`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
