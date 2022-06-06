@@ -28,7 +28,8 @@ let args = getArgs();
   let total = info.total;
   let proportion = used / total;
   let expire = args.expire || info.expire;
-  
+  let content = [`${toPercent(proportion)} of ${bytesToSize(total)} used at ${hour}:${minutes}`];
+
   if (resetDayLeft) {
     content.push(`Reset：${resetDayLeft} day(s)`);
   }
@@ -40,8 +41,6 @@ let args = getArgs();
   let hour = now.getHours()%12;
   let minutes = now.getHours();
   minutes = minutes > 9 ? minutes : "0" + minutes;
-
-  let content = [`${toPercent(proportion)} of ${bytesToSize(total)} used at ${hour}:${minutes}`];
 
   $done({
     title: `${args.title} expires in ${formatTime(expire)}`,
