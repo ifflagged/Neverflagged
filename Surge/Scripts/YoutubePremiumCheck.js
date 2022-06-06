@@ -26,11 +26,11 @@ const BASE_URL = 'https://www.youtube.com/premium'
 
 const DEFAULT_OPTIONS = {
   title: 'YouTube Premium Check',
-  availableContent: 'Premium available in #REGION_FLAG# #REGION_NAME_EN#',
+  availableContent: 'YouTube Premium available in #REGION_FLAG# #REGION_NAME_EN#',
   availableIcon: '',
   availableIconColor: '',
   availableStyle: 'good',
-  notAvailableContent: 'Unavailable',
+  notAvailableContent: 'YouTube unavailable',
   notAvailableIcon: '',
   notAvailableIconColor: '',
   notAvailableStyle: 'alert',
