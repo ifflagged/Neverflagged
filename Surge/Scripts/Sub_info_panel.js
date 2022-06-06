@@ -26,15 +26,16 @@ let args = getArgs();
 
   let used = info.download + info.upload;
   let total = info.total;
+  let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`Used：${bytesToSize(used)} | ${bytesToSize(total)}`];
+  let content = [`${toPercent(proportion)} of ${bytesToSize(total)} used`];
 
   if (resetDayLeft) {
     content.push(`Reset：${resetDayLeft} day(s)`);
   }
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Expiry date：${formatTime(expire)}`);
+    content.push(`Expires ${getRmainingDays(resetDay)} day(s)`);
   }
 
   let now = new Date();
@@ -133,4 +134,9 @@ function formatTime(time) {
   let month = dateObj.getMonth() + 1;
   let day = dateObj.getDate();
   return year + "-" + month + "-" + day;
+}
+
+function toPercent(proportion) {
+  const percent = Number(proportion*100).toFixed(2);
+  return `${percent}%`
 }
