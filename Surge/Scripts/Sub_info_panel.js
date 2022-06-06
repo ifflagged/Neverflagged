@@ -27,15 +27,14 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)} + ${toPercent(proportion)} of ${bytesToSize(total)} is used`];
+  let content = [`用量：${bytesToSize(used)} | ${bytesToSize(total)}`];
 
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
   }
   if (expire && expire !== "false") {
-    let diff = (new Date(expire) - now) / (1000 * 3600 * 24);
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`到期：${formatTime(expire)} | 套餐剩余时间不足天`);
+    content.push(`到期：${formatTime(expire)}`);
   }
 
   let now = new Date();
@@ -135,9 +134,4 @@ function formatTime(time) {
   let month = dateObj.getMonth() + 1;
   let day = dateObj.getDate();
   return year + "年" + month + "月" + day + "日";
-}
-
-function toPercent(proportion) {
-  const percent = Number(proportion*100).toFixed(2);
-  return percent + "%";
 }
