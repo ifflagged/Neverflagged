@@ -20,7 +20,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 
   ;(async () => {
     let panel_result = {
-      title: 'Unlock Check',
+      title: 'Media Check',
       content: '',
       icon: 'play.tv.fill',
       'icon-color': '#FF2D55',
@@ -40,9 +40,9 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
         // console.log(result["Disney"])
       } else if (status==STATUS_NOT_AVAILABLE) {
         //console.log(3)
-        disney_result="Disney+ Unavailable"
+        disney_result="Disney+ unavailable"
       } else if (status==STATUS_TIMEOUT) {
-        disney_result="Disney+ Check Failed"
+        disney_result="Disney+ Check failed"
       }
 result.push(disney_result)
 console.log(result)
@@ -93,13 +93,13 @@ panel_result['content'] = content
     await inner_check()
       .then((code) => {
         if (code === 'Not Available') {
-          youtube_check_result += 'Unavailable'
+          youtube_check_result += 'YouTube Premium unavailable'
         } else {
-          youtube_check_result += 'available in ' + code.toUpperCase()
+          youtube_check_result += 'YouTube Premium available in ' + code.toUpperCase()
         }
       })
       .catch((error) => {
-        youtube_check_result += 'Check Failed'
+        youtube_check_result += 'Check failed'
       })
   
     return youtube_check_result
@@ -151,7 +151,7 @@ panel_result['content'] = content
         if (code === 'Not Found') {
           return inner_check(80018499)
         }
-        netflix_check_result += 'available in ' + code.toUpperCase()
+        netflix_check_result += 'Full Netflix available in ' + code.toUpperCase()
         return Promise.reject('BreakSignal')
       })
       .then((code) => {
@@ -167,10 +167,10 @@ panel_result['content'] = content
           return
         }
         if (error === 'Not Available') {
-          netflix_check_result += 'Unavailable'
+          netflix_check_result += 'Netflix unavailable'
           return
         }
-        netflix_check_result += 'Check Failed'
+        netflix_check_result += 'Check failed'
       })
   
     return netflix_check_result
