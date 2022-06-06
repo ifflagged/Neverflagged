@@ -30,7 +30,6 @@ let args = getArgs();
   let expire = args.expire || info.expire;
   let content = [`${toPercent(proportion)} of ${bytesToSize(total)} used`];
 
-/*
   if (resetDayLeft) {
     content.push(`Reset：${resetDayLeft} day(s)`);
   }
@@ -38,7 +37,6 @@ let args = getArgs();
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
     content.push(`Expires in ${formatTime(expire)}`);
   }
-*/
   
   let now = new Date();
   let hour = now.getHours()%12;
