@@ -55,7 +55,7 @@ const DEFAULT_OPTIONS = {
   notAvailableIcon: undefined,
   notAvailableIconColor: undefined,
   notAvailableStyle: 'alert',
-  errorContent: 'Check Failed',
+  errorContent: 'Check failed',
   errorIcon: undefined,
   errorIconColor: undefined,
   errorStyle: 'error',
