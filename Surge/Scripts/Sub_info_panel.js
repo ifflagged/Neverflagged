@@ -27,7 +27,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)} ${toPercent(proportion)} of ${bytesToSize(total)} is used`];
+  let content = [`${bytesToSize(used)} + ${toPercent(proportion)} of ${bytesToSize(total)} is used`];
 
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
@@ -35,7 +35,7 @@ let args = getArgs();
   if (expire && expire !== "false") {
     let diff = (new Date(expire) - now) / (1000 * 3600 * 24);
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`到期：${formatTime(expire)} | 套餐剩余时间不足${Math.ceil(diff)}天`);
+    content.push(`到期：${formatTime(expire)} | 套餐剩余时间不足天`);
   }
 
   let now = new Date();
