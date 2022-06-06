@@ -42,16 +42,16 @@ const STATUS_TIMEOUT = -1
 const STATUS_ERROR = -2
 
 const DEFAULT_OPTIONS = {
-  title: 'Disney+ Unlock Check',
+  title: 'Disney+ Check',
   availableContent: 'Disney+ available in #REGION_FLAG# #REGION_NAME_EN#',
   availableIcon: undefined,
   availableIconColor: undefined,
   availableStyle: 'good',
-  comingContent: 'Coming Soon in #REGION_FLAG# #REGION_NAME_EN#',
+  comingContent: 'Disney+ coming Soon in #REGION_FLAG# #REGION_NAME_EN#',
   comingIcon: undefined,
   comingIconColor: undefined,
   comingStyle: 'info',
-  notAvailableContent: 'Unavailable',
+  notAvailableContent: 'Disney+ unavailable',
   notAvailableIcon: undefined,
   notAvailableIconColor: undefined,
   notAvailableStyle: 'alert',
