@@ -43,7 +43,7 @@ const DEFAULT_OPTIONS = {
   notAvailableIcon: '',
   notAvailableIconColor: '',
   notAvailableStyle: 'alert',
-  errorContent: 'Check Failed',
+  errorContent: 'Check failed',
   errorIcon: '',
   errorIconColor: '',
   errorStyle: 'error',
