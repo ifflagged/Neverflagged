@@ -28,7 +28,7 @@ let args = getArgs();
   let total = info.total;
   let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)} +"("+${toPercent(proportion)}+")"+ of ${bytesToSize(total)} used`];
+  let content = [`${bytesToSize(used)}(${toPercent(proportion)}) of ${bytesToSize(total)} used`];
 
   if (resetDayLeft) {
     content.push(`Reset：${resetDayLeft} day(s)`);
