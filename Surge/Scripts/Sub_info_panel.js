@@ -28,7 +28,7 @@ let args = getArgs();
   let total = info.total;
   let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)}(${toPercent(proportion)}) of ${bytesToSize(total)} used`];
+  let content = [`${bytesToSize(used)}(${toPercent(proportion)}) used at ${hour}:${minutes}`];
 
   if (resetDayLeft) {
     content.push(`Reset：${resetDayLeft} day(s)`);
@@ -43,7 +43,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} expires in ${formatTime(expire)}`,
+    title: `${args.title} expires in ${formatTime(expire) | ${bytesToSize(total)}} this month`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
