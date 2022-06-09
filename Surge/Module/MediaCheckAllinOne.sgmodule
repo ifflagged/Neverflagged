@@ -7,4 +7,4 @@
 UnlockCheck = script-name=UnlockCheck, title="Unlock Check", content="Refresh", update-interval=1
 
 [Script]
-UnlockCheck = type=generic, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/UnlockCheckAllinone.js, argument=title=Unlock Check
+Media Check = type=generic, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/UnlockCheckAllinone.js, argument=title=Media Check
