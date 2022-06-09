@@ -8,4 +8,4 @@ Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script
 iQIYI Cookie = type=http-request,pattern=^https?:\/\/iface(\d)?\.iqiyi\.com\/,script-path=https://github.jacobmay.ml/NobyDa/Script/raw/master/iQIYI-DailyBonus/iQIYI.js
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, h5.ele.me, i.meituan.com, m.weibo.cn, ifac*.iqiyi.com
+hostname = %APPEND% api.m.jd.com, m.weibo.cn, ifac*.iqiyi.com
