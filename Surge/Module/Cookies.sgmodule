@@ -4,8 +4,8 @@
 
 [Script]
 JD Cookies = type=http-request,pattern=https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean,script-path=https://github.jacobmay.ml/NobyDa/Script/raw/master/JD-DailyBonus/JD_DailyBonus.js
-Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script-path=https://github.jacobmay.ml/zZPiglet/Task/raw/master/Weibo/Weibo.js
 iQIYI Cookie = type=http-request,pattern=^https?:\/\/iface(\d)?\.iqiyi\.com\/,script-path=https://github.jacobmay.ml/NobyDa/Script/raw/master/iQIYI-DailyBonus/iQIYI.js
+Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script-path=https://github.jacobmay.ml/zZPiglet/Task/raw/master/Weibo/Weibo.js
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, m.weibo.cn, ifac*.iqiyi.com
+hostname = %APPEND% api.m.jd.com, ifac*.iqiyi.com, m.weibo.cn
