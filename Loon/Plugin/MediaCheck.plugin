@@ -1,8 +1,9 @@
-#!name=Media Unlock Check
-#!desc=Media Unlock Check
-#!author=Loon
-#!homepage=https://github.com/Loon0x00/LoonExampleConfig
-#!icon=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Media.png
+#!name=Media Check
+#!desc=Netflix & Disney+ & YouTube Premium Check
+#!openUrl= https://github.jacobmay.ml/ifflagged/Neverflagged/blob/main/Loon/Plugin/MediaCheck.plugin
+#!author=Jacob
+#!homepage=https://github.jacobmay.ml/ifflagged/Neverflagged/blob/main/Loon/Plugin/MediaCheck.plugin
+#!icon=https://github.jacobmay.ml/Koolson/Qure/raw/master/IconSet/Color/Media.png
 
 [script]
 generic script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/MediaCheck.js, tag=Media Check, img-url=checkmark.seal.system
