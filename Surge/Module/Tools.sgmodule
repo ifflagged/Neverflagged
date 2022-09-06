@@ -4,8 +4,6 @@
 
 [Script]
 JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), requires-body=1, script-path= https://github.jacobmay.ml/githubdulong/Script/raw/master/jd_price.js
-TB Price = type=http-request, pattern=^http://.+/amdc/mobileDispatch, requires-body=1,script-path= https://github.jacobmay.ml/githubdulong/Script/raw/master/jd_price.js
-TB Price = type=http-response, pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail, requires-body=1,script-path= https://github.jacobmay.ml/githubdulong/Script/raw/master/jd_price.js
 Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.jacobmay.ml/yichahucha/surge/raw/master/nf_rating.js
 Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.jacobmay.ml/yichahucha/surge/raw/master/nf_rating.js
 Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.jacobmay.ml/yichahucha/surge/raw/master/nf_rating_season.js
