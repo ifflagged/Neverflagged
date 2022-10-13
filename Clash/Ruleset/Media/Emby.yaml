@@ -4,9 +4,9 @@ payload:
 
 # > 卷毛鼠
   - DOMAIN-SUFFIX,jmsooo.com
-
-# > MisakaF
-  - DOMAIN-SUFFIX,misakaf.org
    
 # > Misty
   - DOMAIN-SUFFIX,aaa.ax
+
+# > lsemby
+  - DOMAIN-SUFFIX,cf.emby.ml
