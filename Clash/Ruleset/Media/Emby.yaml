@@ -10,3 +10,6 @@ payload:
 
 # > lsemby
   - DOMAIN-SUFFIX,cf.emby.ml
+
+# > MisakaF
+  - DOMAIN-SUFFIX,misakaf.org
