@@ -15,9 +15,5 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.jacobmay.ml/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.jacobmay.ml/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 
-iQiYi = type=cron,cronexp=0 9 * * *,timeout=120,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
-
-iQiYi Cookie = type=http-request,pattern=^https:\/\/passport\.iqiyi\.com\/apis\/user\/,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
-
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, passport.iqiyi.com
+hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net
