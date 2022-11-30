@@ -8,8 +8,11 @@ payload:
 # > Misty
   - DOMAIN-SUFFIX,aaa.ax
 
-# > lsemby
-  - DOMAIN-SUFFIX,cf.emby.ml
+# > 垃圾影业
+  - DOMAIN-SUFFIX,emby.ml
 
 # > MisakaF
   - DOMAIN-SUFFIX,misakaf.org
+
+# > 酒吧影业
+  - DOMAIN-SUFFIX,o9o.nl
