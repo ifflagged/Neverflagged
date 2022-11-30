@@ -76,7 +76,7 @@ esac
 chmod +x cloudflared-linux
 unzip -d v2ray v2ray.zip
 rm -rf v2ray.zip
-uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid=ffffffff-ffff-ffff-ffff-ffffffffffff
 urlpath=$(echo $uuid | awk -F- '{print $1}')
 port=$[$RANDOM+10000]
 if [ $mode == 1 ]
