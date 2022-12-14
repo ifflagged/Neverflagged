@@ -1,5 +1,5 @@
 #!/bin/bash
-# one key vless
+# one key vmess
 
 rm -rf xray cloudflared-linux-amd64
 wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
@@ -12,7 +12,7 @@ cat>xray/config.json<<EOF
 	"inbounds": [
 		{
 			"port": 37777,
-			"listen": "127.0.0.1",
+			"listen": "localhost",
 			"protocol": "vmess",
 			"settings": {
 				"clients": [
@@ -25,7 +25,7 @@ cat>xray/config.json<<EOF
 			"streamSettings": {
 				"network": "ws",
 				"wsSettings": {
-					"path": ""
+					"path": "/"
 				}
 			}
 		}
@@ -38,14 +38,15 @@ cat>xray/config.json<<EOF
 	]
 }
 EOF
-kill -n 9 $(ps -ef | grep xray | grep -v grep | awk '{print $2}')
-kill -n 9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
-./xray/xray run -config ./xray/config.json &
-./cloudflared-linux-amd64 tunnel --url http://localhost:37777 --no-autoupdate >argo.log 2>&1 &
+kill -9 $(ps -ef | grep xray | grep -v grep | awk '{print $2}')
+kill -9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
+./xray/xray &
+./cloudflared-linux-amd64 tunnel --url http://localhost:37777 --no-autoupdate>argo.log 2>&1 &
 sleep 2
-echo "waiting for cloudflare argo address"
-sleep 10
+clear
+echo 等到cloudflare argo生成地址
+sleep 3
 argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
 clear
 echo vmess链接如下：
-echo 'vmess://'$(echo '{"add":"speed.cloudflare.com","aid":"0","host":"'$argo'","id":"'ffffffff-ffff-ffff-ffff-ffffffffffff'","net":"ws","path":"","port":"8080","ps":"argo","tls":"","type":"none","v":"2"}' | base64 -w 0) 
+echo 'vmess://'$(echo '{"add":"cdn.7788.tk","aid":"0","host":"'$argo'","id":"ffffffff-ffff-ffff-ffff-ffffffffffff","net":"ws","path":"","port":"443","ps":"argo","tls":"tls","type":"none","v":"2"}' | base64 -w 0)
