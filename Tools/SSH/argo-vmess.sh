@@ -1,17 +1,18 @@
 #!/bin/bash
-# one key v2ray
-rm -rf v2ray cloudflared-linux-amd64 v2ray-linux-64.zip
-wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
+# one key vless
+
+rm -rf xray cloudflared-linux-amd64
+wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-unzip -d v2ray v2ray-linux-64.zip
-rm -rf v2ray-linux-64.zip
-cat>v2ray/config.json<<EOF
+unzip -d xray Xray-linux-64.zip
+rm -rf Xray-linux-64.zip
+cat>xray/config.json<<EOF
 {
 	"inbounds": [
 		{
 			"port": 37777,
-			"listen": "localhost",
+			"listen": "127.0.0.1",
 			"protocol": "vmess",
 			"settings": {
 				"clients": [
@@ -24,7 +25,7 @@ cat>v2ray/config.json<<EOF
 			"streamSettings": {
 				"network": "ws",
 				"wsSettings": {
-					"path": "/"
+					"path": ""
 				}
 			}
 		}
@@ -37,15 +38,13 @@ cat>v2ray/config.json<<EOF
 	]
 }
 EOF
-kill -9 $(ps -ef | grep v2ray | grep -v grep | awk '{print $2}')
-kill -9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
-./v2ray/v2ray &
-./cloudflared-linux-amd64 tunnel --url http://localhost:37777 --no-autoupdate>argo.log 2>&1 &
+kill -n 9 $(ps -ef | grep xray | grep -v grep | awk '{print $2}')
+kill -n 9 $(ps -ef | grep cloudflared-linux-amd64 | grep -v grep | awk '{print $2}')
+./xray/xray run -config ./xray/config.json &
+./cloudflared-linux-amd64 tunnel --url http://localhost:37777 --no-autoupdate >argo.log 2>&1 &
 sleep 2
-clear
-echo 等到cloudflare argo生成地址
-sleep 3
+echo "waiting for cloudflare argo address"
+sleep 10
 argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
 clear
-echo vmess链接已经生成,IP地址可替换为CF优选IP
-echo 'vmess://'$(echo '{"add":"cdn.7788.tk","aid":"0","host":"'$argo'","id":"ffffffff-ffff-ffff-ffff-ffffffffffff","net":"ws","path":"","port":"443","ps":"argo","tls":"tls","type":"none","v":"2"}' | base64 -w 0)
+echo 'vmess://'$(echo '{"add":"speed.cloudflare.com","aid":"0","host":"'$argo'","id":"'ffffffff-ffff-ffff-ffff-ffffffffffff'","net":"ws","path":"","port":"8080","ps":"argo","tls":"","type":"none","v":"2"}' | base64 -w 0) 
