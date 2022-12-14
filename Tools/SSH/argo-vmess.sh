@@ -47,4 +47,5 @@ echo "waiting for cloudflare argo address"
 sleep 10
 argo=$(cat argo.log | grep trycloudflare.com | awk 'NR==2{print}' | awk -F// '{print $2}' | awk '{print $1}')
 clear
+echo vmess链接如下：
 echo 'vmess://'$(echo '{"add":"speed.cloudflare.com","aid":"0","host":"'$argo'","id":"'ffffffff-ffff-ffff-ffff-ffffffffffff'","net":"ws","path":"","port":"8080","ps":"argo","tls":"","type":"none","v":"2"}' | base64 -w 0) 
