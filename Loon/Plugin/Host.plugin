@@ -6,5 +6,9 @@
 #!icon=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/WiFi.png
 
 [Host]
-ssid:Jacob = server:10.0.0.1
-ssid:77's Primary Router = server:10.0.0.1 
+ssid:Jacob = server:192.168.7.1
+ssid:77's Primary Router = server:192.168.7.1
+ssid:Jacob = server:192.168.77.1
+ssid:77's Primary Router = server:192.168.77.1
+ssid:Jacob = server:192.168.89.1
+ssid:77's Primary Router = server:192.168.89.1
