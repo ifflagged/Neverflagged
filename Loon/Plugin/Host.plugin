@@ -7,8 +7,8 @@
 
 [Host]
 ssid:Jacob = server:192.168.7.1
-ssid:77's Primary Router = server:192.168.7.1
+ssid:McDonald's = server:192.168.7.1
 ssid:Jacob = server:192.168.77.1
-ssid:77's Primary Router = server:192.168.77.1
+ssid:McDonald's = server:192.168.77.1
 ssid:Jacob = server:192.168.89.1
-ssid:77's Primary Router = server:192.168.89.1
+ssid:McDonald's = server:192.168.89.1
