@@ -1,0 +1,10 @@
+#!name=Host
+#!desc=Custom host
+#!openUrl= https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Host.plugin
+#!author=Jacob
+#!homepage=https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Host.plugin
+#!icon=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/WiFi.png
+
+[Host]
+ssid:Jacob = server:10.0.0.1
+ssid:77's Primary Router = server:10.0.0.1 
