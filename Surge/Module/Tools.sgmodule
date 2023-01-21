@@ -23,4 +23,4 @@ Unlock SparkMail = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 
 [MITM]
-hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com
+hostname = %INSERT% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com
