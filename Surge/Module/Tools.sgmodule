@@ -2,6 +2,9 @@
 #!desc= Tools for Surge & Shadowrocket
 #!system=ios
 
+[General]
+force-http-engine-hosts=%APPEND% router.com, www.router.com
+
 [Script]
 JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), requires-body=1, script-path= https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js
 Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.668966.xyz/yichahucha/surge/raw/master/nf_rating.js
@@ -16,5 +19,8 @@ EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/servi
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.668966.xyz/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 Unlock SparkMail = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$,requires-body=true,max-size=0,script-path=https://github.668966.xyz/yqc007/QuantumultX/raw/master/SparkMailProCrack.js
 
+[Header Rewrite]
+^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
+
 [MITM]
-hostname = %APPEND% ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com
+hostname = %INSERT% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com
