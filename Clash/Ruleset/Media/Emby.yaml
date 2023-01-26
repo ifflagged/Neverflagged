@@ -10,6 +10,13 @@ payload:
 
 # > 垃圾影业
   - DOMAIN-SUFFIX,emby.ml
+  - DOMAIN-SUFFIX,loseremby.org
 
 # > MisakaF
   - DOMAIN-SUFFIX,misakaf.org
+
+# > Nebula
+  - DOMAIN-SUFFIX,nebula-emby.com
+
+# > 佛系
+  - DOMAIN-SUFFIX,4545.cf
