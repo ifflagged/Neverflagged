@@ -1,15 +1,15 @@
-#!name=Router.com
-#!desc= After enabling the module, you may access the router configutation webpage by accessing http://router.com in your browser. The URL will always redirect to the gateway address in the current network.
+#!name= Tools
+#!desc= Tools for Loon
 #!openUrl=https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 #!author=Jacob
 #!homepage=https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
-#!icon=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/WiFi.png
+#!icon=wrench
 
-[General]
-force-http-engine-hosts= router.com, www.router.com
+[Script]
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/youtube.js, requires-body=true, binary-body-mode=true, tag=YouTube, img-url=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/YouTube.png
 
-[URL Rewrite]
-^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
+[Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-img
 
 [MITM]
-hostname = router.com, www.router.com
+hostname = *.googlevideo.com, youtubei.googleapis.com
