@@ -17,7 +17,7 @@ ADblock for Weibo = type=http-response, pattern=^https?://m?api\.weibo\.c(n|om)/
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.668966.xyz/id77/QuantumultX/raw/master/Script/zhihu.js
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.668966.xyz/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.668966.xyz/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
-Unlock SparkMail = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$,requires-body=true,max-size=0,script-path=https://github.668966.xyz/yqc007/QuantumultX/raw/master/SparkMailProCrack.js
+Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.668966.xyz/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
 YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/youtube.js
 
 [URL Rewrite]
