@@ -24,7 +24,7 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 
 [Map Local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/tinygif.gif"
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/blank.txt" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
 hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com
