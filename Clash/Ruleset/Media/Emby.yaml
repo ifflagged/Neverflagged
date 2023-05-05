@@ -23,3 +23,9 @@ payload:
 
   # > 佛系
   - DOMAIN-SUFFIX,4545.cf
+
+  # > 剧狗
+  - DOMAIN-SUFFIX,ju.dog
+
+  # > 星光
+  - DOMAIN-SUFFIX,emby.eu.org
