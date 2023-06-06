@@ -18,7 +18,6 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.668966.xyz/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.668966.xyz/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.668966.xyz/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
-YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/youtube.js
 
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
@@ -27,4 +26,4 @@ YouTube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtu
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/blank.txt" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com
+hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com
