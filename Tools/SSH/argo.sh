@@ -69,7 +69,7 @@ unzip -d xray xray.zip
 chmod +x cloudflared-linux xray/xray
 rm -rf xray.zip
 uuid=ffffffff-ffff-ffff-ffff-ffffffffffff
-urlpath=$(echo $uuid | awk -F- '{print $1}')
+urlpath=/jacob
 port=$[$RANDOM+10000]
 if [ $protocol == 1 ]
 then
