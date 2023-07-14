@@ -19,10 +19,7 @@ payload:
   - DOMAIN-SUFFIX,nebula-emby.com
 
   # > Mulgore
-  - DOMAIN-SUFFIX,mulgore.net
-
-  # > 佛系
-  - DOMAIN-SUFFIX,4545.cf
+  - DOMAIN-SUFFIX,mgl.gay
 
   # > 剧狗
   - DOMAIN-SUFFIX,ju.dog
@@ -32,3 +29,6 @@ payload:
   
   # > TreeDiagram
   - DOMAIN-SUFFIX,123456.al
+
+  # > 野兽
+  - DOMAIN-SUFFIX,mius.uk
