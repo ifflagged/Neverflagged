@@ -1,0 +1,6 @@
+#!name= Router DNS
+#!desc= Use router DNS
+
+[SSID Setting]
+SSID:Jacob dns-server=system,encrypted-dns-server=off
+SSID:McDonald's dns-server=system,encrypted-dns-server=off
