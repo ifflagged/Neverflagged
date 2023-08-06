@@ -3,4 +3,4 @@
 #!system=ios
 
 [Script]
-iQiYi = type=cron,cronexp=0 9 * * *,script-path=https://github.jacobmay.ml/NobyDa/Script/raw/master/iQIYI-DailyBonus/iQIYI.js
+Atour = type=cron,pattern=0 30 8 * * *,requires-body=0,script-path=https://github.668966.xyz/Sliverkiss/helloworld/raw/master/Study/adjd.js,script-update-interval=0,cronexp=0 30 8 * * *
