@@ -9,4 +9,4 @@ Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script
 Atour Cookies = type=http-request,pattern=^https:\/\/miniapp\.yaduo\.com\/atourlife\/signIn\/signIn.+,requires-body=0,script-path=https://github.668966.xyz/Sliverkiss/helloworld/raw/master/Study/adjd.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ifac*.iqiyi.com, m.weibo.cn, api2.yaduo.com
+hostname = %APPEND% api.m.jd.com, ifac*.iqiyi.com, m.weibo.cn, miniapp.yaduo.com
