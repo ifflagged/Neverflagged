@@ -7,7 +7,7 @@ JD Cookies = type=http-request,pattern=https:\/\/api\.m\.jd\.com\/client\.action
 iQIYI Cookie = type=http-request,pattern=^https?:\/\/iface(\d)?\.iqiyi\.com\/,script-path=https://github.668966.xyz/NobyDa/Script/raw/master/iQIYI-DailyBonus/iQIYI.js
 Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script-path=https://github.668966.xyz/zZPiglet/Task/raw/master/Weibo/Weibo.js
 Atour Cookies = type=http-request,pattern=^https:\/\/miniapp\.yaduo\.com\/atourlife\/signIn\/signIn.+,requires-body=0,script-path=https://github.668966.xyz/Sliverkiss/helloworld/raw/master/Study/adjd.js,script-update-interval=0
-Amap Cookies = type=http-request,pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=0,script-path=https://github.668966.xyz/wf021325/qx/raw/master/task/ampDache.js,script-update-interval=0
+Amap Cookies = type=http-response,pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://github.668966.xyz/wf021325/qx/raw/master/task/ampDache.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% api.m.jd.com, ifac*.iqiyi.com, m.weibo.cn, miniapp.yaduo.com, m5.amap.com
+hostname = %APPEND% api.m.jd.com, ifac*.iqiyi.com, m.weibo.cn, miniapp.yaduo.com, *.amap.com
