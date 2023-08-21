@@ -1,3 +1,5 @@
+# https://github.com/xream/scripts/tree/main/surge/modules/sub-store-scripts/lite
+
 function operator(proxies = []) {
   return proxies.map((p = {}) => {
     const _ = lodash
@@ -5,6 +7,9 @@ function operator(proxies = []) {
     const server = _.get($arguments, 'server')
     const serverPrefix = _.get($arguments, 'serverPrefix')
     const serverSuffix = _.get($arguments, 'serverSuffix')
+    const type = _.get($arguments, 'type')
+    const typePrefix = _.get($arguments, 'typePrefix')
+    const typeSuffix = _.get($arguments, 'typeSuffix')
     const host = _.get($arguments, 'host')
     const hostPrefix = _.get($arguments, 'hostPrefix')
     const hostSuffix = _.get($arguments, 'hostSuffix')
@@ -66,10 +71,19 @@ function operator(proxies = []) {
       if (server) {
         _.set(p, 'server', server)
         if (serverPrefix) {
-          _.set(p, 'name', `${portPrefix}${p.name}`)
+          _.set(p, 'name', `${serverPrefix}${p.name}`)
         }
         if (serverSuffix) {
-          _.set(p, 'name', `${p.name}${portSuffix}`)
+          _.set(p, 'name', `${p.name}${serverSuffix}`)
+        }
+      }
+      if (type) {
+        _.set(p, 'type', type)
+        if (serverPrefix) {
+          _.set(p, 'name', `${typePrefix}${p.name}`)
+        }
+        if (serverSuffix) {
+          _.set(p, 'name', `${p.name}${typeSuffix}`)
         }
       }
       if (port) {
