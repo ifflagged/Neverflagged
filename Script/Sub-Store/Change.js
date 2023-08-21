@@ -1,5 +1,3 @@
-# https://github.com/xream/scripts/tree/main/surge/modules/sub-store-scripts/lite
-
 function operator(proxies = []) {
   return proxies.map((p = {}) => {
     const _ = lodash
