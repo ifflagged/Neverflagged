@@ -7,9 +7,6 @@ function operator(proxies = []) {
     const server = _.get($arguments, 'server')
     const serverPrefix = _.get($arguments, 'serverPrefix')
     const serverSuffix = _.get($arguments, 'serverSuffix')
-    const type = _.get($arguments, 'type')
-    const typePrefix = _.get($arguments, 'typePrefix')
-    const typeSuffix = _.get($arguments, 'typeSuffix')
     const host = _.get($arguments, 'host')
     const hostPrefix = _.get($arguments, 'hostPrefix')
     const hostSuffix = _.get($arguments, 'hostSuffix')
@@ -75,15 +72,6 @@ function operator(proxies = []) {
         }
         if (serverSuffix) {
           _.set(p, 'name', `${p.name}${serverSuffix}`)
-        }
-      }
-      if (type) {
-        _.set(p, 'type', type)
-        if (serverPrefix) {
-          _.set(p, 'name', `${typePrefix}${p.name}`)
-        }
-        if (serverSuffix) {
-          _.set(p, 'name', `${p.name}${typeSuffix}`)
         }
       }
       if (port) {
