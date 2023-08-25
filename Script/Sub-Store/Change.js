@@ -23,7 +23,7 @@ function operator(proxies = []) {
     let network = _.get(p, 'network')
     const type = _.get(p, 'type')
     /* 只修改 vmess 和 vless */
-    if (_.includes(['vmess', 'vless'], type)) {
+    if (_.includes(['vmess', 'vless', 'trojan'], type)) {
       if (!network) {
         network = defaultNetwork
         _.set(p, 'network', defaultNetwork)
