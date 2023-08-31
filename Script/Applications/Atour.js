@@ -1,22 +1,25 @@
-/****************************************
+/**************************************
 @Author: Sliverkiss
 @Date: 2023-08-06 19:20:18
 @Description: 
-亚朵酒店app 签到
+亚朵酒店app 签到、抽奖
+
+2023.08.08 修复通知提示，新增抽奖任务
+
 使用教程：
  1.复制Cookie脚本到本地
- 2.打开亚朵酒店app->我的->积分，若提示获取cookie成功则可以使用签到脚本
+ 2.打开亚朵酒店app手动签到一次，若提示获取cookie成功则可以使用签到脚本
  3.关闭获取token脚本
 
 【Loon】 :
 *************************
 [Script]
 cron "0 30 7 * * *" script-path=https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/adjd.js, timeout=300, tag=亚朵酒店app
-http-request ^https:\/\/api2\.yaduo\.com\/atourlife\/user\/getUserCenterInfo\?.+ script-path=https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/adjd.js, timeout=10, tag=亚朵酒店app获取token
+http-request ^https:\/\/miniapp\.yaduo\.com\/atourlife\/signIn\/signIn.+ script-path=https://raw.githubusercontent.com/Sliverkiss/helloworld/master/Study/adjd.js, timeout=10, tag=亚朵酒店app获取token
 *************************
 
 [MITM]
-hostname =api2.yaduo.com
+hostname =miniapp.yaduo.com
 
 *************************
 ⚠️【免责声明】
@@ -35,9 +38,10 @@ hostname =api2.yaduo.com
 const $ = new Env("亚朵酒店app");
 
 //环境变量
-const sliverkiss_url=$.getdata('adjd_url')
+const sliverkiss_url = $.getdata('adjd_url')
 const sliverkiss_header = $.getjson('adjd_header')
-
+//六宫格设置抽奖,默认为随机,可填入0~5
+const sliverkiss_draw=$.getdata('adjd_draw')||'';
 //通知相关
 var message = "";
 var account;
@@ -52,6 +56,7 @@ var user;
     }
     //开始执行日常签到
     await signin();
+    await lottery();
     await notify();
 })()
     .catch((e) => {
@@ -66,7 +71,38 @@ function signin() {
     return new Promise((resolve) => {
         const signinRequest = {
             //签到任务调用签到接口
-            url: `https://api2.yaduo.com/atourlife/duomicang/queryDuoMiCangTabUserData?${sliverkiss_url}`,
+            url: `https://miniapp.yaduo.com/atourlife/signIn/signIn?${sliverkiss_url}`,
+            //请求头, 所有接口通用
+            headers: sliverkiss_header
+        };
+        //post方法
+        $.get(signinRequest, (error, response, data) => {
+            try {
+                let result = JSON.parse(data);
+                console.log(result);
+                if (result?.retcode == 0) {
+                    //obj.error是0代表完成
+                    message += `签到:${result?.result?.debrisDesc} \n`;
+                } else {
+                    message += `签到:${result?.retmsg}\n`;
+                }
+            } catch (e) {
+                $.logErr(e, "❌请重新登陆更新Cookie");
+            } finally {
+                resolve();
+            }
+        });
+    });
+}
+
+//抽奖
+function lottery() {
+    //六宫格随机生成抽奖格子
+    let drawNumber =sliverkiss_draw||parseInt(Math.random() * (5 - 0 + 1) + 0);
+    return new Promise((resolve) => {
+        const signinRequest = {
+            //签到任务调用签到接口  
+            url: `https://miniapp.yaduo.com/atourlife/signIn/lottery?${sliverkiss_url}&code=${drawNumber}`,
             //请求头, 所有接口通用
             headers: sliverkiss_header
         };
@@ -75,14 +111,19 @@ function signin() {
             try {
                 let result = JSON.parse(data);
                 console.log(result);
-                if (result?.retcode==0) {
+                if (result?.retcode == 0&&result?.result) {
                     //obj.error是0代表完成
-                    message += `签到:${result?.result?.signInCard?.signInTips} \n`;
-                } else{
-                    message += `${result?.retmsg}\n`;
+                    for (let res of result?.result) {
+                        if (res?.selected) {
+                            message += `抽奖:${res?.prizeName} \n`;
+                            break;
+                        }
+                    }
+                } else {
+                    message += `抽奖:${result?.retmsg}\n`;
                 }
             } catch (e) {
-                $.logErr(e,"❌请重新登陆更新Cookie");
+                $.logErr(e, "❌请重新登陆更新Cookie");
             } finally {
                 resolve();
             }
@@ -93,12 +134,12 @@ function signin() {
 //获取Cookie
 function getCookie() {
     if ($request && $request.method != 'OPTIONS') {
-        const signHeader= JSON.stringify($request.headers)
-        const signUrl=$request.url;
-        let ck_info=signUrl.split('?');
-        let signUrlVal=ck_info[1];
-        if(signHeader) $.setdata(signHeader, 'adjd_header');
-        if(signUrl) $.setdata(signUrlVal,'adjd_url')
+        const signHeader = JSON.stringify($request.headers)
+        const signUrl = $request.url;
+        let ck_info = signUrl.split('?');
+        let signUrlVal = ck_info[1];
+        if (signHeader) $.setdata(signHeader, 'adjd_header');
+        if (signUrl) $.setdata(signUrlVal, 'adjd_url')
         $.msg($.name, "", "获取签到Cookie成功🎉");
     }
 }
