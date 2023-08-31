@@ -6,7 +6,7 @@
 JD Cookies = type=http-request,pattern=https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean,script-path=https://github.668966.xyz/NobyDa/Script/raw/master/JD-DailyBonus/JD_DailyBonus.js
 iQIYI Cookie = type=http-request,pattern=^https?:\/\/iface(\d)?\.iqiyi\.com\/,script-path=https://github.668966.xyz/NobyDa/Script/raw/master/iQIYI-DailyBonus/iQIYI.js
 Weibo Cookies = type=http-request,pattern=^https:\/\/m\.weibo\.cn\/feed\/,script-path=https://github.668966.xyz/zZPiglet/Task/raw/master/Weibo/Weibo.js
-Atour Cookies = type=http-request,pattern=^https:\/\/miniapp\.yaduo\.com\/atourlife\/signIn\/signIn.+,requires-body=0,script-path=https://github.668966.xyz/Sliverkiss/helloworld/raw/master/Study/adjd.js,script-update-interval=0
+Atour Cookies = type=http-request,pattern=^https:\/\/miniapp\.yaduo\.com\/atourlife\/signIn\/signIn.+,requires-body=0,script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Script/Applications/Atour.js,script-update-interval=0
 Amap Cookies = type=http-response,pattern=^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=),requires-body=1,script-path=https://github.668966.xyz/wf021325/qx/raw/master/task/ampDache.js,script-update-interval=0
 
 [MITM]
