@@ -4,6 +4,7 @@ payload:
 
   # > 卷毛鼠
   - DOMAIN-SUFFIX,jmsooo.com
+  - DOMAIN-SUFFIX,emby.pro
 
   # > 垃圾影业
   - DOMAIN-SUFFIX,xmsl.org
@@ -29,6 +30,9 @@ payload:
 
   # > Viper
   - DOMAIN-SUFFIX,agon.cf
+
+  # > Dolphin 
+  - DOMAIN-SUFFIX,emby.ws
 
   # > NMEmby
   - DOMAIN-SUFFIX,ohhhh.org
