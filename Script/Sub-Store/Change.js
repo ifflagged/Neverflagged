@@ -5,12 +5,9 @@ function operator(proxies = []) {
     const server = _.get($arguments, 'server')
     const serverPrefix = _.get($arguments, 'serverPrefix')
     const serverSuffix = _.get($arguments, 'serverSuffix')
-    const username = _.get($arguments, 'username')
-    const usernamePrefix = _.get($arguments, 'usernamePrefix')
-    const usernameSuffix = _.get($arguments, 'usernameSuffix')
-    const password = _.get($arguments, 'password')
-    const passwordPrefix = _.get($arguments, 'passwordPrefix')
-    const passwordSuffix = _.get($arguments, 'passwordSuffix')
+    const uuid = _.get($arguments, 'uuid')
+    const uuidPrefix = _.get($arguments, 'uuidPrefix')
+    const uuidSuffix = _.get($arguments, 'uuidSuffix')
     const host = _.get($arguments, 'host')
     const hostPrefix = _.get($arguments, 'hostPrefix')
     const hostSuffix = _.get($arguments, 'hostSuffix')
@@ -82,22 +79,13 @@ function operator(proxies = []) {
           _.set(p, 'name', `${p.name}${serverSuffix}`)
         }
       }
-      if (username) {
-        _.set(p, 'username', username)
-        if (usernamePrefix) {
-          _.set(p, 'name', `${usernamePrefix}${p.name}`)
+      if (uuid) {
+        _.set(p, 'uuid', uuid)
+        if (uuidPrefix) {
+          _.set(p, 'name', `${uuidPrefix}${p.name}`)
         }
-        if (usernameSuffix) {
-          _.set(p, 'name', `${p.name}${usernameSuffix}`)
-        }
-      }
-      if (password) {
-        _.set(p, 'password', password)
-        if (passwordPrefix) {
-          _.set(p, 'name', `${passwordPrefix}${p.name}`)
-        }
-        if (passwordSuffix) {
-          _.set(p, 'name', `${p.name}${passwordSuffix}`)
+        if (uuidSuffix) {
+          _.set(p, 'name', `${p.name}${uuidSuffix}`)
         }
       }
       if (port) {
