@@ -5,6 +5,12 @@ function operator(proxies = []) {
     const server = _.get($arguments, 'server')
     const serverPrefix = _.get($arguments, 'serverPrefix')
     const serverSuffix = _.get($arguments, 'serverSuffix')
+    const username = _.get($arguments, 'username')
+    const usernamePrefix = _.get($arguments, 'usernamePrefix')
+    const usernameSuffix = _.get($arguments, 'usernameSuffix')
+    const password = _.get($arguments, 'password')
+    const passwordPrefix = _.get($arguments, 'passwordPrefix')
+    const passwordSuffix = _.get($arguments, 'passwordSuffix')
     const host = _.get($arguments, 'host')
     const hostPrefix = _.get($arguments, 'hostPrefix')
     const hostSuffix = _.get($arguments, 'hostSuffix')
@@ -22,9 +28,11 @@ function operator(proxies = []) {
     
     let network = _.get(p, 'network')
     const type = _.get(p, 'type')
+    const isReality = _.get(p, 'reality-opts')
+
     /* 只修改 vmess 和 vless */
     if (_.includes(['vmess', 'vless', 'trojan'], type)) {
-      if (!network) {
+      if (!network && !isReality) {
         network = defaultNetwork
         _.set(p, 'network', defaultNetwork)
       }
@@ -45,24 +53,26 @@ function operator(proxies = []) {
           _.set(p, 'sni', host)
         }
 
-        if (network === 'ws') {
-          _.set(p, 'ws-opts.headers.Host', host)
-        } else if (network === 'h2') {
-          _.set(p, 'h2-opts.host', array ? [host] : host)
-        } else if (network === 'http') {
-          _.set(p, 'http-opts.headers.Host', array ? [host] : host)
-        } else {
-          // 其他? 谁知道是数组还是字符串...先按数组吧
-          _.set(p, `${network}-opts.headers.Host`, array ? [host] : host)
+        if (!isReality) {
+          if (network === 'ws') {
+            _.set(p, 'ws-opts.headers.Host', host)
+          } else if (network === 'h2') {
+            _.set(p, 'h2-opts.host', array ? [host] : host)
+          } else if (network === 'http') {
+            _.set(p, 'http-opts.headers.Host', array ? [host] : host)
+          } else {
+            // 其他? 谁知道是数组还是字符串...先按字符串吧
+            _.set(p, `${network}-opts.headers.Host`, host)
+          }
+        }
+        if (network === 'http') {
+          if (!_.get(p, 'http-opts.method') && !method) {
+            method = defaultMethod
+          }
+          _.set(p, 'http-opts.method', method)
         }
       }
 
-      if (network === 'http') {
-        if (!_.get(p, 'http-opts.method') && !method) {
-          method = defaultMethod
-        }
-        _.set(p, 'http-opts.method', method)
-      }
       if (server) {
         _.set(p, 'server', server)
         if (serverPrefix) {
@@ -70,6 +80,24 @@ function operator(proxies = []) {
         }
         if (serverSuffix) {
           _.set(p, 'name', `${p.name}${serverSuffix}`)
+        }
+      }
+      if (username) {
+        _.set(p, 'username', username)
+        if (usernamePrefix) {
+          _.set(p, 'name', `${usernamePrefix}${p.name}`)
+        }
+        if (usernameSuffix) {
+          _.set(p, 'name', `${p.name}${usernameSuffix}`)
+        }
+      }
+      if (password) {
+        _.set(p, 'password', password)
+        if (passwordPrefix) {
+          _.set(p, 'name', `${passwordPrefix}${p.name}`)
+        }
+        if (passwordSuffix) {
+          _.set(p, 'name', `${p.name}${passwordSuffix}`)
         }
       }
       if (port) {
@@ -81,34 +109,36 @@ function operator(proxies = []) {
           _.set(p, 'name', `${p.name}${portSuffix}`)
         }
       }
-      if (network === 'http') {
-        let currentPath = _.get(p, 'http-opts.path')
-        if (_.isArray(currentPath)) {
-          currentPath = _.find(currentPath, i => _.startsWith(i, '/'))
-        } else {
-          path = currentPath
+      if (!isReality) {
+        if (network === 'http') {
+          let currentPath = _.get(p, 'http-opts.path')
+          if (_.isArray(currentPath)) {
+            currentPath = _.find(currentPath, i => _.startsWith(i, '/'))
+          } else {
+            path = currentPath
+          }
+          if (!_.startsWith(currentPath, '/') && !path) {
+            path = defaultPath
+          }
         }
-        if (!_.startsWith(currentPath, '/') && !path) {
-          path = defaultPath
-        }
-      }
-      if (path) {
-        if (pathPrefix) {
-          _.set(p, 'name', `${pathPrefix}${p.name}`)
-        }
-        if (pathSuffix) {
-          _.set(p, 'name', `${p.name}${pathSuffix}`)
-        }
-        if (network === 'ws') {
-          _.set(p, 'ws-opts.path', path)
-        } else if (network === 'h2') {
-          _.set(p, 'h2-opts.path', path)
-        } else if (network === 'http') {
-          _.set(p, 'http-opts.path', array ? [path] : path)
-        } else {
-          // 其他? 谁知道是数组还是字符串...先按字符串吧
-          _.set(p, `${network}-opts.path`, path)
-        }
+        if (path) {
+          if (pathPrefix) {
+            _.set(p, 'name', `${pathPrefix}${p.name}`)
+          }
+          if (pathSuffix) {
+            _.set(p, 'name', `${p.name}${pathSuffix}`)
+          }
+          if (network === 'ws') {
+            _.set(p, 'ws-opts.path', path)
+          } else if (network === 'h2') {
+            _.set(p, 'h2-opts.path', path)
+          } else if (network === 'http') {
+            _.set(p, 'http-opts.path', array ? [path] : path)
+          } else {
+            // 其他? 谁知道是数组还是字符串...先按字符串吧
+            _.set(p, `${network}-opts.path`, path)
+          }
+        } 
       }
     }
     return p
