@@ -62,14 +62,15 @@ function operator(proxies = []) {
             _.set(p, `${network}-opts.headers.Host`, host)
           }
         }
-        if (network === 'http') {
-          if (!_.get(p, 'http-opts.method') && !method) {
-            method = defaultMethod
-          }
-          _.set(p, 'http-opts.method', method)
-        }
       }
 
+      if (network === 'http') {
+        if (!_.get(p, 'http-opts.method') && !method) {
+          method = defaultMethod
+        }
+        _.set(p, 'http-opts.method', method)
+      }
+  
       if (server) {
         _.set(p, 'server', server)
         if (serverPrefix) {
@@ -87,7 +88,7 @@ function operator(proxies = []) {
         if (uuidSuffix) {
           _.set(p, 'name', `${p.name}${uuidSuffix}`)
         }
-      }
+      }  
       if (port) {
         _.set(p, 'port', port)
         if (portPrefix) {
@@ -129,7 +130,7 @@ function operator(proxies = []) {
         } 
       }
     }
-
+	
     /* 修改 Trojan */
     if (_.includes(['trojan'], type)) {
       if (host) {
@@ -161,14 +162,15 @@ function operator(proxies = []) {
             _.set(p, `${network}-opts.headers.Host`, host)
           }
         }
-        if (network === 'http') {
-          if (!_.get(p, 'http-opts.method') && !method) {
-            method = defaultMethod
-          }
-          _.set(p, 'http-opts.method', method)
-        }
       }
 
+      if (network === 'http') {
+        if (!_.get(p, 'http-opts.method') && !method) {
+          method = defaultMethod
+        }
+        _.set(p, 'http-opts.method', method)
+      }
+  
       if (server) {
         _.set(p, 'server', server)
         if (serverPrefix) {
@@ -186,7 +188,7 @@ function operator(proxies = []) {
         if (uuidSuffix) {
           _.set(p, 'name', `${p.name}${uuidSuffix}`)
         }
-      }
+      }  
       if (port) {
         _.set(p, 'port', port)
         if (portPrefix) {
