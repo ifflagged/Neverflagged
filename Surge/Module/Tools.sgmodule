@@ -5,6 +5,12 @@
 [General]
 force-http-engine-hosts=%APPEND% router.com, www.router.com
 
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-NO-DROP
+DOMAIN, dns.jd.com, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+
 [Script]
 JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), requires-body=1, script-path= https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js
 Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.668966.xyz/yichahucha/surge/raw/master/nf_rating.js
@@ -22,9 +28,11 @@ YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com
 YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.beta.js
 
 SMZDM = type=http-response,pattern=^https:\/\/(app-api\.smzdm\.com\/util\/loading|haojia-api\.smzdm\.com\/home\/list|app-api\.smzdm\.com\/util\/update|homepage-api\.smzdm\.com\/v3\/home|user-api\.smzdm\.com\/vip|user-api\.smzdm\.com\/vip\/bottom_card_list|article-api\.smzdm\.com\/publish\/get_bubble),requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+JD = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js
 
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend) - reject
 
 [Map Local]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
