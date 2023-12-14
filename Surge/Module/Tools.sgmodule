@@ -46,21 +46,7 @@ Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.ume
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend) - reject
-
-# 导航详情页 - 路线规划、地点详情页、搜索详情页、导航结束页
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? - reject
-^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject
-^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? - reject
-# 首页 - 推广卡片、红点角标、右上角动图、搜索框热词、左下角天气、消息横幅
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-(assets|location)\? - reject
-^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword)\? - reject
-^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject
-^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? - reject
-^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject
-# 打车页 - 红点角标、弹窗、天气图标、推广卡片
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble)\? - reject
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order_web\/friendly_information|tips\/onscene_visual_optimization)\? - reject
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-(car-end|route-plan)|main-page-(assets|location))\?|^https:\/\/m5\.amap\.com\/ws\/shield\/(search\/new_hotword|search_poi\/tips_adv|scene\/recommend)\?|^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?|^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|valueadded\/weather\/v2)\?|^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?|^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble|order_web\/friendly_information|tips\/onscene_visual_optimization)\? - reject
 
 [Map Local]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
