@@ -21,11 +21,13 @@ Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.
 YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.request.beta.js
 YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.beta.js
 
+SMZDM = type=http-response,pattern=^https:\/\/(app-api\.smzdm\.com\/util\/loading|haojia-api\.smzdm\.com\/home\/list|app-api\.smzdm\.com\/util\/update|homepage-api\.smzdm\.com\/v3\/home|user-api\.smzdm\.com\/vip|user-api\.smzdm\.com\/vip\/bottom_card_list|article-api\.smzdm\.com\/publish\/get_bubble),requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 
 [Map Local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt" header="Content-Type: application/vnd.yt-ump"
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
 
 [MITM]
-hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com
+hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com,haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com
