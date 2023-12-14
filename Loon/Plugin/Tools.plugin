@@ -6,7 +6,6 @@
 #!icon=wrench
 
 [Rule]
-# 微信小程序通用规则
 DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
@@ -20,7 +19,15 @@ DOMAIN, free-aos-cdn-image.amap.com, REJECT
 
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 
+DOMAIN, adashx.m.taobao.com, REJECT
+DOMAIN, ossgw.alicdn.com, REJECT
+DOMAIN, ems.youku.com, REJECT
+DOMAIN, hudong.alicdn.com, REJECT
+DOMAIN, h-adashx.ut.taobao.com, REJECT
+DOMAIN, ut.taobao.com, REJECT
+
 [Script]
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js, requires-body = true, tag = JD Price
 http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? script-path = https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.request.beta.js, requires-body = true, binary-body-mode = true, tag = YouTube Request, img-url=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/YouTube.png
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? script-path = https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.beta.js, requires-body = true, binary-body-mode = true, tag = YouTube Response, img-url=https://github.668966.xyz/Koolson/Qure/raw/master/IconSet/Color/YouTube.png
 
@@ -30,11 +37,13 @@ http-response ^https:\/\/m5\.amap\.com\/ws\/(perception\/drive\/routePlan|shield
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
 
 http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js, tag = Umetrip
+http-response ^(https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get)|https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json) script-path = https://github.com/ifflagged/Neverflagged/raw/main/Script/Applications/taobao.js, tag = Taobao
 
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend) reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-(car-end|route-plan)|main-page-(assets|location))\?|^https:\/\/m5\.amap\.com\/ws\/shield\/(search\/new_hotword|search_poi\/tips_adv|scene\/recommend)\?|^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?|^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|valueadded\/weather\/v2)\?|^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?|^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble|order_web\/friendly_information|tips\/onscene_visual_optimization)\? reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.(alibaba\.advertisementservice\.getadv|alimama\.etao\.config\.query\/.+?etao_advertise|^alimusic\.common\.mobileservice\.startinit|etao\.noah\.query\/.+tao_splash|film\.mtopadvertiseapi\.queryadvertise|o2o\.ad\.gateway\.get|taobao\.idle\.home\.welcome|trip\.activity\.querytmsresources|guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad|guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)\) reject-dict
 
 [MITM]
-hostname = *.googlevideo.com, youtubei.googleapis.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com
+hostname = *.googlevideo.com, youtubei.googleapis.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
