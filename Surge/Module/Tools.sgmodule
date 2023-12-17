@@ -11,9 +11,11 @@ DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-NO-DROP
+
 DOMAIN, dns.jd.com, REJECT
 IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
 IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
 DOMAIN, awaken.amap.com, REJECT
 DOMAIN, free-aos-cdn-image.amap.com, REJECT
@@ -46,9 +48,12 @@ Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/(perception\/dri
 Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
 Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
 Taobao = type=http-response,pattern=^(https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get)|https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json),requires-body=1,script-path=https://github.com/ifflagged/Neverflagged/raw/main/Script/Applications/taobao.js
+
 Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(v2\/(feed\/index(\/story)?|search\/square)|resource\/(top\/activity|show\/tab\/v2)|v2\/splash\/(brand\/list|event\/list2|list|show)|v2\/account\/(mine(\/ipad)?|myinfo)|resource\/show\/skin)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/bili.js
 Bilibili = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/(pgc\/page\/(bangumi|cinema\/tab\?)|xlive\/app-room\/v1\/index\/getInfoByRoom)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/bili.js
-Bilibili = type=http-response,pattern=^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(app\.dynamic\.v2\.Dynamic\/DynAll|app\.interface\.v1\.Teenagers\/ModeStatus|app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|polymer\.app\.search\.v1\.Search\/SearchAll),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/biliProtoA.js
+Bilibili = type=http-response,pattern=^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(app\.(dynamic\.v2\.Dynamic\/DynAll|interface\.v1\.Teenagers\/ModeStatus)|app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)|main\.community\.reply\.v1\.Reply\/MainList|polymer\.app\.search\.v1\.Search\/SearchAll)$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/biliProtoA.js
+# Bilibili = type=http-response,pattern=^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/biliProtoA.js
+
 Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v10\/search\/notes|v6\/homefeed|v4\/followfeed|v3\/note\/videofeed|v2\/system_service\/splash_config|v2\/note\/widgets|v1\/note\/(imagefeed|live_photo\/save)|v1\/system_service\/config|v4\/search\/(hint|trending)|v1\/search\/(banner|hot)_list)$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active|groups\/allgroups\/v2|cardlist|page|comments\/build_comments|container\/(asyn|flowlist)|friendships\/destroy|profile\/(container_timeline(_hot|_topic|_topicpage|_unread)?|dealatt|me|statuses\/tab|userinfo)|statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|(extend|show)|unread_hot_timeline)|video\/tiny_stream_video_list|!\/huati\/(discovery_home_bottom_channels)|direct_messages\/user_list|messageflow\/notice|search\/(container_timeline|finder)|searchall)$|^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload$|^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php$|^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)$|^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 
@@ -60,7 +65,6 @@ Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|
 ^(https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords|https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\?|http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH|http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH|https:\/\/api\.bilibili\.com\/x\/mengqi\/v1\/resource\?|https:\/\/app\.bilibili\.com\/x\/resource\/ip|https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp=jsonp)$ - reject
 ^(https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action)|https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\?|https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\?|https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\?)$ - reject
 ^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily|!\/live\/media_homelist|comments\/bullet_screens|photo\/info|statuses\/(container_positive|push_info)|vote\/get_vote_detail|!\/chaohua\/discovery\/home_bottom\/switch|!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)|!\/wbox\/\w+\/(home_bottom_modal|interest_category)|search\/container_discover|hot\/hours_spotlight|video\/redpacket|!\/sug\/list\/finderchange)$|^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime$|^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)$|^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)$|^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
-
 
 [Map Local]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
