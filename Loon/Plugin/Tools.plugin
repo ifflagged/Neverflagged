@@ -28,8 +28,8 @@ DOMAIN, ut.taobao.com, REJECT
 
 [Script]
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js, requires-body = true, tag = JD Price
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube Request
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube Request
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
 
 http-response ^https:\/\/(app-api\.smzdm\.com\/util\/loading|haojia-api\.smzdm\.com\/home\/list|app-api\.smzdm\.com\/util\/update|homepage-api\.smzdm\.com\/v3\/home|user-api\.smzdm\.com\/vip|user-api\.smzdm\.com\/vip\/bottom_card_list|article-api\.smzdm\.com\/publish\/get_bubble) script-path = https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
