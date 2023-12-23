@@ -77,7 +77,7 @@ http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path
 # 京东 //api.m.jd.com
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
-http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/wechat110.js, requires-body = true, tag = WeChat
+http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js, requires-body = true, tag = WeChat
 
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
