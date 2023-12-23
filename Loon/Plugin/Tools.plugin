@@ -10,9 +10,6 @@ DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
-DOMAIN, dns.jd.com, REJECT
-IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
-IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT
 DOMAIN, awaken.amap.com, REJECT
 DOMAIN, free-aos-cdn-image.amap.com, REJECT
@@ -31,6 +28,10 @@ DOMAIN, ut.taobao.com, REJECT
 DOMAIN-SUFFIX, ehaier.com, REJECT
 # 建设银行
 DOMAIN-KEYWORD, adv.ccb.com, REJECT
+# 京东
+DOMAIN, dns.jd.com, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
 # 美团
 DOMAIN, al-log.d.meituan.net, REJECT
 DOMAIN, babel-statistics-android.d.meituan.net, REJECT
@@ -53,7 +54,6 @@ http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|pl
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
 
 http-response ^https:\/\/(app-api\.smzdm\.com\/util\/loading|haojia-api\.smzdm\.com\/home\/list|app-api\.smzdm\.com\/util\/update|homepage-api\.smzdm\.com\/v3\/home|user-api\.smzdm\.com\/vip|user-api\.smzdm\.com\/vip\/bottom_card_list|article-api\.smzdm\.com\/publish\/get_bubble) script-path = https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
 http-response ^https:\/\/m5\.amap\.com\/ws\/(perception\/drive\/routePlan|shield\/search\/(common\/coupon\/info|poi\/detail|business\/process\/marketingOperationStructured|poi\/(homepage|mps|search\/sp|sug|tips_operation_location))|faas\/amap-navigation\/(card-service-plan-home|main-page)|shield\/frogserver\/aocs\/updatable\/1|shield\/dsp\/profile\/index\/nodefaasv3|shield\/search\/nearbyrec_smart|valueadded\/alimama\/splash_screen|promotion-web\/resource(\/home)?|sharedtrip\/taxi\/order_detail_car_tips)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
 
@@ -74,12 +74,13 @@ http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path= https://
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/cainiao.js, requires-body = true, tag = Alibaba
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
 http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
+# 京东 //api.m.jd.com
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
 http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/wechat110.js, requires-body = true, tag = WeChat
 
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend) reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-(car-end|route-plan)|main-page-(assets|location))\?|^https:\/\/m5\.amap\.com\/ws\/shield\/(search\/new_hotword|search_poi\/tips_adv|scene\/recommend)\?|^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\?|^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|valueadded\/weather\/v2)\?|^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\?|^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble|order_web\/friendly_information|tips\/onscene_visual_optimization)\? reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.(alibaba\.advertisementservice\.getadv|alimama\.etao\.config\.query\/.+?etao_advertise|^alimusic\.common\.mobileservice\.startinit|etao\.noah\.query\/.+tao_splash|film\.mtopadvertiseapi\.queryadvertise|o2o\.ad\.gateway\.get|taobao\.idle\.home\.welcome|trip\.activity\.querytmsresources|guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad|guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get)\) reject-dict
 
