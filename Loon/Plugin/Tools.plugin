@@ -86,14 +86,15 @@ http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/g
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/bili.js, requires-body = true, tag = Bilibili
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/bili.js, requires-body = true, tag = Bilibili
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/bili.js, requires-body = true, tag = Bilibili
-# SMZDM //app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/baike-api\.smzdm\.com\/home_v3\/list script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/s-api\.smzdm\.com\/sou\/(filter\/tags\/hot_tags|list_v10) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/smzdm.js, requires-body = true, tag = SMZDM
+# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
 http-response ^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
 http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
@@ -220,4 +221,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) reject-dict
 
 [MITM]
-hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
+hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
