@@ -13,7 +13,7 @@ DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 # Google
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-NO-DROP
 
-URL-REGEX,^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native,REJECT
+URL-REGEX, ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 
 # Others #
 # 阿里巴巴
