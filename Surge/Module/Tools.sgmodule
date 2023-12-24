@@ -21,6 +21,8 @@ DOMAIN, ossgw.alicdn.com, REJECT
 DOMAIN, ems.youku.com, REJECT
 DOMAIN, hudong.alicdn.com, REJECT
 DOMAIN-SUFFIX, ut.taobao.com, REJECT
+# 滴滴出行
+DOMAIN, gwp.xiaojukeji.com, REJECT
 # Foreca & Google
 DOMAIN, pagead2.googlesyndication.com, REJECT
 DOMAIN, www.googleadservices.com, REJECT
@@ -70,6 +72,18 @@ YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
 
+# 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
+DiDi = type=http-response,pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/freight\.xiaojukeji\.com\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com:443\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
@@ -154,6 +168,8 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 
+# 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
+^https:\/\/hd\.xiaojukeji\.com\/d - reject
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? - reject
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject
@@ -248,4 +264,4 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
 
 [MITM]
-hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
+hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
