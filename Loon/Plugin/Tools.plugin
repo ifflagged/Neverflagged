@@ -18,6 +18,8 @@ DOMAIN, ossgw.alicdn.com, REJECT
 DOMAIN, ems.youku.com, REJECT
 DOMAIN, hudong.alicdn.com, REJECT
 DOMAIN-SUFFIX, ut.taobao.com, REJECT
+# 滴滴出行
+DOMAIN, gwp.xiaojukeji.com, REJECT
 # Foreca & Google
 DOMAIN, pagead2.googlesyndication.com, REJECT
 DOMAIN, www.googleadservices.com, REJECT
@@ -59,6 +61,18 @@ http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|p
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js, requires-body = true, tag = Umetrip
 
+# 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/daijia\.kuaidadi\.com\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/freight\.xiaojukeji\.com\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/daijia\.kuaidadi\.com:443\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 http-response http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
 http-response https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
@@ -143,6 +157,8 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
+# 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
+^https:\/\/hd\.xiaojukeji\.com\/d reject-dict
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan)\? reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? reject-dict
@@ -221,4 +237,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) reject-dict
 
 [MITM]
-hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
+hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
