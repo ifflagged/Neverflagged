@@ -27,9 +27,9 @@ DOMAIN, www.googleadservices.com, REJECT
 DOMAIN-SUFFIX, adservice.google.com, REJECT
 DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
 # 高德地图
-HOST, amap-aos-info-nogw.amap.com, REJECT
-HOST, awaken.amap.com, REJECT
-HOST, free-aos-cdn-image.amap.com, REJECT
+DOMAIN, amap-aos-info-nogw.amap.com, REJECT
+DOMAIN, awaken.amap.com, REJECT
+DOMAIN, free-aos-cdn-image.amap.com, REJECT
 # 海尔智家
 DOMAIN-SUFFIX, ehaier.com, REJECT
 # 建设银行
