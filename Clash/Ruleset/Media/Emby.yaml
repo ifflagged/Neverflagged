@@ -25,5 +25,8 @@ payload:
   # > Viper
   - DOMAIN-SUFFIX,agon.cf
 
-  # > Misty
-  - DOMAIN-SUFFIX,misty.ltd
+  # > Polo
+  - DOMAIN-SUFFIX,poloemby.xyz
+
+  # > 纸片人
+  - DOMAIN-SUFFIX,embyplus.org
