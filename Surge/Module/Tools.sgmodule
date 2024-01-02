@@ -215,7 +215,7 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) url reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? - reject
-^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? - reject
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject
 
 # 天府通 //ams-cdn.cdtft.cn
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ - reject
