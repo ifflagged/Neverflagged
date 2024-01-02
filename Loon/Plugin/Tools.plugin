@@ -204,7 +204,7 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? reject-dict
-^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) reject-dict
 
 # 天府通
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
