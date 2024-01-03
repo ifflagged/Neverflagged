@@ -126,7 +126,7 @@ Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgrou
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/destroy\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
