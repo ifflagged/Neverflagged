@@ -8,16 +8,16 @@
 #!date = 2023-08-19 22:00:03
 
 [Rule]
-DOMAIN-KEYWORD,tiktokcdn,One Policy
-DOMAIN-SUFFIX,byteoversea.com,One Policy
-DOMAIN-SUFFIX,ibytedtos.com,One Policy
-DOMAIN-SUFFIX,ipstatp.com,One Policy
-DOMAIN-SUFFIX,muscdn.com,One Policy
+DOMAIN-KEYWORD,tiktokcdn,Proxy
+DOMAIN-SUFFIX,byteoversea.com,Proxy
+DOMAIN-SUFFIX,ibytedtos.com,Proxy
+DOMAIN-SUFFIX,ipstatp.com,Proxy
+DOMAIN-SUFFIX,muscdn.com,Proxy
 DOMAIN-SUFFIX,musical.ly
-DOMAIN-SUFFIX,tik-tokapi.com,One Policy
-DOMAIN-SUFFIX,tiktok.com,One Policy
-DOMAIN-SUFFIX,tiktokcdn.com,One Policy
-USER-AGENT,TikTok*,One Policy
+DOMAIN-SUFFIX,tik-tokapi.com,Proxy
+DOMAIN-SUFFIX,tiktok.com,Proxy
+DOMAIN-SUFFIX,tiktokcdn.com,Proxy
+USER-AGENT,TikTok*,Proxy
 
 [MITM]
 hostname = *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com
