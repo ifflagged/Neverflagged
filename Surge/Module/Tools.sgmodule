@@ -95,8 +95,10 @@ Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserv
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
+
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
@@ -180,8 +182,8 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? - reject
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order\/car\/king_toolbox_car_bubble)\? - reject
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order_web\/friendly_information|tips\/onscene_visual_optimization)\? - reject
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization)\? - reject
+
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
 ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject
