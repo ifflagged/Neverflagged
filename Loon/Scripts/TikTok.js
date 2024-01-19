@@ -1,5 +1,12 @@
-let keyus={US: "US", TW: "TW", SG:"SG", JP:"JP", KR:"KR", Country:"inkey"},url = $request.url,lk = "",loc = "";
-if (typeof $argument !== 'undefined' && $argument !== "") {loc = this.$argument ?? "US";} else {lk = $persistentStore.read("UnlockArea");loc = keyus[lk] || "US";if(loc == "inkey"){inkeys = $persistentStore.read("CountryCode");loc = inkeys;}};
+/*
+脚本引用 https://github.com/Keywos/rule/blob/main/loon/tk.js
+*/
+let keyus={US: "US", TW: "TW", SG:"SG", JP:"JP", KR:"KR"},
+lk = $persistentStore.read("UnlockArea"),loc = keyus[lk] || "US",url = $request.url;
+// if(loc == "inkey"){
+//   inkeys = $persistentStore.read("CountryCode");
+//   loc = inkeys
+// }
 if (/(tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?/.test(url)) {
   url = url.replace(/\/\?/g,'');
   const response = {
@@ -14,4 +21,6 @@ if (/(tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?/.test(url)) {
     headers: {Location: url},
   };
   $done({response});
-} else {$done({})};
+} else {
+  $done({})
+}
