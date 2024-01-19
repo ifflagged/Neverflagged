@@ -1,5 +1,5 @@
-let keyus={US: "US", TW: "TW", SG:"SG", JP:"JP", KR:"KR", Enter Country Code:"inkey"},url = $request.url,lk = "",loc = "";
-if (typeof $argument !== 'undefined' && $argument !== "") {loc = this.$argument ?? "US";} else {lk = $persistentStore.read("Unlock Area");loc = keyus[lk] || "US";if(loc == "inkey"){inkeys = $persistentStore.read("Enter Country Code");loc = inkeys;}};
+let keyus={US: "US", TW: "TW", SG:"SG", JP:"JP", KR:"KR", Country:"inkey"},url = $request.url,lk = "",loc = "";
+if (typeof $argument !== 'undefined' && $argument !== "") {loc = this.$argument ?? "US";} else {lk = $persistentStore.read("UnlockArea");loc = keyus[lk] || "US";if(loc == "inkey"){inkeys = $persistentStore.read("CountryCode");loc = inkeys;}};
 if (/(tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?/.test(url)) {
   url = url.replace(/\/\?/g,'');
   const response = {
