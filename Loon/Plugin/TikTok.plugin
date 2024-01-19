@@ -3,8 +3,8 @@
 #!openUrl = https://github.com/Keywos
 #!homepage = 
 #!icon = https://github.668966.xyz/Semporia/Hand-Painted-icon/raw/master/Social_Media/TikTok.png
-#!select = Unlock Area,US,TW,SG,JP,KR,Enter Country Code
-#!input = Enter Country Code
+#!select = UnlockArea,US,TW,SG,JP,KR,Country
+#!input = CountryCode
 #!date = 2023-08-19 22:00:03
 
 [Rule]
@@ -23,4 +23,4 @@ USER-AGENT,TikTok*,Proxy
 hostname = *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com
 
 [Script]
-http-request ^https?:\/\/((tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?|.+\.(byteoversea|tiktokv).com\/.+(_region=CN&|&mcc_mnc=4)) script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Loon/Script/TikTok.js, timeout=20, tag=TikTok
+http-request ^https?:\/\/((tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?|.+\.(byteoversea|tiktokv).com\/.+(_region=CN&|&mcc_mnc=4)) script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Loon/Scripts/TikTok.js, timeout=20, tag=TikTok
