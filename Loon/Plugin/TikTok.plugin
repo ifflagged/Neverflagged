@@ -3,21 +3,37 @@
 #!openUrl = https://github.com/Keywos
 #!homepage = 
 #!icon = https://github.668966.xyz/Semporia/Hand-Painted-icon/raw/master/Social_Media/TikTok.png
-#!select = UnlockArea,US,TW,SG,JP,KR,Country
-#!input = CountryCode
-#!date = 2023-08-19 22:00:03
+#!select = UnlockArea,US,TW,SG,JP,KR
+#!date = 2024-01-19 22:07:00
 
 [Rule]
-DOMAIN-KEYWORD,tiktokcdn,Proxy
-DOMAIN-SUFFIX,byteoversea.com,Proxy
-DOMAIN-SUFFIX,ibytedtos.com,Proxy
-DOMAIN-SUFFIX,ipstatp.com,Proxy
-DOMAIN-SUFFIX,muscdn.com,Proxy
-DOMAIN-SUFFIX,musical.ly
-DOMAIN-SUFFIX,tik-tokapi.com,Proxy
-DOMAIN-SUFFIX,tiktok.com,Proxy
-DOMAIN-SUFFIX,tiktokcdn.com,Proxy
-USER-AGENT,TikTok*,Proxy
+DOMAIN, lf16-effectcdn.byteeffecttos-g.com ,PROXY
+DOMAIN, lf16-pkgcdn.pitaya-clientai.com ,PROXY
+DOMAIN, p16-tiktokcdn-com.akamaized.net ,PROXY
+DOMAIN-SUFFIX, bytedapm.com ,PROXY
+DOMAIN-SUFFIX, bytegecko-i18n.com ,PROXY
+DOMAIN-SUFFIX, bytegecko.com ,PROXY
+DOMAIN-SUFFIX, byteoversea.com ,PROXY
+DOMAIN-SUFFIX, capcut.com ,PROXY
+DOMAIN-SUFFIX, ibytedtos.com ,PROXY
+DOMAIN-SUFFIX, ibyteimg.com ,PROXY
+DOMAIN-SUFFIX, ipstatp.com ,PROXY
+DOMAIN-SUFFIX, isnssdk.com ,PROXY
+DOMAIN-SUFFIX, muscdn.com ,PROXY
+DOMAIN-SUFFIX, musical.ly ,PROXY
+DOMAIN-SUFFIX, sgpstatp.com ,PROXY
+DOMAIN-SUFFIX, snssdk.com ,PROXY
+DOMAIN-SUFFIX, tik-tokapi.com ,PROXY
+DOMAIN-SUFFIX, tiktok.com ,PROXY
+DOMAIN-SUFFIX, tiktokcdn-us.com ,PROXY
+DOMAIN-SUFFIX, tiktokcdn.com ,PROXY
+DOMAIN-SUFFIX, tiktokd.net ,PROXY
+DOMAIN-SUFFIX, tiktokd.org ,PROXY
+DOMAIN-SUFFIX, tiktokmusic.app ,PROXY
+DOMAIN-SUFFIX, tiktokv.com ,PROXY
+DOMAIN-KEYWORD, musical.ly ,PROXY
+DOMAIN-KEYWORD, tiktok ,PROXY
+USER-AGENT, TikTok* ,PROXY
 
 [MITM]
 hostname = *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com
