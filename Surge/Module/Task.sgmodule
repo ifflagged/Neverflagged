@@ -3,4 +3,4 @@
 #!system=ios
 
 [Script]
-Atour = type=cron,cronexp=0 23 7 * * *,script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Script/Applications/Atour.js,script-update-interval=0
+Atour = type=cron,cronexp=0 37 7 * * *,script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Script/Applications/Atour.js,script-update-interval=0
