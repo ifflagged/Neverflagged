@@ -25,6 +25,9 @@ payload:
   # > Viper
   - DOMAIN-SUFFIX,agon.cf
 
+  # > Misty
+  - DOMAIN-SUFFIX,misty.cx
+
   # > Polo
   - DOMAIN-SUFFIX,poloemby.xyz
 
