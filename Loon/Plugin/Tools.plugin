@@ -145,8 +145,8 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? scrip
 
 # Others #
 # 12306 开屏广告 //ad.12306.cn, mobile.12306.cn
-http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path= https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js, requires-body = true, tag = 12306
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/ script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = 12306
+http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path= https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js, requires-body = true, tag = 12306
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = 12306
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/cainiao.js, requires-body = true, tag = Alibaba
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
@@ -212,9 +212,6 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
 
 # Others #
-# 12306 //ad.12306.cn, mobile.12306.cn
-^https:\/\/ad\.12306\.cn\/(ad\/mon\/mzc\?|res\/adfiles\/delivery\/) reject
-^https:\/\/mobile\.12306\.cn\/otsmobile\/h5\/otsbussiness\/travelPageImg\/ reject
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject
