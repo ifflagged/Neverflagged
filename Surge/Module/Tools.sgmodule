@@ -158,9 +158,8 @@ Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api
 
 # Others #
 # 12306 开屏广告 //ad.12306.cn, mobile.12306.cn
-12306 = type=http-response,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList,requires-body=1,script-path=https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js
-12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
-
+12306 = type=http-response,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js
+12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/cainiao.js
 Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
@@ -230,9 +229,6 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 
 # Others #
-# 12306 //ad.12306.cn, mobile.12306.cn
-^https:\/\/ad\.12306\.cn\/(ad\/mon\/mzc\?|res\/adfiles\/delivery\/) - reject
-^https:\/\/mobile\.12306\.cn\/otsmobile\/h5\/otsbussiness\/travelPageImg\/ - reject
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) - reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
