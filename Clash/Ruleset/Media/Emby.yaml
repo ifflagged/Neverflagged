@@ -22,6 +22,9 @@ payload:
   # > 星光
   - DOMAIN-SUFFIX,emby.eu.org
 
+  # > 星光
+  - DOMAIN-SUFFIX,lyrebirdemby.com
+
   # > Viper
   - DOMAIN-SUFFIX,agon.cf
 
