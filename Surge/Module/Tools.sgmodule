@@ -269,7 +269,7 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 
 [Map Local]
 # YouTube
-^https:\/\/redirector\.googlevideo\.com\/initplayback\? data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
+^https?:\/\/redirector\.googlevideo\.com\/initplayback data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
 
 # 中国移动 //client.app.coc.10086.cn
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) data="https://github.668966.xyz/Keywos/rule/raw/main/mocks/reject-200.txt"
