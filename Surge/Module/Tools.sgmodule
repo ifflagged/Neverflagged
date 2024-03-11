@@ -1,6 +1,7 @@
 #!name= Tools
 #!desc= Tools for Surge & Shadowrocket
-#!system=ios
+#!arguments=屏蔽上传按钮:true,屏蔽选段按钮:true,字幕翻译语言:zh-Hans,歌词翻译语言:zh-Hans,脚本执行引擎:jsc,启用调试模式:false
+#!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
 
 [General]
 force-http-engine-hosts=%APPEND% router.com, www.router.com
@@ -66,8 +67,8 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.668966.xyz/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.668966.xyz/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
 Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.668966.xyz/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
-YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js
-YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js
+YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js
+YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
