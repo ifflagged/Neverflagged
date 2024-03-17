@@ -21,8 +21,15 @@ DOMAIN-SUFFIX,123456.al
 # > 星光
 DOMAIN-SUFFIX,emby.eu.org
 
-# > 星光
+# > Lyrebird
 DOMAIN-SUFFIX,lyrebirdemby.com
+
+# > ApoloCloud
+DOMAIN-SUFFIX,apopcloud.com
+DOMAIN-SUFFIX,apopcloud.me
+
+# > Nyamedia
+DOMAIN-SUFFIX,bangumi.ca
 
 # > Viper
 DOMAIN-SUFFIX,agon.cf
