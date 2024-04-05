@@ -10,6 +10,10 @@ DOMAIN, wxsnsdy.wxs.qq.com, REJECT
 DOMAIN, wxsmsdy.video.qq.com, REJECT
 DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
 
+# YouTube
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+
 URL-REGEX, ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 
 # Others #
