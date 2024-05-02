@@ -21,6 +21,9 @@ DOMAIN-SUFFIX,123456.al
 # > 星光
 DOMAIN-SUFFIX,emby.eu.org
 
+# > 观影欢乐园
+DOMAIN-SUFFIX,null.hair
+
 # > Lyrebird
 DOMAIN-SUFFIX,lyrebirdemby.com
 
