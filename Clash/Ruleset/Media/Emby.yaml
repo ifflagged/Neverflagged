@@ -39,9 +39,6 @@ payload:
   - DOMAIN-SUFFIX,bangumi.ca
 
   # > 野兽
-  - DOMAIN-SUFFIX,apopcloud.com
-
-  # > 纸片人
   - DOMAIN-SUFFIX,mius.uk
 
   # > 叔服
