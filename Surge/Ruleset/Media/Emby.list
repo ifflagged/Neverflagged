@@ -8,6 +8,7 @@ DOMAIN-SUFFIX,emby.pro
 # > 垃圾影业
 DOMAIN-SUFFIX,xmsl.org
 DOMAIN-SUFFIX,loseremby.org
+DOMAIN-SUFFIX,emby.moe
 
 # > CC
 DOMAIN-SUFFIX,coemn.com
@@ -27,21 +28,17 @@ DOMAIN-SUFFIX,null.hair
 # > Lyrebird
 DOMAIN-SUFFIX,lyrebirdemby.com
 
-# > ApoloCloud
-DOMAIN-SUFFIX,apopcloud.com
-DOMAIN-SUFFIX,apopcloud.me
-
-# > Nyamedia
-DOMAIN-SUFFIX,bangumi.ca
-
-# > Viper
-DOMAIN-SUFFIX,agon.cf
-
 # > Misty
 DOMAIN-SUFFIX,misty.cx
 
-# > Polo
-DOMAIN-SUFFIX,poloemby.xyz
+# > ApopCloud
+DOMAIN-SUFFIX,apopcloud.com
+
+# > Nya Media
+DOMAIN-SUFFIX,bangumi.ca
+
+# > 野兽
+DOMAIN-SUFFIX,mius.uk
 
 # > 纸片人
 DOMAIN-SUFFIX,embyplus.org
