@@ -1,13 +1,17 @@
-#!name=TikTok
+#!name=TikTok Unlock
 #!desc=TikTok Unlock
-#!homepage=https://github.com/Semporia/TikTok-Unlock
+#!arguments=region:JP,mcc_mnc:44001,carrier:docomo,tz_name:Asia/Tokyo
+#!arguments-desc=region: 解锁 TikTok 地区的地区码\nmcc_mnc: 解锁 TikTok 地区的运营商代码\ncarrier: 解锁 TikTok地区的运营商名称\ntz_name: 解锁 TikTok 地区的时区\n\n推荐配置\n日本：JP 44001 docomo Asia/Tokyo\n韩国：KR  45005 SKT Asia/Seoul\n台湾：TW 46692 CHT Asia/Taipei\n美国：US 310260 T-Mobile America/New_York
 #!icon= https://github.com/Koolson/Qure/raw/master/IconSet/Color/TikTok.png
 
 [URL Rewrite]
-(?<=_region=)CN(?=&) US 307
-(?<=&mcc_mnc=)4 2 307
+(?<=_region=)CN(?=&) {{{region}}} 307
+(?<=carrier_region1=)CN(?=&) {{{region}}} 307
+(?<=&mcc_mnc=)460[0-1][0-9](?=&) {{{mcc_mnc}}} 307
 ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
 (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
+(?<=&carrier=)[%A-Z0-9]+(?=&) {{{carrier}}} 307
+(?<=tz_name=)Asia/Shanghai(?=&) {{{tz_name}}} 307
 
 [MITM]
 hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com
