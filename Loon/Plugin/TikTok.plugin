@@ -3,8 +3,12 @@
 #!openUrl = https://github.com/Keywos
 #!homepage = 
 #!icon = https://github.668966.xyz/Semporia/Hand-Painted-icon/raw/master/Social_Media/TikTok.png
-#!select = UnlockArea,US,TW,SG,JP,KR
-#!date = 2024-01-19 22:07:00
+#!select = UnlockArea, US, TW, SG, JP, KR
+#!date = 2024-05-03 23:35:00
+
+[Rewrite]
+# 去广告
+^https:\/\/api-va\.tiktokv\.com\/api\/ad\/ reject-dict
 
 [MITM]
 hostname = *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com
