@@ -1,7 +1,7 @@
 #!name= 🎵 TikTok
 #!desc= TikTok Unlock
 #!category= Jacob
-#!arguments= Region:US, Watermark:TikTok Watermark
+#!arguments= Region:US, Script Name:TikTok Watermark
 #!arguments-desc= Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\n\nScript Name: 脚本名称\n# TikTok Watermark 为禁用
 #!icon= https://github.com/Koolson/Qure/raw/master/IconSet/Color/TikTok.png
 
