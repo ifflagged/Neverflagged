@@ -1,4 +1,4 @@
-#!name=TikTok Unlock
+#!name=TikTok
 #!desc=TikTok Unlock
 #!arguments=region:US,mcc_mnc:310260,carrier:T-Mobile,tz_name:America/New_York
 #!arguments-desc=region: 解锁 TikTok 地区的地区码\nmcc_mnc: 解锁 TikTok 地区的运营商代码\ncarrier: 解锁 TikTok地区的运营商名称\ntz_name: 解锁 TikTok 地区的时区\n\n推荐配置\n美国：US 310260 T-Mobile America/New_York\n台湾：TW 46692 CHT Asia/Taipei\n日本：JP 44001 docomo Asia/Tokyo\n韩国：KR  45005 SKT Asia/Seoul
