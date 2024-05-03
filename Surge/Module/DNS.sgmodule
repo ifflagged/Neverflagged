@@ -1,5 +1,6 @@
-#!name= Router DNS
+#!name= 🛜 Router DNS
 #!desc= Use router DNS
+#!category= Jacob
 
 [SSID Setting]
 SSID:Jacob dns-server=system,encrypted-dns-server=off
