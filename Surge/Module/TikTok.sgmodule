@@ -2,7 +2,7 @@
 #!desc=TikTok Unlock
 #!category=Jacob
 #!arguments=Region:US,Watermark:TikTok Watermark
-#!arguments-desc=Region: 解锁 TikTok 地区的地区码, 美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\nWatermark:TikTok Watermark(添加注释符号'#'为禁用,默认启用);
+#!arguments-desc=Region: 解锁 TikTok 地区的地区码\n美国：US, 台湾：TW, 新加坡：SG, 日本：JP, 韩国：KR\nWatermark:TikTok Watermark\n# TikTok Watermark 为禁用
 #!icon=https://github.com/Koolson/Qure/raw/master/IconSet/Color/TikTok.png
 
 [URL Rewrite]
