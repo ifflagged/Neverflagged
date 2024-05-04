@@ -1,8 +1,8 @@
 #!name= Tools
 #!desc= Tools for Loon
-#!openUrl=https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!openUrl=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 #!author=Jacob
-#!homepage=https://github.668966.xyz/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!homepage=https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 #!icon=wrench
 
 [Rule]
@@ -56,107 +56,107 @@ DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, tysdk.95516.com, REJECT
 
 [Script]
-http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js, requires-body = true, tag = JD Price
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube Request
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://github.com/githubdulong/Script/raw/master/jd_price.js, requires-body = true, tag = JD Price
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube Request
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js, requires-body = true, tag = Umetrip
 
 # 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/daijia\.kuaidadi\.com\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/freight\.xiaojukeji\.com\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/daijia\.kuaidadi\.com:443\/gateway script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/daijia\.kuaidadi\.com\/gateway script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/freight\.xiaojukeji\.com\/gateway script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/daijia\.kuaidadi\.com:443\/gateway script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
-http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = Bilibili
 # SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
-http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path= https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
+http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = SMZDM
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
-http-response ^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
-http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
+http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = Weibo
 # 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
 
 # Others #
 # 12306 开屏广告 //ad.12306.cn, mobile.12306.cn
-http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path= https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js, requires-body = true, tag = 12306
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = 12306
+http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path= https://github.com/kokoryh/Script/raw/master/js/12306.js, requires-body = true, tag = 12306
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = 12306
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/cainiao.js, requires-body = true, tag = Alibaba
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
-http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/cainiao.js, requires-body = true, tag = Alibaba
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
 # 京东 //api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/jingdong.js, requires-body = true, tag = JD
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
-http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js, requires-body = true, tag = WeChat
+http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js, requires-body = true, tag = WeChat
 
 [Rewrite]
 ^https?:\/\/redirector\.googlevideo\.com\/initplayback reject-200
