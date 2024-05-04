@@ -58,116 +58,116 @@ DOMAIN, switch.cup.com.cn, REJECT
 DOMAIN, tysdk.95516.com, REJECT
 
 [Script]
-JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item), requires-body=1, script-path=https://github.668966.xyz/githubdulong/Script/raw/master/jd_price.js
-Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.668966.xyz/yichahucha/surge/raw/master/nf_rating.js
-Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.668966.xyz/yichahucha/surge/raw/master/nf_rating.js
-Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.668966.xyz/yichahucha/surge/raw/master/nf_rating_season.js
-ADblock for WeChat public account = type=http-request, pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad, script-path=https://github.668966.xyz/NobyDa/Script/raw/master/QuantumultX/File/Wechat.js
-Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.668966.xyz/id77/QuantumultX/raw/master/Script/zhihu.js
-EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.668966.xyz/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
-BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.668966.xyz/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
-Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.668966.xyz/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
-YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/request.js
-YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/youtube/response.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
+JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item), requires-body=1, script-path=https://github.com/githubdulong/Script/raw/master/jd_price.js
+Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
+Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
+Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating_season.js
+ADblock for WeChat public account = type=http-request, pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad, script-path=https://github.com/NobyDa/Script/raw/master/QuantumultX/File/Wechat.js
+Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
+EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.com/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
+BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://github.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
+Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
+YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/request.js
+YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/response.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
 Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
 
 # 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
-DiDi = type=http-response,pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/freight\.xiaojukeji\.com\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com:443\/gateway,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
-DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com\/gateway,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/freight\.xiaojukeji\.com\/gateway,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/daijia\.kuaidadi\.com:443\/gateway,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
+DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
-Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
-Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
-Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
+Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
+Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
 # SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com
-SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/update,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home,requires-body=1,script-path=https://github.668966.xyz/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/update,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+Weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
 # 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
-Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
+Xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js
 
 # Others #
 # 12306 开屏广告 //ad.12306.cn, mobile.12306.cn
-12306 = type=http-response,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.668966.xyz/kokoryh/Script/raw/master/js/12306.js
-12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/header.js
+12306 = type=http-response,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.com/kokoryh/Script/raw/master/js/12306.js
+12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/cainiao.js
-Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
-Alibaba = type=http-response,pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
+Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/cainiao.js
+Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
+Alibaba = type=http-response,pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
 # 京东 //api.m.jd.com
-JD = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/jingdong.js
+JD = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/jingdong.js
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
-WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,script-path=https://github.668966.xyz/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js
+WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js
 
 [URL Rewrite]
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
@@ -270,10 +270,10 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 
 [Map Local]
 # YouTube
-^https?:\/\/redirector\.googlevideo\.com\/initplayback data="https://github.668966.xyz/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
+^https?:\/\/redirector\.googlevideo\.com\/initplayback data="https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/blank.txt"
 
 # 中国移动 //client.app.coc.10086.cn
-^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) data="https://github.668966.xyz/Keywos/rule/raw/main/mocks/reject-200.txt"
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) data="https://github.com/Keywos/rule/raw/main/mocks/reject-200.txt"
 
 [MITM]
 hostname = %APPEND% router.com, www.router.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com, boxjs.com, boxjs.net, api.revenuecat.com, redirector.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, weixin110.qq.com, security.wechat.com, ams-cdn.cdtft.cn, api.pinduoduo.com, api.yangkeduo.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
