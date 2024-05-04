@@ -2,7 +2,7 @@
 #!desc = TikTok Unlock
 #!openUrl = https://github.com/Keywos
 #!homepage = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Plugin/TikTok_redirect.plugin
-#!icon = https://github.668966.xyz/Semporia/Hand-Painted-icon/raw/master/Social_Media/TikTok.png
+#!icon = https://github.com/Semporia/Hand-Painted-icon/raw/master/Social_Media/TikTok.png
 #!select = UnlockArea, US, TW, SG, JP, KR
 #!date = 2024-05-03 23:35:00
 
@@ -14,4 +14,4 @@
 hostname = *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com
 
 [Script]
-http-request ^https?:\/\/((tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?|.+\.(byteoversea|tiktokv).com\/.+(_region=CN&|&mcc_mnc=4)) script-path=https://github.668966.xyz/ifflagged/Neverflagged/raw/main/Loon/Scripts/TikTok.js, timeout=20, tag=TikTok
+http-request ^https?:\/\/((tnc|dm).+\.[^\/]+\.com\/\w+\/v\d\/\?|.+\.(byteoversea|tiktokv).com\/.+(_region=CN&|&mcc_mnc=4)) script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/TikTok.js, timeout=20, tag=TikTok
