@@ -108,7 +108,7 @@ payload:
   #京东
   - DOMAIN, dns.jd.com, REJECT
   - IP-CIDR, 101.124.19.122/32, REJECT
-  - IP6-CIDR, 2402:db40:5100:1011::5/128, REJECT
+  - IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT
   #JavDB
   - DOMAIN, api.liquidlink.cn, REJECT
 
@@ -254,4 +254,4 @@ payload:
   - DOMAIN, zxid-m.mobileservice.cn, REJECT
   - IP-CIDR, 103.41.167.237/32, REJECT
   - IP-CIDR, 118.89.204.198/32, REJECT
-  - IP6-CIDR, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
+  - IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
