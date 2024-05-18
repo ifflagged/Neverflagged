@@ -212,13 +212,13 @@ payload:
   #小米
   - DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
   #迅雷 解除版权限制
-#  - DOMAIN, hub5btmain.v6.shub.sandai.net, REJECT
-#  - DOMAIN, hub5emu.v6.shub.sandai.net, REJECT
-#  - DOMAIN, hub5idx.v6.shub.sandai.net, REJECT
+  # - DOMAIN, hub5btmain.v6.shub.sandai.net, REJECT
+  # - DOMAIN, hub5emu.v6.shub.sandai.net, REJECT
+  # - DOMAIN, hub5idx.v6.shub.sandai.net, REJECT
 
   #======= Y ======= #
   #优酷 & 菜鸟
-#  - DOMAIN, acs.youku.com, REJECT
+  # - DOMAIN, acs.youku.com, REJECT
   - DOMAIN, acs4baichuan.m.taobao.com, REJECT
   - DOMAIN, adsmind.ugdtimg.com, REJECT
   - DOMAIN, amdc.m.youku.com, REJECT
