@@ -150,7 +150,7 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject
 ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH - reject
 ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH - reject
-^https:\/\/api\.bilibili\.com\/x\/mengqi\/v1\/resource\? - reject
+^https:\/\/(api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download)\? url reject-
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp - reject
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
 # SMZDM //app-api.smzdm.com, baike-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, homepage-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
