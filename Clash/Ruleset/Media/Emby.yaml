@@ -46,3 +46,6 @@ payload:
 
   # > Heisi
   - DOMAIN-SUFFIX,i109.com
+
+  # > StarCat
+  - DOMAIN-SUFFIX,catlinks.co.uk
