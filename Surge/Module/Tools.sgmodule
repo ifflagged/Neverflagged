@@ -13,7 +13,7 @@ AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 
 # 航旅纵横
-URL-REGEX, ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 
 [Script]
 JD Price = type=http-response, pattern=^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item), requires-body=1, script-path=https://github.com/githubdulong/Script/raw/master/jd_price.js
@@ -29,7 +29,7 @@ YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com
 YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/response.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 
 # 航旅纵横 //114.115.217.129, home.umetrip.com
-Umetrip = type=http-response,pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
+Umetrip = type=http-response,pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,max-size=0,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js
 
 # 滴滴出行 //hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn
 DiDi = type=http-response,pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
@@ -181,12 +181,10 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 
 # 天府通 //ams-cdn.cdtft.cn
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ - reject
-# 航旅纵横 //home.umetrip.com, umerp.umetrip.com
-^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
 ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
 # 麦当劳 //api.mcd.cn 
-^https:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) reject
+^https:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject
 
 # Others #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
