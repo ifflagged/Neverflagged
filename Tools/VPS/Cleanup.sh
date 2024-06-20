@@ -60,7 +60,13 @@ fi
 
 # 清理系统日志文件
 echo "正在清理系统日志文件..."
-find /var/log /root /home /ql -type f -name "*.log" -print0 | xargs -0 truncate -s 0 > /dev/null 2>&1
+log_dirs=("/var/log" "/root" "/home" "/ql")
+for dir in "${log_dirs[@]}"; do
+    if [ -d "$dir" ]; then
+        find "$dir" -type f -name "*.log" -print0 | xargs -0 truncate -s 0 > /dev/null 2>&1
+    fi
+done
+echo "系统日志文件清理完成"
 
 # 清理缓存目录
 echo "正在清理缓存目录..."
@@ -71,23 +77,27 @@ for user in /home/* /root; do
     rm -rf "$cache_dir"/* > /dev/null 2>&1
   fi
 done
+echo "缓存目录清理完成"
 
 # 清理Docker（如果使用Docker）
 if command -v docker &> /dev/null
 then
     echo "正在清理Docker镜像、容器和卷..."
     docker system prune -a -f --volumes > /dev/null 2>&1
+    echo "Docker清理完成"
 fi
 
 # 清理孤立包（仅apt）
 if [ "$PKG_MANAGER" = "apt" ]; then
     echo "正在清理孤立包..."
     deborphan --guess-all | xargs -r apt-get -y remove --purge > /dev/null 2>&1
+    echo "孤立包清理完成"
 fi
 
 # 清理包管理器缓存
 echo "正在清理包管理器缓存..."
 $CLEAN_CMD > /dev/null 2>&1
+echo "包管理器缓存清理完成"
 
 end_space=$(df / | tail -n 1 | awk '{print $3}')
 cleared_space=$((start_space - end_space))
