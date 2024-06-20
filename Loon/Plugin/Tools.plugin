@@ -11,7 +11,7 @@ AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 
 # 航旅纵横
-URL-REGEX, ^https?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 
 [Script]
 http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://github.com/githubdulong/Script/raw/master/jd_price.js, requires-body = true, tag = JD Price
@@ -171,6 +171,10 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 # 天府通
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
+# 拼多多 //api.pinduoduo.com, api.yangkeduo.com
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject-dict
+# 麦当劳 //api.mcd.cn 
+^https:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject-dict
 
 # Others #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
@@ -215,4 +219,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) reject-dict
 
 [MITM]
-hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, weixin110.qq.com, security.wechat.com, ams-cdn.cdtft.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
+hostname = *.googlevideo.com, youtubei.googleapis.com, 114.115.217.129, home.umetrip.com, hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com ,qianbao.smzdm.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, weixin110.qq.com, security.wechat.com, ams-cdn.cdtft.cn, api.pinduoduo.com, api.yangkeduo.com, api.mcd.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, gab.122.gov.cnflowplus.meituan.net, img.meituan.net, s3plus.meituan.net, mp.weixin.qq.com, home.mi.com, wallet.95516.com, client.app.coc.10086.cn
