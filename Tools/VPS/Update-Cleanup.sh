@@ -1,4 +1,4 @@
-bash <(curl -s https://raw.githubusercontent.com/ifflagged/Neverflagged/main/Tools/VPS/Update-Cleanup.sh)
+# bash <(curl -s https://raw.githubusercontent.com/ifflagged/Neverflagged/main/Tools/VPS/Update-Cleanup.sh)
 
 #!/bin/bash
 
