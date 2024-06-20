@@ -1,4 +1,4 @@
-# bash <(curl -s https://github.com/ifflagged/Neverflagged/raw/main/Tools/VPS/Cleanup.sh)
+# bash <(curl -s https://raw.githubusercontent.com/ifflagged/Neverflagged/main/Tools/VPS/Cleanup.sh)
 #!/bin/bash
 
 # 确保脚本以root权限运行
