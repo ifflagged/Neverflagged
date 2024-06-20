@@ -1,4 +1,5 @@
 # bash <(curl -s https://raw.githubusercontent.com/ifflagged/Neverflagged/main/Tools/VPS/Cleanup.sh)
+
 #!/bin/bash
 
 # 确保脚本以root权限运行
@@ -56,6 +57,20 @@ if [[ "$PKG_MANAGER" == "apt" || "$PKG_MANAGER" == "dnf" ]]; then
     else
         echo "没有旧内核需要删除。"
     fi
+fi
+
+# 额外的清理命令（从第二个脚本中合并过来）
+if [ "$PKG_MANAGER" = "apt" ]; then
+    echo "正在运行额外的清理命令..."
+    apt autoremove --purge -y > /dev/null 2>&1
+    apt clean > /dev/null 2>&1
+    apt autoclean > /dev/null 2>&1
+    apt remove --purge -y $(dpkg -l | awk '/^rc/ {print $2}') > /dev/null 2>&1
+    journalctl --rotate > /dev/null 2>&1
+    journalctl --vacuum-time=1s > /dev/null 2>&1
+    journalctl --vacuum-size=50M > /dev/null 2>&1
+    apt remove --purge -y $(dpkg -l | awk '/^ii linux-(image|headers)-[^ ]+/{print $2}' | grep -v $(uname -r | sed 's/-.*//')) > /dev/null 2>&1
+    echo "额外的清理命令完成"
 fi
 
 # 清理系统日志文件
