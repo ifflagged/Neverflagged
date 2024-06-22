@@ -13,8 +13,8 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
 # 航旅纵横
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
 # 滴滴出行
-IP-CIDR, 123.207.209.39/32, REJECT
-IP-CIDR, 123.207.209.60/32, REJECT
+IP-CIDR, 123.207.209.39/32, REJECT, no-resolve
+IP-CIDR, 123.207.209.60/32, REJECT, no-resolve
 DOMAIN, gwp.xiaojukeji.com, REJECT
 
 [Script]
