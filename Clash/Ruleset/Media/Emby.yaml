@@ -32,6 +32,9 @@ payload:
   # > Misty
   - DOMAIN-SUFFIX,misty.cx
 
+  # > 卡戎
+  - DOMAIN-SUFFIX,charontv.com
+
   # > ApopCloud
   - DOMAIN-SUFFIX,apopcloud.com
 
