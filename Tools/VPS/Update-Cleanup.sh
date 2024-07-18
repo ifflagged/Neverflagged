@@ -39,13 +39,13 @@ fi
 
 # 系统升级
 echo "正在更新软件包信息..."
-$PKG_UPDATE_CMD > /dev/null 2>&1
+$PKG_UPDATE_CMD
 
 echo "正在升级系统..."
-$UPGRADE_CMD > /dev/null 2>&1
+$UPGRADE_CMD
 
 echo "正在自动移除不再需要的软件包..."
-$CLEAN_CMD > /dev/null 2>&1
+$CLEAN_CMD
 
 # 安全删除旧内核（只适用于使用apt和dnf的系统）
 echo "正在删除未使用的内核..."
@@ -58,8 +58,8 @@ if [[ "$PKG_MANAGER" == "apt" || "$PKG_MANAGER" == "dnf" ]]; then
     fi
     if [ ! -z "$kernel_packages" ]; then
         echo "找到旧内核，正在删除：$kernel_packages"
-        $PURGE_CMD $kernel_packages > /dev/null 2>&1
-        [[ "$PKG_MANAGER" == "apt" ]] && update-grub > /dev/null 2>&1
+        $PURGE_CMD $kernel_packages
+        [[ "$PKG_MANAGER" == "apt" ]] && update-grub
     else
         echo "没有旧内核需要删除。"
     fi
@@ -67,10 +67,10 @@ fi
 
 # 清理系统日志文件（保留最近一周的日志）
 echo "正在清理系统日志文件..."
-find /var/log -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /root -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /home -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /ql -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \; > /dev/null 2>&1
+find /var/log -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \;
+find /root -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \;
+find /home -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \;
+find /ql -type f -name "*.log" -mtime +7 -exec truncate -s 0 {} \;
 
 # 清理缓存目录
 echo "正在清理缓存目录..."
@@ -87,19 +87,19 @@ done
 if command -v docker &> /dev/null
 then
     echo "正在清理Docker镜像、容器和卷..."
-    docker system prune -a -f --volumes > /dev/null 2>&1
+    docker system prune -a -f --volumes
 fi
 
 # 清理孤立包（仅apt）
 if [ "$PKG_MANAGER" = "apt" ]; then
     echo "正在清理孤立包..."
     if [ ! -x /usr/bin/deborphan ]; then
-        $INSTALL_CMD deborphan > /dev/null 2>&1
+        $INSTALL_CMD deborphan
     fi
     orphan_packages=$(deborphan --guess-all)
     if [ ! -z "$orphan_packages" ]; then
         echo "找到孤立包，正在删除：$orphan_packages"
-        echo "$orphan_packages" | xargs -r apt-get -y remove --purge > /dev/null 2>&1
+        echo "$orphan_packages" | xargs -r apt-get -y remove --purge
     else
         echo "没有孤立包需要删除。"
     fi
@@ -107,7 +107,7 @@ fi
 
 # 清理包管理器缓存
 echo "正在清理包管理器缓存..."
-$CLEAN_CMD > /dev/null 2>&1
+$CLEAN_CMD
 
 end_space=$(df / | tail -n 1 | awk '{print $3}')
 cleared_space=$((start_space - end_space))
