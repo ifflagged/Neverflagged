@@ -39,15 +39,31 @@ fi
 
 # 更新和升级系统
 echo "正在更新软件包信息..."
-$PKG_UPDATE_CMD > /dev/null 2>&1
+$PKG_UPDATE_CMD
 
 echo "正在升级系统..."
-$FULL_UPGRADE_CMD > /dev/null 2>&1
+$FULL_UPGRADE_CMD
 
 # 安装deborphan（仅适用于apt）
-if [ "$PKG_MANAGER" = "apt" ] && [ ! -x /usr/bin/deborphan ]; then
-    echo "正在安装deborphan..."
-    $INSTALL_CMD deborphan > /dev/null 2>&1
+if [ "$PKG_MANAGER" = "apt" ]; then
+    echo "正在检查deborphan是否安装..."
+    if [ ! -x /usr/bin/deborphan ]; then
+        echo "deborphan未安装，正在安装..."
+        $INSTALL_CMD deborphan
+    else
+        echo "deborphan已安装"
+    fi
+fi
+
+# 修复dpkg状态问题（仅适用于apt）
+if [ "$PKG_MANAGER" = "apt" ]; then
+    echo "正在检查dpkg状态..."
+    dpkg --audit
+    if [ $? -ne 0 ]; then
+        echo "修复dpkg状态问题..."
+        dpkg --configure -a
+        apt-get install -f
+    fi
 fi
 
 # 安全删除旧内核（只适用于使用apt和dnf的系统）
@@ -61,8 +77,8 @@ if [[ "$PKG_MANAGER" == "apt" || "$PKG_MANAGER" == "dnf" ]]; then
     fi
     if [ ! -z "$kernel_packages" ]; then
         echo "找到旧内核，正在删除：$kernel_packages"
-        $PURGE_CMD $kernel_packages > /dev/null 2>&1
-        [[ "$PKG_MANAGER" == "apt" ]] && update-grub > /dev/null 2>&1
+        $PURGE_CMD $kernel_packages
+        [[ "$PKG_MANAGER" == "apt" ]] && update-grub
     else
         echo "没有旧内核需要删除。"
     fi
@@ -70,10 +86,10 @@ fi
 
 # 清理系统日志文件
 echo "正在清理系统日志文件..."
-find /var/log -type f -name "*.log" -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /root -type f -name "*.log" -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /home -type f -name "*.log" -exec truncate -s 0 {} \; > /dev/null 2>&1
-find /ql -type f -name "*.log" -exec truncate -s 0 {} \; > /dev/null 2>&1
+find /var/log -type f -name "*.log" -exec truncate -s 0 {} \;
+find /root -type f -name "*.log" -exec truncate -s 0 {} \;
+find /home -type f -name "*.log" -exec truncate -s 0 {} \;
+find /ql -type f -name "*.log" -exec truncate -s 0 {} \;
 
 # 清理缓存目录
 echo "正在清理缓存目录..."
@@ -82,37 +98,37 @@ find /var/tmp -type f -mtime +1 -exec rm -f {} \;
 for user in /home/* /root; do
   cache_dir="$user/.cache"
   if [ -d "$cache_dir" ]; then
-    rm -rf "$cache_dir"/* > /dev/null 2>&1
+    rm -rf "$cache_dir"/* 
   fi
 done
 
 # 清理Docker（如果使用Docker）
 if command -v docker &> /dev/null; then
     echo "正在清理Docker镜像、容器和卷..."
-    docker system prune -a -f --volumes > /dev/null 2>&1
+    docker system prune -a -f --volumes
 fi
 
 # 清理孤立包（仅适用于apt）
 if [ "$PKG_MANAGER" = "apt" ]; then
     echo "正在清理孤立包..."
-    deborphan --guess-all | xargs -r apt-get -y remove --purge > /dev/null 2>&1
+    deborphan --guess-all | xargs -r apt-get -y remove --purge
 fi
 
 # 清理包管理器缓存
 echo "正在清理包管理器缓存..."
-$CLEAN_CMD > /dev/null 2>&1
+$CLEAN_CMD
 
 # 清理dpkg残留配置（仅适用于apt）
 if [ "$PKG_MANAGER" = "apt" ]; then
     echo "正在清理残留配置..."
-    apt-get remove --purge $(dpkg -l | awk '/^rc/ {print $2}') > /dev/null 2>&1
+    apt-get remove --purge $(dpkg -l | awk '/^rc/ {print $2}')
 fi
 
 # 清理systemd日志
 echo "正在清理systemd日志..."
-journalctl --rotate > /dev/null 2>&1
-journalctl --vacuum-time=1s > /dev/null 2>&1
-journalctl --vacuum-size=50M > /dev/null 2>&1
+journalctl --rotate
+journalctl --vacuum-time=1s
+journalctl --vacuum-size=50M
 
 end_space=$(df / | tail -n 1 | awk '{print $3}')
 cleared_space=$((start_space - end_space))
