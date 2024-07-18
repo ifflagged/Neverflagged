@@ -13,21 +13,21 @@ start_space=$(df / | tail -n 1 | awk '{print $3}')
 # 检测并设置包管理器变量
 if command -v apt-get > /dev/null; then
     PKG_MANAGER="apt"
-    CLEAN_CMD="apt-get autoremove -y && apt-get clean && apt-get autoclean"
+    CLEAN_CMDS=("apt-get autoremove -y" "apt-get clean" "apt-get autoclean")
     PKG_UPDATE_CMD="apt-get update -y"
     UPGRADE_CMD="apt-get full-upgrade -y"
     INSTALL_CMD="apt-get install -y"
     PURGE_CMD="apt-get purge -y"
 elif command -v dnf > /dev/null; then
     PKG_MANAGER="dnf"
-    CLEAN_CMD="dnf autoremove -y && dnf clean all"
-    PKG_UPDATE_CMD="dnf update"
+    CLEAN_CMDS=("dnf autoremove -y" "dnf clean all")
+    PKG_UPDATE_CMD="dnf update -y"
     UPGRADE_CMD="dnf upgrade -y"
     INSTALL_CMD="dnf install -y"
     PURGE_CMD="dnf remove -y"
 elif command -v apk > /dev/null; then
     PKG_MANAGER="apk"
-    CLEAN_CMD="apk cache clean"
+    CLEAN_CMDS=("apk cache clean")
     PKG_UPDATE_CMD="apk update"
     UPGRADE_CMD="apk upgrade -a"
     INSTALL_CMD="apk add"
@@ -45,7 +45,9 @@ echo "正在升级系统..."
 $UPGRADE_CMD || { echo "系统升级失败"; exit 1; }
 
 echo "正在自动移除不再需要的软件包..."
-$CLEAN_CMD || { echo "软件包自动移除失败"; exit 1; }
+for cmd in "${CLEAN_CMDS[@]}"; do
+    $cmd || { echo "执行命令失败: $cmd"; exit 1; }
+done
 
 # 安全删除旧内核（只适用于使用apt和dnf的系统）
 echo "正在删除未使用的内核..."
@@ -108,7 +110,9 @@ fi
 
 # 清理包管理器缓存
 echo "正在清理包管理器缓存..."
-$CLEAN_CMD || { echo "包管理器缓存清理失败"; exit 1; }
+for cmd in "${CLEAN_CMDS[@]}"; do
+    $cmd || { echo "执行命令失败: $cmd"; exit 1; }
+done
 
 end_space=$(df / | tail -n 1 | awk '{print $3}')
 cleared_space=$((start_space - end_space))
