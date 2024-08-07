@@ -50,19 +50,19 @@ DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/
 
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hotel\/page\/main\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
-Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-hotel\/page\/main\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
