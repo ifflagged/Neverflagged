@@ -107,6 +107,10 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+# 拼多多 //api.pinduoduo.com
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js, requires-body = true, tag = Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js, requires-body = true, tag = Pinduoduo
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js, requires-body = true, tag = Pinduoduo
 
 # Others #
 # 12306 开屏广告 //ad.12306.cn, mobile.12306.cn
@@ -173,6 +177,16 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) reject-dict
+# 拼多多 //api.pinduoduo.com
+^https:\/\/api\.pinduoduo\.com\/search_hotquery reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/new_chat_group reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/personal reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/my_order_group reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/likes reject-dict
 
 # 天府通
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
