@@ -87,7 +87,7 @@ SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip\/bottom_
 SMZDM = type=http-response,pattern=^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 SMZDM = type=http-response,pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 SMZDM = type=http-response,pattern=^https:\/\/s3\.zdmimg\.com\/third\/index,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
+SMZDM = type=http-response,pattern=^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 SMZDM = type=http-response,pattern=^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
 SMZDM = type=http-response,pattern=^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
 SMZDM = type=http-response,pattern=^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
