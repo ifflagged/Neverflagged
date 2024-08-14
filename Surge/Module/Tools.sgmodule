@@ -43,6 +43,8 @@ DiDi = type=http-response,pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-s
 DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=0,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
+Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
