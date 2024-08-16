@@ -87,7 +87,7 @@ Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/t
 
 # ➡️ H ⬅️ #
 # 航旅纵横 //114.115.217.129, *.umetrip.com
-Umetrip = type=http-response,pattern=^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
+Umetrip = type=http-response,pattern=^https?:\/\/.*\.umetrip\.com\.cn\/gateway\/api\/umetrip\/native$,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
 Umetrip = type=http-response,pattern=^https?:\/\/114\.115\.217\.129\/gateway\/api\/umetrip\/native$,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
 
 # ➡️ J ⬅️ #
