@@ -350,7 +350,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? - reject
 ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list - reject
+# ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list - reject
 ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner - reject
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
