@@ -31,6 +31,7 @@ http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me 
 http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ url script-response-header https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = false, tag = Amap
 http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
