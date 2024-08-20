@@ -28,7 +28,7 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
 [Script]
 # ➡️ 1 ⬅️ #
 # 12306 //ad.12306.cn, mobile.12306.cn
-12306 = type=http-response,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/12306.js
+12306 = type=http-request,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/12306.js
 12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$,requires-body=0,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
 
 # ➡️ A ⬅️ #
