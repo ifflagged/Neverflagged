@@ -29,11 +29,13 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
 [Script]
 # ➡️ 1 ⬅️ #
 # 12306 //ad.12306.cn, mobile.12306.cn
+# RuCu6
 12306 = type=http-request,pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/12306.js
 12306 = type=http-response,pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$,requires-body=0,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
 
 # ➡️ A ⬅️ #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# RuCu6
 Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/cainiao.js
 Alibaba = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
 Alibaba = type=http-response,pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js
@@ -42,6 +44,7 @@ Alibaba = type=http-response,pattern=^https:\/\/poplayer\.template\.alibaba\.com
 # BoxJs //boxjs.com, boxjs.net
 BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),requires-body=1,script-path=https://github.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
+# RuCu6
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
 Bilibili = type=http-response,pattern=^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoA.js
@@ -57,19 +60,21 @@ Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/acco
 Bilibili = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js
 
 # ➡️ D ⬅️ #
-# 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
+# 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
+# ZenmoFeiShi
 DiDi = type=http-response,pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 DiDi = type=http-response,pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 DiDi = type=http-response,pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 DiDi = type=http-response,pattern=^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js
 
-# ➡️ N ⬅️ #
+# ➡️ E ⬅️ #
 # Emby //mb3admin.com
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.com/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
 
 # ➡️ G ⬅️ #
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
+# RuCu6
 Amap = type=http-response,pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$,requires-body=0,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
 Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js
@@ -89,20 +94,23 @@ Amap = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/t
 
 # ➡️ H ⬅️ #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
+# ddgksf2013
 Umetrip = type=http-response,pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js
 
 # ➡️ J ⬅️ #
 # 京东 //api.m.jd.com
+# RuCu6
 JD = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/jingdong.js
 
 # ➡️ N ⬅️ #
-# Netflix //ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, mb3admin.com
+# Netflix //ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
 Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
 Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
 Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating_season.js
 
 # ➡️ P ⬅️ #
 # 拼多多 //api.pinduoduo.com
+# ZenmoFeiShi
 Pinduoduo = type=http-response,pattern=^https:\/\/api\.pinduoduo\.com\/search,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js
 Pinduoduo = type=http-response,pattern=^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js
 Pinduoduo = type=http-response,pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Pinduoduo.js
@@ -112,6 +120,7 @@ Pinduoduo = type=http-response,pattern=^https:\/\/api\.pinduoduo\.com\/api\/oak\
 # Spark //api.revenuecat.com
 Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
 # SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+# ZenmoFeiShi & ddgksf2013
 SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 SMZDM = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
 SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/update,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
@@ -132,9 +141,11 @@ SMZDM = type=http-response,pattern=^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\
 
 # ➡️ W ⬅️ #
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
+# RuCu6
 WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js
 
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
+# RuCu6
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
 Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
@@ -157,6 +168,7 @@ Weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/
 
 # ➡️ X ⬅️ #
 # 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com
+# fmz200
 Xiaohongshu = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets,requires-body=1,script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js
 Xiaohongshu = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(banner|hot)_list,requires-body=1,script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js
 Xiaohongshu = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(hint|trending)\?,requires-body=1,script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js
@@ -170,6 +182,7 @@ Xiaohongshu = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/ap
 
 # ➡️ Y ⬅️ #
 # Youtube //*.googlevideo.com, youtubei.googleapis.com
+# RuCu6 & Maasea
 YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/request.js
 YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/response.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"immersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 
@@ -180,10 +193,12 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 [URL Rewrite]
 # ➡️ 1 ⬅️ #
 # 交管12123 //gab.122.gov.cn
+# RuCu6
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 
 # ➡️ A ⬅️ #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# RuCu6
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) - reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
@@ -199,6 +214,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ B ⬅️ #
 # Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
+# RuCu6
 ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? - reject
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject
@@ -210,6 +226,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ D ⬅️ #
 # 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
+# ZenmoFeiShi
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget - reject
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds - reject
 ^https:\/\/daijia\.kuaidadi\.com\/gateway - reject
@@ -221,6 +238,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ E ⬅️ #
 # 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+# fmz200
 ^https?:\/\/elemecdn\.com\/.+\/sitemap - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} - reject
 ^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} - reject
@@ -234,6 +252,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ G ⬅️ #
 # 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
+# RuCu6
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan) - reject
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject
@@ -244,30 +263,38 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? - reject
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) - reject
-# 国家电网 //osg-service.sgcc.com.cn
+# 国家电网 //osg-static.sgcc.com.cn, osg-service.sgcc.com.cn
+# fmz200
 ^https?:\/\/osg-static\.sgcc\.com\.cn\/omg-static\/.*.jpg - reject
 ^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ - reject
 # 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+# fmz200
 ^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject
 ^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
 
 # ➡️ H ⬅️ #
 # 航旅纵横 //umerp.umetrip.com
-^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
+# Keli
+^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
+^https:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 
 # ➡️ J ⬅️ #
 # 京东 //api.m.jd.com
+# RuCu6 & fmz200
 ^http:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) - reject
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
 # 建设银行
+# RuCu6
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
 
 # ➡️ M ⬅️ #
-# 麦当劳 //api.mcd.cn 
+# 麦当劳 //api.mcd.cn
+# fmz200
 ^https:\/\/api\.mcd\.cn\/bff\/portal\/(home\/splash|richpop) - reject
 # 大众点评 & 美团//flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+# RuCu6
 ^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png - reject
 ^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) - reject
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? - reject
@@ -277,10 +304,12 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ - reject
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends - reject
 # 米家 //home.mi.com
+# RuCu6
 ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) - reject
 
 # ➡️ P ⬅️ #
 # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
+# ZenmoFeiShi & fmz200
 ^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/order_express_group - reject
 ^https:\/\/api\.pinduoduo\.com\/search_hotquery - reject
 ^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data - reject
@@ -295,6 +324,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ Q ⬅️ #
 # 去哪儿 //qde.qunar.com, homefront.qunar.com, client.qunar.com
+# fmz200
 ^https?:\/\/qde\.qunar\.com\/preload - reject
 ^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad - reject
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
@@ -305,8 +335,10 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ S ⬅️ #
 # SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+# ZenmoFeiShi
 ^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading - reject
 # 山姆会员商店 //api-sams.walmartmobile.cn
+# fmz200
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) - reject
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData - reject
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query - reject
@@ -317,16 +349,20 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ T ⬅️ #
 # 天府通 //ams-cdn.cdtft.cn
+# fmz200
 ^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ - reject
 # 天府市民云 //tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+# fmz200
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version - reject
 ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd - reject
 
 # ➡️ W ⬅️ #
 # 微信 //mp.weixin.qq.com
+# RuCu6
 ^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ - reject
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? - reject
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
+# RuCu6
 ^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? - reject
 ^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? - reject
 ^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? - reject
@@ -347,6 +383,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ X ⬅️ #
 # 小红书 //edith.xiaohongshu.com, www.xiaohongshu.come, ci.xiaohongshu.com
+# fmz200
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(get_style|open|submit_action) - reject
 ^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? - reject
@@ -355,6 +392,7 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner - reject
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
+# RuCu6
 ^https:\/\/gw\.alicdn\.com\/mt\/ - reject
 ^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} - reject
 ^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} - reject
@@ -362,15 +400,18 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 
 # ➡️ Y ⬅️ #
 # 云闪付 //wallet.95516.com
+# RuCu6
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
 
 # ➡️ Z ⬅️ #
 # 中国移动 //client.app.coc.10086.cn
+# RuCu6
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) - reject
 
 [Map Local]
 # YouTube
+# Maasea
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
 
 [MITM]
-hostname = %APPEND% ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, boxjs.com, boxjs.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*,  116.85.3.*, 139.199.240.84, mb3admin.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com, api.m.jd.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, api.pinduoduo.com, api.revenuecat.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, weixin110.qq.com, security.wechat.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, gab.122.gov.cn, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, osg-service.sgcc.com.cn, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, api.mcd.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, home.mi.com, api.yangkeduo.com, qde.qunar.com, homefront.qunar.com, client.qunar.com, router.com, www.router.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, mp.weixin.qq.com, gw.alicdn.com, wallet.95516.com, client.app.coc.10086.cn
+hostname = %APPEND% ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, boxjs.com, boxjs.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, mb3admin.com, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com, api.m.jd.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, api.pinduoduo.com, api.revenuecat.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, weixin110.qq.com, security.wechat.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, gab.122.gov.cn, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, osg-static.sgcc.com.cn, osg-service.sgcc.com.cn, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, umerp.umetrip.com, api.mcd.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, home.mi.com, api.yangkeduo.com, qde.qunar.com, homefront.qunar.com, client.qunar.com, router.com, www.router.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, mp.weixin.qq.com, gw.alicdn.com, wallet.95516.com, client.app.coc.10086.cn
