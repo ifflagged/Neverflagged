@@ -148,25 +148,25 @@ WeChat = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security\.wechat)
 
 # Weibo //*.weibo.cn, *.weibo.com, weibo.com
 # RuCu6
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
-Weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist|flowpage)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
+RuCu6_Weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,requires-body=1,script-path=https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js
 
 # ➡️ X ⬅️ #
 # 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com
