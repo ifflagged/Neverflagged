@@ -1,10 +1,7 @@
 
 # Emby
 # > CC
-# DOMAIN-SUFFIX,coemn.com
+DOMAIN-SUFFIX,carryz.net
 
 # > 叔服
-DOMAIN,jz.mcjoker.xyz
-
-# > 蘑菇
-DOMAIN,emby1.vban.xyz 
+DOMAIN,jz.mcjoker.xyz 
