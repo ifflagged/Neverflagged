@@ -220,7 +220,6 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 # ZenmoFeiShi
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget reject-dict
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
-^https:\/\/daijia\.kuaidadi\.com\/gateway reject-dict
 ^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
 ^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
