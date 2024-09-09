@@ -239,7 +239,6 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 # ZenmoFeiShi
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget - reject
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds - reject
-^https:\/\/daijia\.kuaidadi\.com\/gateway - reject
 ^https:\/\/freight\.xiaojukeji\.com\/gateway - reject
 ^https:\/\/daijia\.kuaidadi\.com:443\/gateway - reject
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget - reject
