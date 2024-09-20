@@ -6,9 +6,24 @@
 #!icon=wrench
 
 [Rule]
-# ➡️ H ⬅️ #
-# 航旅纵横
-URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+# ➡️ 1 ⬅️ #
+# 12306
+DOMAIN, ad.12306.cn, DIRECT
+
+# ➡️ A ⬅️ #
+# 阿里巴巴
+DOMAIN, dns.alidns.com, REJECT
+DOMAIN, ems.youku.com, REJECT
+DOMAIN, hudong.alicdn.com, REJECT
+DOMAIN, ossgw.alicdn.com, REJECT
+DOMAIN-SUFFIX, ut.taobao.com, REJECT
+# 爱奇艺
+DOMAIN, api.iqiyi.com, REJECT
+
+# ➡️ B ⬅️ #
+# 哔哩哔哩
+URL-REGEX, ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH, REJECT-DICT
+URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT-DICT
 
 # ➡️ D ⬅️ #
 # 滴滴出行
@@ -18,42 +33,95 @@ IP-CIDR, 139.199.240.12/32, REJECT, no-resolve
 IP-CIDR, 116.85.3.37/32, REJECT, no-resolve
 IP-CIDR, 139.199.240.15/32, REJECT, no-resolve
 
+# ➡️ G ⬅️ #
+# 高德地图
+AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
+
+# ➡️ H ⬅️ #
+# 航旅纵横
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+# 海尔智家
+DOMAIN-SUFFIX, ehaier.com, REJECT
+
+# ➡️ J ⬅️ #
+# 建设银行
+DOMAIN-KEYWORD, adv.ccb.com, REJECT
+# 京东
+DOMAIN, dns.jd.com, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
+
+# ➡️ M ⬅️ #
+# 美团
+DOMAIN, maplocatesdksnapshot.d.meituan.net, REJECT
+DOMAIN, metrics-picture.d.meituan.net, REJECT
+IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
+
+# ➡️ O ⬅️ #
+# Outlook
+DOMAIN, acdn.adnxs.com, REJECT
+DOMAIN, mediation.adnxs.com, REJECT
+DOMAIN, sin3-ib.adnxs.com, REJECT
+
+# ➡️ S ⬅️ #
+# 什么值得买
+DOMAIN, api.zuihuimai.com, REJECT
+
+# ➡️ W ⬅️ #
+# 微博
+DOMAIN-SUFFIX, uve.weibo.com, DIRECT
+DOMAIN, huodong.weibo.cn, REJECT
+DOMAIN-SUFFIX, biz.weibo.com, REJECT
+# 微信
+DOMAIN, badjs.weixinbridge.com, REJECT
+DOMAIN, dns.weixin.qq.com.cn, REJECT
+DOMAIN-SUFFIX, wxs.qq.com, REJECT
+
+# ➡️ X ⬅️ #
+# 小红书
+AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
+
 # ➡️ Y ⬅️ #
 # YouTube
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)), REJECT
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
+# 云闪付 开屏广告
+DOMAIN, ads.95516.com, REJECT
+DOMAIN, switch.cup.com.cn, REJECT
 
 [Script]
 # ➡️ 1 ⬅️ #
 # 12306 //ad.12306.cn, mobile.12306.cn
 # RuCu6
-http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/12306.js, requires-body = true, tag = 12306
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = 12306
+http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/12306.js, requires-body = true, tag = RuCu6_12306
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/header.js, tag = RuCu6_12306
 
 # ➡️ A ⬅️ #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 # RuCu6
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/cainiao.js, requires-body = true, tag = Alibaba
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
-http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = Alibaba
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = RuCu6_Alibaba
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = RuCu6_Alibaba
 
 # ➡️ B ⬅️ #
-# Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
+# bilibili // ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com,
 # RuCu6
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.show\.v1\.Popular\/Index$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress)$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/protoC.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_Bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:view|viewunite)\.v1\.View\/(?:View|ViewProgress)$ script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll$ script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:brand\/list|event\/list2|list|show) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/top\/activity\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine(\/ipad)?|myinfo) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/bilibili/json.js, requires-body = true, tag = RuCu6_bilibili
 
 # ➡️ D ⬅️ #
 # 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
@@ -65,25 +133,24 @@ http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList scri
 http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
 
 # ➡️ G ⬅️ #
-# 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
+# amap // m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 # RuCu6
-http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/header.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(routeInfo|routePlan) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
-http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/amap.js, requires-body = true, tag = Amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-(?:hotel|launch)\/page\/main\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(?:routeInfo|routePlan) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(?:common\/coupon\/info|poi\/detail) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:homepage|mps|search\/sp|sug|tips_operation_location) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:card-service-plan-home|main-page) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
+http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/amap.js, requires-body = true, tag = RuCu6_amap
 
 # ➡️ H ⬅️ #
 # 航旅纵横 //114.115.217.129, home.umetrip.com
@@ -93,7 +160,7 @@ http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api
 # ➡️ J ⬅️ #
 # 京东 //api.m.jd.com
 # RuCu6
-http-response ^https:\/\/(api\.hechuangxinxi\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+) script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/myBlockAds.js, requires-body = true, tag = JD
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/jingdong.js, requires-body = true, tag = RuCu6_JD
 
 # ➡️ P ⬅️ #
 # 拼多多 //api.pinduoduo.com
@@ -127,49 +194,49 @@ http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner scri
 # ➡️ W ⬅️ #
 # 微信封禁页面 //weixin110.qq.com, security.wechat.com
 # RuCu6
-http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/wechat/wechat110.js, requires-body = true, tag = Wechat
+http-response ^https\:\/\/(?:weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/wechat/unlockUrls.js, requires-body = true, tag = RuCu6_Wechat
 
-# Weibo //*.weibo.cn, *.weibo.com, weibo.com
+# weibo // *.weibo.cn, *.weibo.com, weibo.com,
 # RuCu6
-http-response ^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist|flowpage)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/friendships\/(create|destroy)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
-http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path= https://github.com/RuCu6/QuanX/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_Weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(?:checkin\/show|client\/publisher_list|push\/active) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(?:cardlist|page) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/(?:container\/asyn|flowlist|flowpage) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/friendships\/(?:create|destroy) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/(?:container_timeline|dealatt|me|statuses\/tab|userinfo) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_timeline(?:_hot|_topic|_topicpage|_unread)?|unread_hot_timeline) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:extend|show) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_timeline|finder) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(?:preload\/get_ad|wbapplua\/wbpullad\.lua) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
+http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true, tag = RuCu6_weibo
 
 # ➡️ X ⬅️ #
-# 小红书 //edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com
-# fmz200
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(banner|hot)_list script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(hint|trending)\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/notes\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config$ script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v\d\/note\/feed|v3\/note\/videofeed)\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save) script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/followfeed\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? script-path= https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body = true, tag = Xiaohongshu
+# xiaohongshu // edith.xiaohongshu.com, www.xiaohongshu.com,
+# RuCu6
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(?:banner|hot)_list script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(?:hint|trending) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true, tag = RuCu6_xiaohongshu
 
 # ➡️ Y ⬅️ #
 # Youtube //*.googlevideo.com, youtubei.googleapis.com
 # RuCu6 & Maasea
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube Request
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://github.com/RuCu6/QuanX/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube Response
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = RuCu6_youtube
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://github.com/RuCu6/Loon/raw/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = RuCu6_youtube
 
 # ➡️ Z ⬅️ #
 # 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
@@ -185,35 +252,36 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 # ➡️ 1 ⬅️ #
 # 交管12123 //gab.122.gov.cn
 # RuCu6
-^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ reject
+^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver reject-dict
 
 # ➡️ A ⬅️ #
 # 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 # RuCu6
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources reject
-^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 reject
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources reject-dict
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jpg|png)_(?:1\d{3}|9\d{2})x(?:1\d{3}|9\d{2})q[59]0 reject-dict
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad reject-dict
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) reject-dict
 
 # ➡️ B ⬅️ #
-# Bilibili //app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
+# Bilibili
 # RuCu6
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
-^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
+^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) reject-dict
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
-^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH reject-dict
-^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH reject-dict
-^https:\/\/(api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) reject-dict
-^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? reject-dict
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo reject-dict
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 302 $1
+(^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) 302 $1
 
 # ➡️ D ⬅️ #
 # 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
@@ -241,25 +309,24 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) reject
 
 # ➡️ G ⬅️ #
-# 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
+# 高德
 # RuCu6
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(car-end|route-plan) reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? reject-dict
 ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? reject-dict
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(main-page-assets|main-page-location|ridewalk-end-fc) reject-dict
-^https:\/\/m5\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc) reject-dict
+^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? reject-dict
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? reject-dict
-^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) reject-dict
-# 国家电网 //osg-static.sgcc.com.cn, osg-service.sgcc.com.cn
-# fmz200
-^https?:\/\/osg-static\.sgcc\.com\.cn\/omg-static\/.*.jpg reject-200
-^https?:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ reject-dict
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) reject-dict
+# 网上国网 //osg-service.sgcc.com.cn
+# RuCu6
+^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ reject-dict
 
-# > 高铁管家
-# Hostname = cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
 # fmz200
 ^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
 ^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver reject
@@ -273,31 +340,29 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 # ➡️ J ⬅️ #
 # 京东 //api.m.jd.com
 # RuCu6 & fmz200
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
+
 ^http:\/\/\w{32}\.jddebug\.com\/diagnose\? reject
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising reject-dict
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 reject
 # 建设银行
 # RuCu6
-^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
+^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
 
 # ➡️ M ⬅️ #
 # 麦当劳 //api.mcd.cn 
 # fmz200
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash reject-200
-# 大众点评 & 美团//flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
-# RuCu6 & fmz200
-^https?:\/\/img\.meituan\.net\/dpmobile\/.+93241\.png reject-dict
-^https?:\/\/img\.meituan\.net\/dpmobile\/.*.(gif|jpg) reject-200
-^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? reject-dict
+# 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+# RuCu6
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(?:loadInfo|openscreen|startpicture) reject-dict
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg reject-dict
 ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg reject-dict
-^https:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json reject-dict
-^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ reject-dict
-^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends reject-dict
+^https:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_\d+\.json reject-dict
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(?:brandcpt-vedio|waimai-alita)\/\w+\.zip$ reject-dict
 # 米家 //home.mi.com
 # RuCu6
-^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) reject-dict
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(?:banner|carousel\/banners|myTab|openingBanner) reject-dict
 
 # ➡️ P ⬅️ #
 # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
@@ -347,38 +412,35 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 # ➡️ W ⬅️ #
 # 微信 //mp.weixin.qq.com
 # RuCu6
-^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
-^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
-# Weibo //*.weibo.cn, *.weibo.com, weibo.com
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) reject-dict
+# Weibo
 # RuCu6
-^https:\/\/api\.weibo\.cn\/2\/(ug\/checkin\/list|push\/daily)\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily) reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/photo\/info\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_positive|push_info)\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info) reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(discovery_home_bottom_getdotinfo|mobile_discovery_searchchange)\? reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(home_bottom_modal|interest_category)\? reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange) reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category) reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? reject-dict
 ^https:\/\/api\.weibo\.cn\/!\/sug\/list\/finderchange\? reject-dict
 ^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime reject-dict
-^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) reject
-^https:\/\/card\.weibo\.com\/article\/m\/aj\/(reward|uvead)\? reject-dict
-^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(reward|uvead)\? reject-dict
+^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php) reject-dict
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) reject-dict
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) reject-dict
 
 # ➡️ X ⬅️ #
-# 小红书 //edith.xiaohongshu.com, www.xiaohongshu.come, ci.xiaohongshu.com
-# fmz200
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/surprisebox\/(get_style|open|submit_action) reject-dict
-^https?:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? reject-dict
-^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v2\/hey\/\w+\/hey_gallery) reject-dict
-# ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list url response-body red_id response-body fmz200
-^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark reject-img
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner reject-dict
+# 小红书
+# RuCu6
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) reject-dict
+
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
 # RuCu6
 ^https:\/\/gw\.alicdn\.com\/mt\/ reject
@@ -389,7 +451,7 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 # ➡️ Y ⬅️ #
 # YouTube
 # Maasea
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-dict
+^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? reject-dict
 # 云闪付 //wallet.95516.com
 # RuCu6
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 reject
@@ -400,4 +462,4 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail reject-200
 
 [MITM]
-hostname = ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com, api.m.jd.com, api.pinduoduo.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, weixin110.qq.com, security.wechat.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, osg-static.sgcc.com.cn, osg-service.sgcc.com.cn, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, umerp.umetrip.com, api.mcd.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, home.mi.com, api.yangkeduo.com, qde.qunar.com, homefront.qunar.com, client.qunar.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, mp.weixin.qq.com, edith.xiaohongshu.come, gw.alicdn.com, wallet.95516.com, client.app.coc.10086.cn, h.app.coc.10086.cn
+hostname = ad.12306.cn, mobile.12306.cn, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com, 114.115.217.129, home.umetrip.com, api.m.jd.com, api.pinduoduo.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, weixin110.qq.com, security.wechat.com, *.weibo.cn, *.weibo.com, weibo.com, edith.xiaohongshu.com, www.xiaohongshu.com, *.googlevideo.com, youtubei.googleapis.com, client.app.coc.10086.cn, h.app.coc.10086.cn, gab.122.gov.cn, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, osg-service.sgcc.com.cn, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, umerp.umetrip.com, api.mcd.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, home.mi.com, api.yangkeduo.com, qde.qunar.com, homefront.qunar.com, client.qunar.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, mp.weixin.qq.com, gw.alicdn.com, wallet.95516.com
