@@ -30,11 +30,10 @@ URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT
  
 # ➡️ D ⬅️ #
 # 滴滴出行
-IP-CIDR, 123.207.209.39/32, REJECT, no-resolve
-IP-CIDR, 123.207.209.60/32, REJECT, no-resolve
-IP-CIDR, 139.199.240.12/32, REJECT, no-resolve
-IP-CIDR, 116.85.3.37/32, REJECT, no-resolve
-IP-CIDR, 139.199.240.15/32, REJECT, no-resolve
+DOMAIN, hd.xiaojukeji.com, REJECT
+DOMAIN, gwp.xiaojukeji.com, REJECT
+AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
  
 # ➡ G ⬅️ #
 # 高德地图
@@ -305,7 +304,7 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
  
 # ➡️ D ⬅️ #
 # 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
-# ZenmoFeiShi
+# ZenmoFeiShi & 可莉🅥
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget - reject
 ^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds - reject
 ^https:\/\/freight\.xiaojukeji\.com\/gateway - reject
@@ -313,7 +312,7 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget - reject
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast - reject
 ^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf - reject
- 
+
 # ➡️ E ⬅️ #
 # 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
 # fmz200
