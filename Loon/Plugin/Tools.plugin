@@ -364,8 +364,10 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 
 # ➡️ M ⬅️ #
 # 麦当劳 //api.mcd.cn 
+# dgksf2013
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) reject-200
 # fmz200
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash reject-200
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity reject-dict
 # 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
 # RuCu6
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(?:loadInfo|openscreen|startpicture) reject-dict
