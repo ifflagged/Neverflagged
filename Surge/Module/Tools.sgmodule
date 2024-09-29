@@ -382,7 +382,7 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 # dgksf2013
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) - reject
 # fmz200
-^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject-dict
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject
 # 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
 # RuCu6
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(?:loadInfo|openscreen|startpicture) - reject
