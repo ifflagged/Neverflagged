@@ -15,19 +15,50 @@ DOMAIN, ad.12306.cn, DIRECT
  
 # ➡️ A ⬅️ #
 # 阿里巴巴
+DOMAIN, amdc.m.taobao.com, DIRECT
+DOMAIN-SUFFIX, ut.taobao.com, REJECT
 DOMAIN, dns.alidns.com, REJECT
 DOMAIN, ems.youku.com, REJECT
 DOMAIN, hudong.alicdn.com, REJECT
 DOMAIN, ossgw.alicdn.com, REJECT
-DOMAIN-SUFFIX, ut.taobao.com, REJECT
+
 # 爱奇艺
 DOMAIN, api.iqiyi.com, REJECT
- 
+
+# Apple
+DOMAIN, ca.iadsdk.apple.com, DIRECT
+DOMAIN-SUFFIX, advp.apple.com, REJECT
+DOMAIN-SUFFIX, iad-apple.com, REJECT
+DOMAIN-SUFFIX, iadsdk.apple.com, REJECT
+DOMAIN, advertising.apple.com, REJECT
+DOMAIN, api-adservices.apple.com, REJECT
+DOMAIN, apple.comscoreresearch.com, REJECT
+DOMAIN, banners.itunes.apple.com, REJECT
+DOMAIN, iad.apple.com, REJECT
+DOMAIN, iadcontent.apple.com, REJECT
+DOMAIN, iadctest.qwapi.com, REJECT
+DOMAIN, iadmoo.apple.com, REJECT
+DOMAIN, iadworkbench.apple.com, REJECT
+DOMAIN, launch.apple.com, REJECT
+DOMAIN, qwapi.apple.com, REJECT
+
+# 安全浏览限制解除
+DOMAIN-KEYWORD, safebrowsing., REJECT
+DOMAIN-SUFFIX, u3.ucweb.com, REJECT
+DOMAIN, lookup.api.bsb.baidu.com, REJECT
+
 # ➡ B ⬅️ #
 # 哔哩哔哩
 URL-REGEX, ^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH, REJECT
 URL-REGEX, ^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH, REJECT
- 
+
+# 百度
+DOMAIN-SUFFIX, pos.baidu.com, REJECT
+DOMAIN, mobads.baidu.com, REJECT
+# 百度
+IP-CIDR, 180.76.76.112/32, REJECT, no-resolve
+IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
+
 # ➡️ D ⬅️ #
 # 滴滴出行
 DOMAIN, hd.xiaojukeji.com, REJECT
@@ -38,27 +69,95 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 # ➡ G ⬅️ #
 # 高德地图
 AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
- 
+
+# 广告联盟
+AND, ((OR,((DOMAIN-SUFFIX, amemv.com), (DOMAIN-SUFFIX, zijieapi.com))), (DOMAIN-KEYWORD,-misc-)), REJECT
+DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
+DOMAIN-KEYWORD, ads.g.doubleclick, REJECT
+DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
+DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
+DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
+DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
+DOMAIN-SUFFIX, ads.linkedin.com, REJECT
+DOMAIN-SUFFIX, ads.vungle.com, REJECT
+DOMAIN-SUFFIX, adservice.google.com, REJECT
+DOMAIN-SUFFIX, adukwai.com, REJECT
+DOMAIN-SUFFIX, applovin.com, REJECT
+DOMAIN-SUFFIX, applvn.com, REJECT
+DOMAIN-SUFFIX, appsflyer.com, REJECT
+DOMAIN-SUFFIX, appsflyersdk.com, REJECT
+DOMAIN-SUFFIX, kuaishouzt.com, REJECT
+DOMAIN-SUFFIX, miaozhen.com, REJECT
+DOMAIN-SUFFIX, ubixioe.com, REJECT
+DOMAIN-SUFFIX, unityads.unity3d.com, REJECT
+DOMAIN-SUFFIX, v.smtcdns.com, REJECT
+DOMAIN, ad.zijieapi.com, REJECT
+DOMAIN, adapi.izuiyou.com, REJECT
+DOMAIN, adtracker.adfunlink.com, REJECT
+DOMAIN, dig.bdurl.net, REJECT
+DOMAIN, dsp-x.jd.com, REJECT
+DOMAIN, et.tanx.com, REJECT
+DOMAIN, gdfp.gifshow.com, REJECT
+DOMAIN, init.supersonicads.com, REJECT
+DOMAIN, janapi.jd.com, REJECT
+DOMAIN, lf-ad-ies.bytecdn.cn, REJECT
+DOMAIN, mercury-gateway.ixiaochuan.cn, REJECT
+DOMAIN, mon.toutiaocloud.com, REJECT
+DOMAIN, open.e.kuaishou.com, REJECT
+DOMAIN, open.kuaishou.com, REJECT
+DOMAIN, pagead2.googlesyndication-cn.com, REJECT
+DOMAIN, pagead2.googlesyndication.com, REJECT
+DOMAIN, sdk.e.qq.com, REJECT
+DOMAIN, tangram.e.qq.com, REJECT
+DOMAIN, ws.tapjoyads.com, REJECT
+DOMAIN, www.googleadservices.com, REJECT
+
 # ➡️ H ⬅️ #
 # 航旅纵横
 URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+
 # 海尔智家
 DOMAIN-SUFFIX, ehaier.com, REJECT
- 
+
+# 盒马
+AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, Hema4iPhone*)), REJECT
+
 # ➡️ J ⬅️ #
 # 建设银行
 DOMAIN-KEYWORD, adv.ccb.com, REJECT
+
 # 京东
 DOMAIN, dns.jd.com, REJECT
 IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
 IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve
- 
+URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+
 # ➡️ M ⬅️ #
+# 芒果TV
+DOMAIN-SUFFIX, da.mgtv.com, REJECT
+DOMAIN, credits.bz.mgtv.com, REJECT
+DOMAIN, credits2.bz.mgtv.com, REJECT
+DOMAIN, credits3.bz.mgtv.com, REJECT
+DOMAIN, dflow.bz.mgtv.com, REJECT
+DOMAIN, encounter.bz.mgtv.com, REJECT
+DOMAIN, floor.bz.mgtv.com, REJECT
+DOMAIN, layer.bz.mgtv.com, REJECT
+DOMAIN, mob.bz.mgtv.com, REJECT
+DOMAIN, rc-topic-api.bz.mgtv.com, REJECT
+DOMAIN, rprain.bz.mgtv.com, REJECT
+DOMAIN, rprain.log.mgtv.com, REJECT
+DOMAIN, vip.bz.mgtv.com, REJECT
+
 # 美团
 DOMAIN, maplocatesdksnapshot.d.meituan.net, REJECT
 DOMAIN, metrics-picture.d.meituan.net, REJECT
 IP-CIDR, 103.37.155.60/32, REJECT, no-resolve
- 
+
+# 美颜相机
+DOMAIN, aaid.uyunad.com, REJECT
+DOMAIN, adui.tg.meitu.com, REJECT
+
 # ➡️ O ⬅️ #
 # Outlook
 DOMAIN, acdn.adnxs.com, REJECT
@@ -66,11 +165,11 @@ DOMAIN, mediation.adnxs.com, REJECT
 DOMAIN, sin3-ib.adnxs.com, REJECT
 
 # ➡️ P ⬅️ #
+# RuCu6
 # 拼多多
 # 拦截HTTPDNS
 AND, ((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
 AND, ((URL-REGEX, ^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
-DOMAIN, titan.pinduoduo.com, REJECT
 # DOMAIN, apm-a.pinduoduo.com, REJECT
 # DOMAIN, apm.pinduoduo.com, REJECT
 # DOMAIN, m.pinduoduo.net, REJECT
@@ -79,22 +178,44 @@ DOMAIN, ta.pinduoduo.com, REJECT
 DOMAIN, th-a.pinduoduo.com, REJECT
 DOMAIN, th-b.pinduoduo.com, REJECT
 DOMAIN, th.pinduoduo.com, REJECT
+DOMAIN, titan.pinduoduo.com, REJECT
 
 # ➡️ S ⬅️ #
 # 什么值得买
 DOMAIN, api.zuihuimai.com, REJECT
- 
+
+# ➡️ T ⬅️ #
+# 腾讯
+DOMAIN-KEYWORD, trace.qq.com, REJECT
+DOMAIN-KEYWORD, trace.video.qq.com, REJECT
+DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN-SUFFIX, l.qq.com, REJECT
+DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, info4.video.qq.com, REJECT
+DOMAIN, info6.video.qq.com, REJECT
+DOMAIN, ios.video.mpush.qq.com, REJECT
+DOMAIN, otheve.beacon.qq.com, REJECT
+DOMAIN, pgdt.gtimg.cn, REJECT
+DOMAIN, pgdt.ugdtimg.com, REJECT
+DOMAIN, tmead.y.qq.com, REJECT
+DOMAIN, tmeadbak.y.qq.com, REJECT
+DOMAIN, tmeadcomm.y.qq.com, REJECT
+DOMAIN, tpns.qq.com, REJECT
+IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
+
 # ➡️ W ⬅️ #
 # 微博
 DOMAIN-SUFFIX, uve.weibo.com, DIRECT
 DOMAIN, huodong.weibo.cn, REJECT
 DOMAIN-SUFFIX, biz.weibo.com, REJECT
+
 # 微信
 DOMAIN, badjs.weixinbridge.com, REJECT
 DOMAIN, dns.weixin.qq.com.cn, REJECT
 DOMAIN-SUFFIX, wxs.qq.com, REJECT
  
 # ➡️ X ⬅️ #
+# RuCu6
 # 小红书
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
  
@@ -102,6 +223,7 @@ AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
 # YouTube
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)), REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
+
 # 云闪付 开屏广告
 DOMAIN, ads.95516.com, REJECT
 DOMAIN, switch.cup.com.cn, REJECT
@@ -183,7 +305,7 @@ Umetrip = type=http-response,pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umet
 # 京东 //api.m.jd.com
 # RuCu6
 RuCu6_JD = type=http-response,pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome),script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/jingdong.js, requires-body = true
- 
+
 # ➡️ N ⬅️ #
 # Netflix //ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
 Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
@@ -191,8 +313,8 @@ Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)
 Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating_season.js
  
 # ➡️ P ⬅️ #
-# pinduoduo // api.pinduoduo.com, api.yangkeduo.com,
 # RuCu6
+# pinduoduo // api.pinduoduo.com, api.yangkeduo.com,
 RuCu6_pinduoduo = type=http-response,pattern=^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\?,script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/pdd.js, requires-body = true
 
 # ➡️ S ⬅️ #
@@ -280,13 +402,13 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
  
 [URL Rewrite]
 # ➡️ 1 ⬅️ #
-# 交管12123 //gab.122.gov.cn
 # RuCu6
+# 交管12123 //gab.122.gov.cn
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
  
 # ➡️ A ⬅️ #
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 # RuCu6
+# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) - reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
@@ -300,8 +422,8 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) - reject
  
 # ➡️ B ⬅️ #
-# Bilibili
 # RuCu6
+# Bilibili
 ^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) - reject
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? - reject
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? - reject
@@ -339,8 +461,8 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
  
 # ➡️ G ⬅️ #
-# 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 # RuCu6
+# 高德 //m5.amap.com, m5-zb.amap.com, oss.amap.com, sns.amap.com
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) - reject
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject
@@ -351,11 +473,13 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject
 ^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? - reject
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject
-# 网上国网 //osg-service.sgcc.com.cn
+
 # RuCu6
+# 网上国网 //osg-service.sgcc.com.cn
 ^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ - reject
-# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+
 # fmz200
+# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
 ^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject
 ^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
  
@@ -364,39 +488,46 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 # Keli
 ^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 ^https:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
- 
+
+# RuCu6
+# 盒马
+^https:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/ - reject
+
 # ➡️ J ⬅️ #
-# 京东 //api.m.jd.com
 # RuCu6 & fmz200
+# 京东 //api.m.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(?:searchBoxWord|stationPullService|uniformRecommend[06]) - reject
- 
+
 ^http:\/\/\w{32}\.jddebug\.com\/diagnose\? - reject
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
-# 建设银行
+
 # RuCu6
+# 建设银行
 ^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
- 
+
 # ➡️ M ⬅️ #
 # 麦当劳 //api.mcd.cn
 # dgksf2013
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) - reject
 # fmz200
 ^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject
-# 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+
 # RuCu6
+# 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(?:loadInfo|openscreen|startpicture) - reject
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg - reject
 ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject
 ^https:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_\d+\.json - reject
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(?:brandcpt-vedio|waimai-alita)\/\w+\.zip$ - reject
+
+# RuCu6
 # 米家 //home.mi.com
-# RuCu6
 ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(?:banner|carousel\/banners|myTab|openingBanner) - reject
- 
+
 # ➡️ P ⬅️ #
-# 拼多多
 # RuCu6
+# 拼多多
 ^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? - reject
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? - reject
 ^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide - reject
@@ -444,9 +575,10 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd - reject
  
 # ➡️ W ⬅️ #
-# 微信 //mp.weixin.qq.com
 # RuCu6
+# 微信 //mp.weixin.qq.com
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) - reject
+
 # 微博
 # RuCu6
 ^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily) - reject
@@ -468,12 +600,13 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) - reject
  
 # ➡️ X ⬅️ #
-# 小红书
 # RuCu6
+# 小红书
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) - reject
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? - reject
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) - reject
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) - reject
+
 # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
 # RuCu6
 ^https:\/\/gw\.alicdn\.com\/mt\/ - reject
@@ -482,8 +615,8 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
  
 # ➡️ Y ⬅️ #
-# 云闪付 //wallet.95516.com
 # RuCu6
+# 云闪付 //wallet.95516.com
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
  
 # ➡️ Z ⬅️ #
