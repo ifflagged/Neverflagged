@@ -15,9 +15,9 @@ AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -be-pack.pglstatp-toutiao.com)), RE
 AND, ((DOMAIN-KEYWORD, s), (DOMAIN-KEYWORD, -fe-scm.pglstatp-toutiao.com)), REJECT
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -ttcdn-tos.pstatp.com)), REJECT
 # AND, ((DOMAIN-KEYWORD, p), (DOMAIN-KEYWORD, -be-pack-sign.pglstatp-toutiao.com)), REJECT // 被更精细的规则替代
-# AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -fe-tos.pglstatp-toutiao.com)), REJECT // 被复写替代
+AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -fe-tos.pglstatp-toutiao.com)), REJECT
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -static.i18n-pglstatp.com)), REJECT
-# AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -cdn-tos.bytescm.com)), REJECT //误杀
+AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -cdn-tos.bytescm.com)), REJECT //误杀
 AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
@@ -29,6 +29,7 @@ AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, pangolin), (DOMAIN-SUFFIX, sgsnssd
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal-lq), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 URL-REGEX, ^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/, REJECT
 DOMAIN, mon.zijieapi.com, REJECT
+DOMAIN, lf-ad-ies.bytecdn.cn, REJECT
 DOMAIN, i.snssdk.com, REJECT
 DOMAIN, is.snssdk.com, REJECT
 DOMAIN, bds.snssdk.com, REJECT
@@ -46,8 +47,9 @@ DOMAIN, toblog.ctobsnssdk.com, REJECT
 DOMAIN, mssdk.volces.com, REJECT
 DOMAIN, pangolin.snssdk.com, REJECT
 DOMAIN, gromore.pangolin-sdk-toutiao.com, REJECT
+DOMAIN, ether-pack.pangolin-sdk-toutiao.com, REJECT
 DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
-# DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT // 被复写替代
+DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT
 DOMAIN-KEYWORD, log-api.pangolin-sdk-toutiao, REJECT
 DOMAIN-KEYWORD, -ad.byteoversea.com, REJECT
 DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
@@ -85,6 +87,9 @@ DOMAIN-SUFFIX, adukwai.com, REJECT
 # SupersonicAds
 DOMAIN, init.supersonicads.com, REJECT
 
+# APPSAD
+DOMAIN, st.appsad.cn, REJECT
+
 # 上海倍孜
 DOMAIN, sdk.beizi.biz, REJECT
 DOMAIN, api-htp.beizi.biz, REJECT
@@ -96,6 +101,8 @@ DOMAIN-SUFFIX, miaozhen.com, REJECT
 # 艾狄墨搏 - 广告服务商
 DOMAIN, monitor.ssp.admobile.top, REJECT
 DOMAIN, sdk.ssp.admobile.top, REJECT
+DOMAIN, ax.admobile.top, REJECT
+DOMAIN, jump.admobile.top, REJECT
 DOMAIN-SUFFIX, admobile.top, REJECT
 
 # 袤博 - 广告服务商
@@ -167,7 +174,7 @@ DOMAIN, rmonitor.qq.com, REJECT
 DOMAIN, sdk.e.qq.com, REJECT
 DOMAIN, sdkconfig.video.qq.com, REJECT
 DOMAIN, t.gdt.qq.com, REJECT
-DOMAIN, tmead.y.qq.com, REJECT-NO-DROP
+DOMAIN, tmead.y.qq.com, REJECT
 DOMAIN, tmeadbak.y.qq.com, REJECT
 DOMAIN, tmeadcomm.y.qq.com, REJECT
 DOMAIN, tpns.qq.com, REJECT
@@ -176,6 +183,7 @@ DOMAIN, v2.gdt.qq.com, REJECT
 DOMAIN, win.gdt.qq.com, REJECT
 DOMAIN, wup.imtt.qq.com, REJECT
 DOMAIN, tpstelemetry.tencent.com, REJECT
+DOMAIN, ii.gdt.qq.com, REJECT
 DOMAIN-KEYWORD, trace.qq.com, REJECT
 DOMAIN-KEYWORD, trace.video.qq.com, REJECT
 DOMAIN-SUFFIX, gdt.qq.com, REJECT
@@ -183,7 +191,7 @@ DOMAIN-SUFFIX, l.qq.com, REJECT
 DOMAIN-SUFFIX, ugdtimg.com, REJECT
 IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
 
-# App全渠道统计
+# 分秒网络
 DOMAIN-SUFFIX, openinstall.io, REJECT
 
 # 个推
@@ -212,12 +220,14 @@ DOMAIN, aspect-upush.umeng.com, REJECT
 DOMAIN, plbslog.umeng.com, REJECT
 DOMAIN, log.umtrack.com, REJECT
 DOMAIN, aaid.umeng.com, REJECT
+DOMAIN, log.umsns.com, REJECT
 
 # FUNLINK - 北京泛连科技
 DOMAIN, adtracker.adfunlink.com, REJECT
 
 # 天目 - 广告服务商
 DOMAIN, sdk.tianmu.mobi, REJECT
+DOMAIN, tracker.tianmu.mobi, REJECT
 
 # 上海优比客思科技有限公司 - 广告服务商
 DOMAIN, e-u1.ubixioe.com, REJECT
@@ -270,6 +280,10 @@ DOMAIN, da.toponadss.com, REJECT
 DOMAIN, tk.toponadss.com, REJECT
 DOMAIN, adx-os.toponadss.com, REJECT
 
+# 塔酷信息
+DOMAIN, mores.motowoo.com, REJECT
+DOMAIN-SUFFIX, motowoo.com, REJECT
+
 # 变现猫
 DOMAIN, guide2.bianxianmao.com, REJECT
 
@@ -279,13 +293,48 @@ DOMAIN, sv.adintl.cn, REJECT
 DOMAIN, v.adintl.cn, REJECT
 DOMAIN, oss.cdn.adintl.cn, REJECT
 
-[Rewrite]
-# 字节跳动广告
-^https:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/ reject
-^https:\/\/api-access\.pangolin-sdk-toutiao\d?\.com\/api\/ad\/ reject
-^https:\/\/sf\d+-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/ reject
-^https:\/\/lf-cdn-tos\.bytescm\.com\/obj\/static\/ad\/ reject
+# 上海泰之菩信息科技有限公司
+DOMAIN, adx.adtaipo.com, REJECT
 
+# 浙江翼信科技有限公司
+DOMAIN, adx.yixin.im, REJECT
+
+# 天津快易科技有限公司
+DOMAIN, adx.kuaiyiad.com, REJECT
+
+# 天脉移动广告平台
+DOMAIN, adreport.adtianmai.com, REJECT
+
+# 数萤技术
+DOMAIN, adxapi.readgps.com, REJECT
+
+# 方麟数字营销
+DOMAIN, t.fanglinad.com, REJECT
+
+# 益起广告
+DOMAIN, trk1.17admob.com, REJECT
+
+# 北京上量优选科技有限公司
+DOMAIN, nfy.slyxmobi.com, REJECT
+
+# 新义互联
+DOMAIN, api.mobrtb.com, REJECT
+
+# 枫岚互联
+DOMAIN, ssp.maplehaze.cn, REJECT
+
+# 北京腾云天下科技有限公司
+DOMAIN-SUFFIX, lnk0.com, REJECT
+
+# 布里奇信息科技有限公司
+DOMAIN, tk.bridgeoos.com, REJECT
+DOMAIN, da.bridgeoos.com, REJECT
+DOMAIN, api.bridgeoos.com, REJECT
+DOMAIN, adx-os.bridgeoos.com, REJECT
+DOMAIN, adx-sg-req.bridgeoos.com, REJECT
+DOMAIN-SUFFIX, bridgeoos.com, REJECT
+
+[Rewrite]
 # 拼多多广告平台
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
 ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union - reject
@@ -295,4 +344,4 @@ DOMAIN, oss.cdn.adintl.cn, REJECT
 [Script]
 
 [MitM]
-Hostname = %APPEND% ether-pack.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao?.com, sf*-fe-tos.pglstatp-toutiao.com, lf-cdn-tos.bytescm.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+Hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
