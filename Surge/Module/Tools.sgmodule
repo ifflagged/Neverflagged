@@ -368,8 +368,8 @@ RuCu6_weibo = type=http-response,pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(?:p
 RuCu6_weibo = type=http-response,pattern=^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\?,script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/weibo.js, requires-body = true
  
 # ➡️ X ⬅️ #
-# xiaohongshu // edith.xiaohongshu.com, www.xiaohongshu.com
 # RuCu6
+# xiaohongshu // edith.xiaohongshu.com, www.xiaohongshu.com
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed),script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(?:banner|hot)_list,script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(?:hint|trending),script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
@@ -381,7 +381,7 @@ RuCu6_xiaohongshu = type=http-response,pattern=https:\/\/edith\.xiaohongshu\.com
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed),script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
 RuCu6_xiaohongshu = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save),script-path=https://github.com/RuCu6/Loon/raw/main/Scripts/xiaohongshu.js, requires-body = true
- 
+
 # ➡️ Y ⬅️ #
 # Youtube //*.googlevideo.com, youtubei.googleapis.com
 # RuCu6 & Maasea
