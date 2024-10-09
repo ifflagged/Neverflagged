@@ -1,0 +1,162 @@
+#!name= Tools
+#!desc= Tools for Loon
+#!openUrl = https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!author = Jacob
+#!tag = Jacob
+#!homepage = https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!icon = wrench
+
+[Rule]
+# ➡️ D ⬅️ #
+# luestr (源 ZenmoFeiShi)
+# 滴滴出行
+DOMAIN, hd.xiaojukeji.com, REJECT
+DOMAIN, gwp.xiaojukeji.com, REJECT
+AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+
+# ➡️ H ⬅️ #
+# 航旅纵横
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+
+[Script]
+# ➡️ D ⬅️ #
+# luestr (源 ZenmoFeiShi)
+# 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Didichuxing.js, requires-body = true, tag = DiDi
+
+# ➡️ H ⬅️ #
+# 航旅纵横 //114.115.217.129, home.umetrip.com
+# ddgksf2013
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, requires-body = true, tag = Umetrip
+
+# ➡️ S ⬅️ #
+# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+# ZenmoFeiShi & ddgksf2013
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/s3\.zdmimg\.com\/third\/index script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
+
+# ➡️ Z ⬅️ #
+# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
+# Yuheng0101
+http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$ script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/newTopPullSecond\/getNewTopPullList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/emotionMarket\/getEmotionMarketNew script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getTopAreaList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
+
+[Rewrite]
+# ➡️ D ⬅️ #
+# luestr (源 ZenmoFeiShi)
+# 滴滴出行 //common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget reject-dict
+^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
+^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget reject-dict
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast reject-dict
+^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf reject-dict
+
+# ➡️ E ⬅️ #
+# fmz200
+# 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
+^https?:\/\/elemecdn\.com\/.+\/sitemap reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 reject-img
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ reject
+^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? reject
+^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ reject
+^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) reject
+
+# fmz200
+# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
+^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
+^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver reject
+
+# ➡️ H ⬅️ #
+# Keli
+# 航旅纵横 //umerp.umetrip.com
+^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+
+# ➡️ J ⬅️ #
+# fmz200
+# 京东 //api.m.jd.com
+^http:\/\/\w{32}\.jddebug\.com\/diagnose\? reject
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising reject-dict
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 reject
+
+# ➡️ M ⬅️ #
+# 麦当劳 //api.mcd.cn 
+# dgksf2013
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) reject-200
+# fmz200
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity reject-dict
+
+# ➡️ Q ⬅️ #
+# fmz200
+# 去哪儿 //qde.qunar.com, homefront.qunar.com, client.qunar.com
+^https?:\/\/qde\.qunar\.com\/preload reject-200
+^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad reject-dict
+^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd reject
+
+# ➡️ S ⬅️ #
+# ZenmoFeiShi
+# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading reject-dict
+# fmz200
+# 山姆会员商店 //api-sams.walmartmobile.cn
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) reject
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo reject-dict
+^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate reject-dict
+
+# ➡️ T ⬅️ #
+# fmz200
+# 天府通 //ams-cdn.cdtft.cn
+^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
+# fmz200
+# 天府市民云 //tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version reject-200
+^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd reject
+
+# 闲鱼 //gw.alicdn.com, acs.m.taobao.com
+# RuCu6
+^https:\/\/gw\.alicdn\.com\/mt\/ reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
+
+# ➡️ Z ⬅️ #
+# Yuheng0101
+# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
+^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail reject-200
+
+[MITM]
+hostname = hd.xiaojukeji.com, gwp.xiaojukeji.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 116.85.3.*, 139.199.240.84, 114.115.217.129, home.umetrip.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, umerp.umetrip.com, api.m.jd.com, api.mcd.cn, qde.qunar.com, homefront.qunar.com, client.qunar.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, client.app.coc.10086.cn, h.app.coc.10086.cn, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn, gw.alicdn.com, acs.m.taobao.com, api-sams.walmartmobile.cn
