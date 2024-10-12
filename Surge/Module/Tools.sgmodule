@@ -5,7 +5,7 @@
 #!arguments-desc=- YouTube 屏蔽参数：[true, false] \n- YouTube 翻译参数：[语言代码, off] \n- YouTube 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
  
 [General]
-# Router //router.com, www.router.com
+# Router
 force-http-engine-hosts=%APPEND% router.com, www.router.com
  
 [Rule]
@@ -115,4 +115,4 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
  
 [MITM]
-hostname = %APPEND% router.com, www.router.com, boxjs.com, boxjs.net, mb3admin.com, api.revenuecat.com, googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, elemecdn.com, rsscc.com, m.jd.com, api.mcd.cn, qunar.com, router.com, walmartmobile.cn, cdtft.cn, chengdu.gov.cn
+hostname = %APPEND% boxjs.com, boxjs.net, mb3admin.com, api.revenuecat.com, googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, elemecdn.com, rsscc.com, m.jd.com, api.mcd.cn, qunar.com, router.com, walmartmobile.cn, cdtft.cn, chengdu.gov.cn
