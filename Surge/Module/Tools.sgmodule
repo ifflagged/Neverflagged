@@ -5,7 +5,7 @@
 #!arguments-desc=- YouTube 屏蔽参数：[true, false] \n- YouTube 翻译参数：[语言代码, off] \n- YouTube 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
  
 [General]
-# Router
+# Router //router.com, www.router.com
 force-http-engine-hosts=%APPEND% router.com, www.router.com
  
 [Rule]
@@ -33,26 +33,6 @@ Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-
 # Spark //api.revenuecat.com
 Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
 
-# ZenmoFeiShi & ddgksf2013
-# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
-SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/loading,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/haojia-api\.smzdm\.com\/home\/list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/app-api\.smzdm\.com\/util\/update,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/homepage-api\.smzdm\.com\/v3\/home,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/s3\.zdmimg\.com\/third\/index,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list,requires-body=1,script-path=https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js
-SMZDM = type=http-response,pattern=^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
-SMZDM = type=http-response,pattern=^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js
- 
 # ➡️ Y ⬅️ #
 # Youtube //*.googlevideo.com, youtubei.googleapis.com
 # RuCu6 & Maasea
@@ -62,15 +42,7 @@ YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 # ➡️ Z ⬅️ #
 # Zhihu //www.zhihu.com, zhuanlan.zhihu.com
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
-# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
-# Yuheng0101
-CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
-CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/newTopPullSecond\/getNewTopPullList,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
-CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/emotionMarket\/getEmotionMarketNew,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
-CMCC = type=http-response,pattern=^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getTopAreaList,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
-CMCC = type=http-response,pattern=^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
-CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList,requires-body=1,script-path=https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js
- 
+
 [URL Rewrite]
 # ➡️ E ⬅️ #
 # 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
@@ -117,10 +89,6 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
  
 # ➡️ S ⬅️ #
-# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
-# ZenmoFeiShi
-^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading - reject
-
 # fmz200
 # 山姆会员商店 //api-sams.walmartmobile.cn
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) - reject
@@ -141,15 +109,10 @@ CMCC = type=http-response,pattern=^https?:\/\/client\.app\.coc\.10086\.cn\/biz-o
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version - reject
 ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd - reject
 
-# ➡️ Z ⬅️ #
-# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
-# Yuheng0101
-^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail - reject
- 
 [Map Local]
 # YouTube
 # Maasea
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
  
 [MITM]
-hostname = %APPEND% router.com, www.router.com, googlevideo.com, youtubei.googleapis.com, boxjs.com, boxjs.net, mb3admin.com, ios.prod.ftl.netflix.com, api.revenuecat.com, haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, www.zhihu.com, zhuanlan.zhihu.com, client.app.coc.10086.cn, h.app.coc.10086.cn, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, api.m.jd.com, api.mcd.cn, qde.qunar.com, homefront.qunar.com, client.qunar.com, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+hostname = %APPEND% router.com, www.router.com, boxjs.com, boxjs.net, mb3admin.com, api.revenuecat.com, googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, elemecdn.com, rsscc.com, m.jd.com, api.mcd.cn, qunar.com, router.com, walmartmobile.cn, cdtft.cn, chengdu.gov.cn
