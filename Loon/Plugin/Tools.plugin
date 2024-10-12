@@ -9,36 +9,6 @@
 [Rule]
 
 [Script]
-# ➡️ S ⬅️ #
-# ZenmoFeiShi & ddgksf2013
-# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/loading script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/haojia-api\.smzdm\.com\/home\/list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/app-api\.smzdm\.com\/util\/update script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/homepage-api\.smzdm\.com\/v3\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/user-api\.smzdm\.com\/vip script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/article-api\.smzdm\.com\/publish\/get_bubble script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/qianbao\.smzdm\.com\/v\d\/app\/home script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/s3\.zdmimg\.com\/third\/index script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list script-path= https://github.com/ZenmoFeiShi/Qx/raw/main/Smzdm.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/s-api.smzdm\.com\/sou\/search_default_keyword script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/.*zdmimg\.com\/cpm\/api\/v\d\/advert_distribution\/get_all_advertise script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path= https://github.com/ddgksf2013/Scripts/raw/master/smzdm_json.js, requires-body = true, tag = Smzdm
-
-# ➡️ Z ⬅️ #
-# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
-# Yuheng0101
-http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$ script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
-http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/newTopPullSecond\/getNewTopPullList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
-http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/emotionMarket\/getEmotionMarketNew script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
-http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/homeArea\/getTopAreaList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
-http-response ^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/navigation\/getNavigationNewInfo script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
-http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendShake\/getShakeList script-path= https://github.com/Yuheng0101/X/raw/main/Scripts/ChinaMobile/NoAds.js, requires-body = true, tag = CMCC
 
 [Rewrite]
 # fmz200
@@ -81,10 +51,6 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 ^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd reject
 
 # ➡️ S ⬅️ #
-# ZenmoFeiShi
-# SMZDM //haojia-api.smzdm.com, homepage-api.smzdm.com, app-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com,qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, app-api.smzdm.com, *.zdmimg.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
-^https:\/\/haojia\.m\.smzdm\.com\/detail_modul\/(other_modul|wiki_related_modul)|^https:\/\/s3\.zdmimg\.com\/third\/index|^https:\/\/app-api\.smzdm\.com\/util\/loading reject-dict
-
 # fmz200
 # 山姆会员商店 //api-sams.walmartmobile.cn
 ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) reject
@@ -105,10 +71,5 @@ http-response ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/friendSha
 ^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version reject-200
 ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd reject
 
-# ➡️ Z ⬅️ #
-# Yuheng0101
-# 中国移动 //client.app.coc.10086.cn, h.app.coc.10086.cn
-^https?:\/\/h\.app\.coc\.10086\.cn\/biz-orange\/DH\/popupWindow\/getDetail reject-200
-
 [MITM]
-hostname = app-api.smzdm.com, haojia-api.smzdm.com, homepage-api.smzdm.com, user-api.smzdm.com, article-api.smzdm.com, qianbao.smzdm.com, s3.zdmimg.com, post.m.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, client.app.coc.10086.cn, h.app.coc.10086.cn, elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, cdn.133.cn, jt.rsscc.com, jp.rsscc.com, api.m.jd.com, api.mcd.cn, qde.qunar.com, homefront.qunar.com, client.qunar.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, cdn.133.cn, rsscc.com, api.m.jd.com, api.mcd.cn, qde.qunar.com, homefront.qunar.com, client.qunar.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
