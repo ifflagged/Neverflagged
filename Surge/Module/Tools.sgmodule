@@ -44,25 +44,6 @@ YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 
 [URL Rewrite]
-# ➡️ E ⬅️ #
-# 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
-# fmz200
-^https?:\/\/elemecdn\.com\/.+\/sitemap - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} - reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ - reject
-^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? - reject
-^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ - reject
-^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
- 
-# ➡️ G ⬅️ #
-# fmz200
-# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
-^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 - reject
-^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver - reject
 
 # ➡️ J ⬅️ #
 # fmz200
@@ -70,44 +51,9 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
 
-# ➡️ M ⬅️ #
-# 麦当劳 //api.mcd.cn
-# dgksf2013
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) - reject
-# fmz200
-^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity - reject
-
-# ➡️ Q ⬅️ #
-# 去哪儿 //qde.qunar.com, homefront.qunar.com, client.qunar.com
-# fmz200
-^https?:\/\/qde\.qunar\.com\/preload - reject
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad - reject
-^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd - reject
- 
 # ➡️ R ⬅️ #
 # Router //router.com, www.router.com
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
- 
-# ➡️ S ⬅️ #
-# fmz200
-# 山姆会员商店 //api-sams.walmartmobile.cn
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo - reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate - reject
- 
-# ➡️ T ⬅️ #
-# fmz200
-# 天府通 //ams-cdn.cdtft.cn
-^http:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ - reject
-
-# fmz200
-# 天府市民云 //tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
-^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version - reject
-^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd - reject
 
 [Map Local]
 # YouTube
@@ -115,4 +61,4 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
  
 [MITM]
-hostname = %APPEND% boxjs.com, boxjs.net, mb3admin.com, api.revenuecat.com, googlevideo.com, youtubei.googleapis.com, www.zhihu.com, zhuanlan.zhihu.com, elemecdn.com, rsscc.com, m.jd.com, api.mcd.cn, qunar.com, router.com, walmartmobile.cn, cdtft.cn, chengdu.gov.cn
+hostname = %APPEND% router.com, www.router.com, youtubei.googleapis.com, boxjs.com, boxjs.net, mb3admin.com, ios.prod.ftl.netflix.com, api.revenuecat.com, www.zhihu.com, zhuanlan.zhihu.com, api.m.jd.com
