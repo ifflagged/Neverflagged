@@ -11,65 +11,11 @@
 [Script]
 
 [Rewrite]
-# fmz200
-# ➡️ E ⬅️ #
-# 饿了么 //elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com
-^https?:\/\/elemecdn\.com\/.+\/sitemap reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} reject
-^https?:\/\/fuss10\.elemecdn\.com\/.+?\.mp4 reject-img
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_1\d{3},h_2\d{3}\/format,webp\/ reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_6\d{2},h_8\d{2}\/format,webp\/ reject
-^https?:\/\/cube\.elemecdn\.com\/[\w\/]+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{3},h_\d{4}\/format,webp\/ reject
-^https?:\/\/cube\.elemecdn\.com\/\w\/\w{2}\/\w+mp4\.mp4\? reject
-^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ reject
-^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) reject
-
-# fmz200
-# 高铁管家 //cdn.133.cn, jt.rsscc.com, jp.rsscc.com
-^https?:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
-^https?:\/\/[a-z]*\.rsscc\.com\/[a-z]*\/adver reject
-
 # ➡️ J ⬅️ #
 # fmz200
 # 京东 //api.m.jd.com
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising reject-dict
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 reject
 
-# ➡️ M ⬅️ #
-# 麦当劳 //api.mcd.cn 
-# dgksf2013
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/(richpop|home\/splash) reject-200
-# fmz200
-^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity reject-dict
-
-# ➡️ Q ⬅️ #
-# fmz200
-# 去哪儿 //qde.qunar.com, homefront.qunar.com, client.qunar.com
-^https?:\/\/qde\.qunar\.com\/preload reject-200
-^https?:\/\/homefront\.qunar\.com\/front\/splash\/ad reject-dict
-^https?:\/\/client\.qunar\.com\/pitcher-proxy\?qrt=p_splashAd reject
-
-# ➡️ S ⬅️ #
-# fmz200
-# 山姆会员商店 //api-sams.walmartmobile.cn
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/(window\/getGoUpPlus|screen_promotion\/get) reject
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/personCenterEntrance\/query reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/trade\/order\/getOftenBuyGoods reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/goods-portal\/spu\/searchRecommendPool reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/configuration\/appVersionUpdate\/getAppVersionUpdateInfo reject-dict
-^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v1\/sams\/configuration\/portal\/beUpdate reject-dict
-
-# ➡️ T ⬅️ #
-# fmz200
-# 天府通 //ams-cdn.cdtft.cn
-^https?:\/\/ams-cdn\.cdtft\.cn\/prod\/tft-ams\/ reject-dict
-
-# fmz200
-# 天府市民云 //tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
-^https?:\/\/tfsmy\.chengdu\.gov\.cn\/api\/v5\/core\/version reject-200
-^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\/api\/appAd reject
-
 [MITM]
-hostname = elemecdn.com, fuss10.elemecdn.com, cube.elemecdn.com, www1.elecfans.com, nr-op.elemecdn.com, cdn.133.cn, rsscc.com, api.m.jd.com, api.mcd.cn, qde.qunar.com, homefront.qunar.com, client.qunar.com, api-sams.walmartmobile.cn, ams-cdn.cdtft.cn, tfsmy.chengdu.gov.cn, tft-app.cdtft.cn
+hostname = api.m.jd.com
