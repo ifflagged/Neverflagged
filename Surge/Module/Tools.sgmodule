@@ -1,24 +1,14 @@
 #!name= 🧰 Tools
 #!desc= Tools for Surge & Shadowrocket
 #!category=Jacob
-#!arguments=YouTube 屏蔽上传按钮:true,YouTube 屏蔽选段按钮:true,YouTube 字幕翻译语言:zh-Hans,YouTube 歌词翻译语言:zh-Hans,YouTube 脚本执行引擎:auto,YouTube 启用调试模式:false
-#!arguments-desc=- YouTube 屏蔽参数：[true, false] \n- YouTube 翻译参数：[语言代码, off] \n- YouTube 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
- 
+
 [General]
 # Router
 force-http-engine-hosts=%APPEND% router.com, www.router.com
  
 [Rule]
-# ➡️ Y ⬅️ #
-# YouTube
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)), REJECT
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)), REJECT
- 
-[Script]
-# ➡️ B ⬅️ #
-# BoxJs //boxjs.com, boxjs.net
-BoxJs = type=http-request,pattern=https?:\/\/boxjs\.(com|net),requires-body=1,script-path=https://github.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js
 
+[Script]
 # ➡️ E ⬅️ #
 # Emby //mb3admin.com
 EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.com/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
@@ -34,11 +24,7 @@ Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-
 Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
 
 # ➡️ Y ⬅️ #
-# Youtube //*.googlevideo.com, youtubei.googleapis.com
-# RuCu6 & Maasea
-YouTube Request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{YouTube 脚本执行引擎}}},script-path=https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.request.preview.js
-YouTube Response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{YouTube 脚本执行引擎}}},script-path=https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.preview.js,argument="{"lyricLang":"{{{YouTube 歌词翻译语言}}}","captionLang":"{{{YouTube 字幕翻译语言}}}","blockUpload":{{{YouTube 屏蔽上传按钮}}},"immersive":{{{YouTube 屏蔽选段按钮}}},"debug":{{{YouTube 启用调试模式}}}}"
- 
+
 # ➡️ Z ⬅️ #
 # Zhihu //www.zhihu.com, zhuanlan.zhihu.com
 Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
@@ -56,9 +42,6 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
 
 [Map Local]
-# YouTube
-# Maasea
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
- 
+
 [MITM]
-hostname = %APPEND% router.com, www.router.com, youtubei.googleapis.com, boxjs.com, boxjs.net, mb3admin.com, ios.prod.ftl.netflix.com, api.revenuecat.com, www.zhihu.com, zhuanlan.zhihu.com, api.m.jd.com
+hostname = %APPEND% router.com, www.router.com, mb3admin.com, ios.prod.ftl.netflix.com, api.revenuecat.com, www.zhihu.com, zhuanlan.zhihu.com, api.m.jd.com
