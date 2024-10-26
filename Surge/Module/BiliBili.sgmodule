@@ -1,0 +1,6 @@
+#!name= 🧰 BiliBili
+#!desc= 神秘代码
+#!category=Jacob
+
+[Script]
+BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(?:\/ipad)?|myinfo), script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
