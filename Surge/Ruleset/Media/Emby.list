@@ -4,6 +4,7 @@ DOMAIN-SUFFIX,emby.wtf
 # > 卷毛鼠
 DOMAIN-SUFFIX,jmsooo.com
 DOMAIN-SUFFIX,emby.pro
+DOMAIN-SUFFIX,jmsuper.com
 
 # > 垃圾影业
 DOMAIN-SUFFIX,xmsl.org
@@ -16,23 +17,14 @@ DOMAIN-SUFFIX,coemn.com
 # > 卡戎
 DOMAIN-SUFFIX,charontv.com
 
-# > NMEmby
-DOMAIN-SUFFIX,hovervan.org
-
 # > TreeDiagram
 DOMAIN-SUFFIX,123456.al
 
 # > Lyrebird
 DOMAIN-SUFFIX,lyrebirdemby.com
 
-# > Misty
-DOMAIN-SUFFIX,misty.cx
-
 # > 星光
 DOMAIN-SUFFIX,emby.eu.org
-
-# > ApopCloud
-DOMAIN-SUFFIX,apopcloud.com
 
 # > Nya Media
 DOMAIN-SUFFIX,bangumi.ca
@@ -42,6 +34,18 @@ DOMAIN-SUFFIX,catlinks.co.uk
 
 # > 野兽
 DOMAIN-SUFFIX,mius.uk
+
+# > 非越
+DOMAIN-SUFFIX,sfcj.org
+
+# > ApopCloud
+DOMAIN-SUFFIX,apopcloud.live
+
+# > Misty
+DOMAIN-SUFFIX,misty.cx
+
+# > NMEmby
+DOMAIN-SUFFIX,hovervan.org
 
 # > 纸片人
 DOMAIN-SUFFIX,embyplus.org
