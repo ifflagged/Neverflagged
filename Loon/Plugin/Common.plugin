@@ -1,0 +1,14 @@
+#!name= Common Tools
+#!desc= Common Tools for Loon
+#!openUrl = https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!author = Jacob
+#!tag = Jacob
+#!homepage = https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
+#!icon = wrench
+
+[Rewrite]
+# 拼多多瀑布流
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? reject-dict
+
+[MITM]
+hostname = api.pinduoduo.com
