@@ -9,9 +9,8 @@
 [Script]
 # ➡️ G ⬅️ #
 # Gentler Streak //api.revenuecat.com
-Gentler Streak = type=http-request,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=0,script-path=https://github.com/afengye/QX/raw/main/gsjk.js,script-update-interval=0
 Gentler Streak = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=1,max-size=0,binary-body-mode=0,script-path=https://github.com/afengye/QX/raw/main/gsjk.js,script-update-interval=0
-
+Gentler Streak = type=http-request,pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),requires-body=0,script-path=https://github.com/afengye/QX/raw/main/gsjk.js,script-update-interval=0
 
 [URL Rewrite]
 
