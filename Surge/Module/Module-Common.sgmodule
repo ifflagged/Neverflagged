@@ -26,4 +26,4 @@ Pornhub = type=http-response,pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view
 [Map Local]
 
 [MITM]
-hostname = %APPEND% api.revenuecat.com, *.pornhub.com, *.91porn.com
+hostname = %APPEND% api.revenuecat.com, *.pornhub.com, 91porn.com
