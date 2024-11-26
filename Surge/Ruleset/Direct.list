@@ -2,6 +2,11 @@
 # > IPTV
 DOMAIN,tv.668966.xyz
 
+# Websites
+# > Github
+DOMAIN-SUFFIX,github.site
+DOMAIN-SUFFIX,github.store
+
 # Emby
 # > CC
 DOMAIN-SUFFIX,carryz.net
