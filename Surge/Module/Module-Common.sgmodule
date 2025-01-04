@@ -19,7 +19,7 @@ https?:\/\/91porn\.com(\/|)$ https://91porn.com/index.php 302
 # Gentler Streak = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers\/(\$RCAnonymousID%)?([\u4E00-\u9FA5A-Za-z0-9-_]+))$,requires-body=0,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/GentlerStreak.js,script-update-interval=0
 
 # ➡️ J ⬅️ #
-JD Price = type=http-request,pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html,requires-body=1,max-size=0,timeout=60,debug=1,script-path=https://github.com/mw418/Loon/raw/main/script/jd_price.js,script-update-interval=0
+JD Price = type=http-request,pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html,requires-body=1,max-size=0,timeout=60,script-path=https://github.com/mw418/Loon/raw/main/script/jd_price.js,script-update-interval=0
 
 
 # NSFW #
