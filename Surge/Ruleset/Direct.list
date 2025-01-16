@@ -13,6 +13,10 @@ DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,carryz.net
 
 # > FacMata
+DOMAIN,cinema.makima.online
+DOMAIN,theater.makima.online
+DOMAIN,anime.makima.online
+DOMAIN,celluloid.makima.online
 AND,((DOMAIN-SUFFIX,makima.online), (NOT,((DOMAIN,restrict.makima.online))))
 
 # > 叔服
