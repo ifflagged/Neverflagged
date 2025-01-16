@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,carryz.net
 
 # > FacMata
-DOMAIN-SUFFIX,makima.online
+AND,((DOMAIN-SUFFIX,makima.online), (NOT,((DOMAIN,restrict.makima.online))))
 
 # > 叔服
 DOMAIN,jz.mcjoker.xyz 
