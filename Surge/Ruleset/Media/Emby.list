@@ -52,3 +52,6 @@ DOMAIN-SUFFIX,emby.eu.org
 
 # > 叔服
 DOMAIN,emby3.mcjoker.xyz
+
+# > Reflix
+DOMAIN-SUFFIX,reflix.top
