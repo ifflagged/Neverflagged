@@ -6,12 +6,12 @@
 #!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
 
 [Argument]
-blockUpload=switch,true,false,tag=屏蔽上传按钮, desc=屏蔽上传按钮
-blockImmersive=switch,true,false,tag=屏蔽选段按钮, desc=屏蔽选段按钮
-blockShorts=switch,true,false,tag=屏蔽Shorts按钮, desc=屏蔽Shorts按钮
-captionLang=select,"off","zh-Hans","zh-Hant","en",tag=字幕翻译语言, desc=字幕翻译语言
-lyricLang=select,"off","zh-Hans","zh-Hant","en",tag=歌词翻译语言, desc=歌词翻译语言
-debug=switch,false,true,tag=启用调试模式, desc=启用调试模式
+blockUpload=switch,true,false,tag=屏蔽上传按钮,desc=屏蔽上传按钮
+blockImmersive=switch,true,false,tag=屏蔽选段按钮,desc=屏蔽选段按钮
+blockShorts=switch,true,false,tag=屏蔽Shorts按钮,desc=屏蔽Shorts按钮
+captionLang=select,"off","zh-Hans","zh-Hant","en",tag=字幕翻译语言,desc=字幕翻译语言
+lyricLang=select,"off","zh-Hans","zh-Hant","en",tag=歌词翻译语言,desc=歌词翻译语言
+debug=switch,false,true,tag=启用调试模式,desc=启用调试模式
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
