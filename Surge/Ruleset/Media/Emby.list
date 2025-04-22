@@ -25,9 +25,6 @@ DOMAIN-SUFFIX,lyrebirdemby.com
 # > Nya Media
 DOMAIN-SUFFIX,bangumi.ca
 
-# > 野兽
-DOMAIN-SUFFIX,mius.uk
-
 # > 非越
 DOMAIN-SUFFIX,sfcj.org
 
@@ -69,6 +66,9 @@ DOMAIN,emby.116168.xyz
 
 # > hkbemby
 DOMAIN-SUFFIX,aliz.work
+
+# > 云梯
+DOMAIN-SUFFIX,yunti.online
 
 # > 叔服
 DOMAIN,emby3.mcjoker.xyz
