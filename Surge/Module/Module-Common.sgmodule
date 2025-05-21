@@ -7,6 +7,9 @@
 [Rule]
 
 [URL Rewrite]
+# 小熊拦截 //spamblocker-api.zeekstudio.com
+^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
+^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
 
 # NSFW #
 ^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads - reject
@@ -25,4 +28,4 @@ Pornhub = type=http-response,pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view
 [Map Local]
 
 [MITM]
-hostname = %APPEND% *.pornhub.com, 91porn.com
+hostname = %APPEND% spamblocker-api.zeekstudio.com, *.pornhub.com, 91porn.com
