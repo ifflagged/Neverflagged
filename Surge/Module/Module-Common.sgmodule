@@ -7,7 +7,7 @@
 [Rule]
 
 [URL Rewrite]
-# 小熊拦截 //spamblocker-api.zeekstudio.com
+# 小熊拦截 3.1.0 //spamblocker-api.zeekstudio.com
 ^https:\/\/spamblocker-api\.zeekstudio\.com\/profile - reject
 ^https:\/\/spamblocker-api\.zeekstudio\.com\/checkVersion - reject
 
