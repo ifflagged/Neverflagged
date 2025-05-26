@@ -9,16 +9,6 @@ force-http-engine-hosts=%APPEND% router.com, www.router.com
 [Rule]
 
 [Script]
-# ➡️ E ⬅️ #
-# Emby //mb3admin.com
-# EmbyPremiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://github.com/rartv/SurgeScript/raw/main/EmbyPremiere/EmbyPremiere.js
-
-# ➡️ N ⬅️ #
-# Netflix //ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
-# Netflix Rating = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
-# Netflix Rating = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating.js
-# Netflix Rating for single episode = type=http-response,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://github.com/yichahucha/surge/raw/master/nf_rating_season.js
-
 # ➡️ S ⬅️ #
 # Spark //api.revenuecat.com
 # Unlock SparkMail = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/(\$RCAnonymousID%)?(\w)*$),requires-body=1,max-size=0,script-path=https://github.com/89996462/Quantumult-X/raw/main/ycdz/SparkMail.js
@@ -27,16 +17,9 @@ force-http-engine-hosts=%APPEND% router.com, www.router.com
 
 # ➡️ Z ⬅️ #
 # Zhihu //www.zhihu.com, zhuanlan.zhihu.com
-Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
+# Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/question|zhuanlan\.zhihu\.com/p)/,requires-body=1,max-size=0,script-path=https://github.com/id77/QuantumultX/raw/master/Script/zhihu.js
 
 [URL Rewrite]
-
-# ➡️ J ⬅️ #
-# fmz200
-# 京东 //api.m.jd.com
-^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising - reject
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=getWidgetV1052 - reject
-
 # ➡️ R ⬅️ #
 # Router //router.com, www.router.com
 ^https?://(|www\.)router\.com http://{{{GATEWAY_ADDRESS}}} 302
@@ -44,4 +27,4 @@ Look directly for Zhihu = type=http-response,pattern=https://(www\.zhihu\.com/qu
 [Map Local]
 
 [MITM]
-hostname = %APPEND% router.com, www.router.com, www.zhihu.com, zhuanlan.zhihu.com, api.m.jd.com
+hostname = %APPEND% router.com, www.router.com
