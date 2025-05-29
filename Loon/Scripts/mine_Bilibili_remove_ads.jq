@@ -133,4 +133,4 @@
             }
         ] 
     end 
-)mine_Bilibili_remove_ads.jq
+)
