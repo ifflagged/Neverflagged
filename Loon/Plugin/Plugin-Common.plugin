@@ -7,6 +7,10 @@
 #!icon = wrench
 
 [Rewrite]
+# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# 高铁管家
+^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
+
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # 拼多多瀑布流 // api.pinduoduo.com
 ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/cells\/hub\/v3\? reject-dict
