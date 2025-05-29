@@ -5,8 +5,9 @@
 [Script]
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 # bilibili
-Tab = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\?, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
-BiliBili Mystery Code = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine|myinfo), script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
+Tab = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
+My Info = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
+# BiliBili Mystery Code = type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?, script-path=https://github.com/ifflagged/Neverflagged/raw/main/Surge/Scripts/BiliBili.js, requires-body=true
 
 # >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
 # DiDi
