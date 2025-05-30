@@ -42,41 +42,6 @@
                 "style": 1,
                 "button": {}
             },
-            /*{
-                "title": "推荐服务",
-                "items": [
-                    {
-                        "id": 402,
-                        "title": "个性装扮",
-                        "uri": "https://www.bilibili.com/h5/mall/home?navhide=1&f_source=shop&from=myservice",
-                        "icon": "http://i0.hdslb.com/bfs/archive/0bcad10661b50f583969b5a188c12e5f0731628c.png",
-                        "common_op_item": {}
-                    },
-                    {
-                        "id": 622,
-                        "title": "会员购",
-                        "uri": "bilibili://mall/home",
-                        "icon": "http://i0.hdslb.com/bfs/archive/19c794f01def1a267b894be84427d6a8f67081a9.png",
-                        "common_op_item": {}
-                    },
-                    {
-                        "id": 404,
-                        "title": "我的钱包",
-                        "uri": "bilibili://bilipay/mine_wallet",
-                        "icon": "http://i0.hdslb.com/bfs/archive/f416634e361824e74a855332b6ff14e2e7c2e082.png",
-                        "common_op_item": {}
-                    },
-                    {
-                        "id": 406,
-                        "title": "我的直播",
-                        "uri": "bilibili://user_center/live_center",
-                        "icon": "http://i0.hdslb.com/bfs/archive/1db5791746a0112890b77a0236baf263d71ecb27.png",
-                        "common_op_item": {},
-                    }
-                ],
-                "style": 1,
-                "button": {}
-            },*/
             {
                 "title": "更多服务",
                 "items": [
@@ -132,17 +97,6 @@
             }
         ] 
     end | 
-    /*if .ipad_upper_sections then .ipad_upper_sections = 
-        [
-            {
-                "id": 752,
-                "title": "创作首页",
-                "uri": "/uper/homevc",
-                "icon": "http://i0.hdslb.com/bfs/feed-admin/d20dfed3b403c895506b1c92ecd5874abb700c01.png",
-                "mng_resource": { "icon_id": 0, "icon": "" }
-            }
-        ] 
-    end | */
     if .ipad_recommend_sections then .ipad_recommend_sections = 
         [
             {
