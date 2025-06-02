@@ -1,0 +1,6 @@
+#!name= 🔧 Host
+#!desc= Custom host
+#!category= Jacob
+
+[Host]
+iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
