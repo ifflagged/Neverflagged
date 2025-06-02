@@ -6,7 +6,13 @@
 #!homepage = https://github.com/ifflagged/Neverflagged/blob/main/Loon/Plugin/Tools.plugin
 #!icon = wrench
 
-[Rewrite]
+[Argument]
+
+[General]
+
+[rule]
+
+[rewrite]
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # 高铁管家
 ^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
@@ -20,8 +26,10 @@
 # > 亚朵开屏 // api2.yaduo.com
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch reject-dict
 
-[Host]
+[script]
+
+[host]
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 
-[MITM]
+[mitm]
 hostname = api.pinduoduo.com, api2.yaduo.com
