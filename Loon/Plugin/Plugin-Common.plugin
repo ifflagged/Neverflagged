@@ -20,5 +20,8 @@
 # > 亚朵开屏 // api2.yaduo.com
 ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch reject-dict
 
+[Host]
+iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
+
 [MITM]
 hostname = api.pinduoduo.com, api2.yaduo.com
