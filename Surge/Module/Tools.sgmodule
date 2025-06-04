@@ -5,7 +5,8 @@
 [General]
 # Router
 force-http-engine-hosts=%APPEND% router.com, www.router.com
- 
+use-local-host-item-for-proxy = true
+
 [Rule]
 
 [Script]
