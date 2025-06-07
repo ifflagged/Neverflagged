@@ -2,6 +2,11 @@
 #!desc= Common Tools for All
 #!category=Jacob
 
+[Map Local]
+# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# SMZDM
+^https:\/\/app-api\.smzdm\.com\/mychannel\/list$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 [Script]
 # >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
 # bilibili
