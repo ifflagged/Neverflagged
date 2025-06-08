@@ -12,4 +12,4 @@
 #ssid:McDonald's = server:192.168.77.1
 #ssid:Jacob = server:192.168.89.1
 #ssid:McDonald's = server:192.168.89.1
-iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
+iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com, use-in-proxy=true
