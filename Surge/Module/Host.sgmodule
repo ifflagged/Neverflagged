@@ -6,5 +6,5 @@
 # iTunes
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 
-# Twitter
-api.twitter.com = 2606:4700:4700::1001
+# Twitter （已失效）
+# api.twitter.com = 2606:4700:4700::1001
