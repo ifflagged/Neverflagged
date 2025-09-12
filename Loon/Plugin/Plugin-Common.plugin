@@ -15,7 +15,7 @@
 [rewrite]
 # >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
 # 高铁管家
-^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
+# ^http:\/\/cdn\.133\.cn\/md\/gtgj\/.+\/.+720x1280 reject-dict
 
 # >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
 # 拼多多瀑布流 // api.pinduoduo.com
