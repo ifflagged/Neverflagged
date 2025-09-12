@@ -24,11 +24,11 @@
 # >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
 # fmz200
 # > 亚朵开屏 // api2.yaduo.com
-^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch reject-dict
+# ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch reject-dict
 
 [script]
 
 [host]
 
 [mitm]
-hostname = api.pinduoduo.com, api2.yaduo.com
+hostname = api.pinduoduo.com
