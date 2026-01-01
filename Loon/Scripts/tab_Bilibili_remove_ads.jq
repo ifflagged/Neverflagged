@@ -1,24 +1,24 @@
 .data.tab = [
     {
-        pos: 1,
-        id: 477,
+        pos: 2,
+        id: 40,
         name: "推荐",
         tab_id: "推荐tab",
         uri: "bilibili://pegasus/promo",
         default_selected: 1
     },
     {
-        pos: 2,
-        id: 478,
+        pos: 3,
+        id: 41,
         name: "热门",
-        tab_id: "热门tab",
+        tab_id: "hottopic",
         uri: "bilibili://pegasus/hottopic"
     }
 ] | 
 .data.top = [
     {
         pos: 1,
-        id: 176,
+        id: 3510,
         name: "消息",
         tab_id: "消息Top",
         uri: "bilibili://link/im_home",
@@ -34,15 +34,6 @@
         uri: "bilibili://main/home/",
         icon: "http://i0.hdslb.com/bfs/archive/63d7ee88d471786c1af45af86e8cb7f607edf91b.png",
         icon_selected: "http://i0.hdslb.com/bfs/archive/e5106aa688dc729e7f0eafcbb80317feb54a43bd.png"
-    },
-    {
-        pos: 2,
-        id: 179,
-        name: "动态",
-        tab_id: "dynamic",
-        uri: "bilibili://following/home/",
-        icon: "http://i0.hdslb.com/bfs/archive/86dfbe5fa32f11a8588b9ae0fccb77d3c27cedf6.png",
-        icon_selected: "http://i0.hdslb.com/bfs/archive/25b658e1f6b6da57eecba328556101dbdcb4b53f.png"
     },
     {
         pos: 5,
