@@ -1,5 +1,5 @@
 .data |= (
-    del(.answer, .live_tip, .vip_section, .vip_section_v2, .modular_vip_section) | 
+    del(.answer, .live_tip, .vip_section, .vip_section_v2, .modular_vip_section, .ipad_upper_sections) | 
     .vip_type = 2 | 
     .vip |= if . != null and .status == 0
         then . + { 
