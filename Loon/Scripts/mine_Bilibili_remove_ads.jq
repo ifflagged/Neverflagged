@@ -1,8 +1,26 @@
 .data |= (
     del(.answer, .live_tip, .vip_section, .vip_section_v2, .modular_vip_section) | 
     .vip_type = 2 | 
-    .vip |= if . != null and .status == 0 
-        then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 }
+    .vip |= if . != null and .status == 0
+        then . + { 
+            status: 1, 
+            type: 2, 
+            due_date: 9005270400000, 
+            role: 15, 
+            vip_type: 2, 
+            vip_pay_type: 1, 
+            label: {
+                bg_color: "#FB7299",
+                border_color: "",
+                bg_style: 1,
+                text: "年度大会员",
+                path: "",
+                image: "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
+                label_theme: "annual_vip",
+                text_color: "#FFFFFF"
+            }, 
+            nickname_color: "#FB7299" 
+        } 
         else . 
     end | 
     if .sections_v2 then .sections_v2 = 
@@ -10,17 +28,17 @@
             {
                 "items": [
                     {
-                        "id": 396,
-                        "title": "离线缓存",
-                        "uri": "bilibili://user_center/download",
-                        "icon": "http://i0.hdslb.com/bfs/archive/5fc84565ab73e716d20cd2f65e0e1de9495d56f8.png",
-                        "common_op_item": {}
-                    },
-                    {
                         "id": 397,
                         "title": "历史记录",
                         "uri": "bilibili://user_center/history",
                         "icon": "http://i0.hdslb.com/bfs/archive/8385323c6acde52e9cd52514ae13c8b9481c1a16.png",
+                        "common_op_item": {}
+                    },
+                    {
+                        "id": 396,
+                        "title": "离线缓存",
+                        "uri": "bilibili://user_center/download",
+                        "icon": "http://i0.hdslb.com/bfs/archive/5fc84565ab73e716d20cd2f65e0e1de9495d56f8.png",
                         "common_op_item": {}
                     },
                     {
@@ -68,17 +86,17 @@
     if .ipad_sections then .ipad_sections = 
         [
             {
-                "id": 747,
-                "title": "离线缓存",
-                "uri": "bilibili://user_center/download",
-                "icon": "http://i0.hdslb.com/bfs/feed-admin/9bd72251f7366c491cfe78818d453455473a9678.png",
-                "mng_resource": { "icon_id": 0, "icon": "" }
-            },
-            {
                 "id": 748,
                 "title": "历史记录",
                 "uri": "bilibili://user_center/history",
                 "icon": "http://i0.hdslb.com/bfs/feed-admin/83862e10685f34e16a10cfe1f89dbd7b2884d272.png",
+                "mng_resource": { "icon_id": 0, "icon": "" }
+            },
+            {
+                "id": 747,
+                "title": "离线缓存",
+                "uri": "bilibili://user_center/download",
+                "icon": "http://i0.hdslb.com/bfs/feed-admin/9bd72251f7366c491cfe78818d453455473a9678.png",
                 "mng_resource": { "icon_id": 0, "icon": "" }
             },
             {
@@ -132,5 +150,5 @@
                 "mng_resource": { "icon_id": 0, "icon": "" }
             }
         ] 
-    end 
+    end
 )
