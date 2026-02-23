@@ -30,6 +30,7 @@ DOMAIN-SUFFIX,embymv.link
 
 # > 起点
 DOMAIN-SUFFIX,28.al
+DOMAIN,freestream.startspoint.com
 
 # > Saturday.Lite
 DOMAIN-SUFFIX,saturdayvideo.top
@@ -55,7 +56,7 @@ DOMAIN-SUFFIX,shrekmedia.org
 # > 二次元
 DOMAIN-SUFFIX,nijigem.by
 
-# > hkbemby
+# > hkaemby
 DOMAIN-SUFFIX,aliz.work
 
 # > OkEmby
