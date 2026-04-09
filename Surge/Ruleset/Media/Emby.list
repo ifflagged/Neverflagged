@@ -59,5 +59,8 @@ DOMAIN-SUFFIX,aliz.work
 # > OkEmby
 DOMAIN-SUFFIX,okemby.org
 
+# > KL Emby
+DOMAIN-SUFFIX,klplay.top
+
 # > HG_Emby
 DOMAIN-SUFFIX,microsoftpersonalcontent.com
