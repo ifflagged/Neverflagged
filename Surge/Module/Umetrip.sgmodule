@@ -6,3 +6,4 @@
 ^https:\/\/oss\.umetrip\.com\/fs\/advert\/polite reject
 
 [MITM]
+hostname = %APPEND% oss.umetrip.com
