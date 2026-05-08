@@ -31,9 +31,6 @@ DOMAIN-SUFFIX,saturdayent.top
 # > SNTP+
 DOMAIN-SUFFIX,cn2gias.uk
 
-# > Misty
-DOMAIN-SUFFIX,misty.cx
-
 # > Youno
 DOMAIN-SUFFIX,younoyes.com
 
@@ -58,5 +55,9 @@ DOMAIN-SUFFIX,okemby.org
 # > KL Emby
 DOMAIN-SUFFIX,klplay.top
 
+# > 灵车公益服
+DOMAIN-SUFFIX,n150.asia
+
 # > HG_Emby
+DOMAIN-SUFFIX,qzz.io
 DOMAIN-SUFFIX,microsoftpersonalcontent.com
