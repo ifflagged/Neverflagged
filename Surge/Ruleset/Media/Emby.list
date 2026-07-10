@@ -74,6 +74,9 @@ DOMAIN-SUFFIX,zzm.li
 DOMAIN-SUFFIX,ccdv.cc.cd
 DOMAIN-SUFFIX,chi.us.ci
 
+# > 周三晚
+DOMAIN-SUFFIX,zhousanwan.xyz
+
 # > HG_Emby
 DOMAIN-SUFFIX,qzz.io
 DOMAIN-SUFFIX,microsoftpersonalcontent.com
