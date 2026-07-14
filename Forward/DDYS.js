@@ -13,12 +13,12 @@ const DEFAULT_VISION_BASE = "https://grsai.dakka.com.cn";
 const DEFAULT_VISION_MODEL = "gemini-2.5-flash";
 
 var WidgetMetadata = {
-  id: "https://ddys.app?mod=resource&v=127",
+  id: "https://ddys.app?mod=resource&v=128",
   title: "低调影视播放源",
   description: "低调影视播放源；Cookie 自动过门禁续期，无需手抓",
   author: "TG@ZenMoFiShi",
   site: "https://t.me/Nzmgs",
-  version: "1.2.7",
+  version: "1.2.8",
   requiredVersion: "0.0.1",
   globalParams: [
     {
@@ -675,6 +675,32 @@ async function searchSite(keyword, params) {
   return parseSearchResults((res && res.data) || "");
 }
 
+function buildSearchQueries(baseTitle, rawSeries) {
+  const out = [];
+  function add(value) {
+    const q = String(value || "").replace(/\s+/g, " ").trim();
+    if (q && out.indexOf(q) < 0) out.push(q);
+  }
+  [baseTitle, rawSeries].forEach(title => {
+    const raw = String(title || "").trim();
+    if (!raw) return;
+    add(raw);
+    const spaced = raw
+      .replace(/[：:·・,，.。!！?？\-—_'’"“”()（）\[\]【】\/\\]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    add(spaced);
+    add(spaced.replace(/\s+/g, ""));
+    const parts = raw
+      .split(/[：:·・,，.。!！?？\-—_'’"“”()（）\[\]【】\/\\\s]+/)
+      .map(s => s.trim())
+      .filter(s => s.length >= 2)
+      .sort((a, b) => b.length - a.length);
+    parts.forEach(add);
+  });
+  return out.slice(0, 6);
+}
+
 function parsePlaylist(html) {
   const i = String(html || "").indexOf('"playlistType"');
   if (i < 0) return null;
@@ -743,7 +769,7 @@ function buildVideoUrl(track) {
 }
 
 async function loadResource(params) {
-  console.log("[ddys] widget version 1.2.7");
+  console.log("[ddys] widget version 1.2.8");
   resolveVisionConfig(params || {});
   const rawSeries = String(params.seriesName || params.title || "").trim();
   const rawEpisodeName = String(params.episodeName || "").trim();
@@ -754,8 +780,15 @@ async function loadResource(params) {
   if (!baseTitle) return [];
   const wantBaseNorm = normalizeName(baseTitle);
 
-  let results = await searchSite(baseTitle, params);
-  if (!results.length && rawSeries && rawSeries !== baseTitle) results = await searchSite(rawSeries, params);
+  let results = [];
+  const searchQueries = buildSearchQueries(baseTitle, rawSeries);
+  for (const query of searchQueries) {
+    results = await searchSite(query, params);
+    if (results.length) {
+      console.log("[ddys] search hit: " + query + " -> " + results.length);
+      break;
+    }
+  }
   if (!results.length) return [];
 
   const best = pickBestResult(results, wantBaseNorm);
