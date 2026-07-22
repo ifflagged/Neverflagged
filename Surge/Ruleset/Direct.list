@@ -1,6 +1,4 @@
 # TV
-# > IPTV
-DOMAIN,tv.668966.xyz
 
 # Websites
 # > Github
@@ -16,7 +14,3 @@ DOMAIN-SUFFIX,carryz.net
 # > 跑路
 DOMAIN,emby.161611.xyz
 
-# > 屿森
-DOMAIN-SUFFIX,cmecloud.cn
-IP-CIDR,51.83.100.187/32,no-resolve
-DOMAIN-SUFFIX,139.com
