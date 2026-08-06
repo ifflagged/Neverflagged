@@ -58,10 +58,11 @@ DOMAIN-SUFFIX,okemby.org
 # > KL Emby
 DOMAIN-SUFFIX,klplay.top
 
-# > 屿森
-DOMAIN-SUFFIX,ccwu.cc
-DOMAIN-SUFFIX,us.ci
+# > 屿森（予初）
+DOMAIN-SUFFIX,yusen6.ccwu.cc
+DOMAIN-SUFFIX,yusen.us.ci
 DOMAIN-SUFFIX,yusen.cyou
+DOMAIN-SUFFIX,yusen.cc.cd
 
 # > Lunaris Vault
 DOMAIN-SUFFIX,lunarisvault.com
