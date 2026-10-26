@@ -1,0 +1,7 @@
+
+
+[Rewrite]
+request if ${url} ~= /^https?:\/\/res\.app\.coc\.10086\.cn\/qwhdcdn_cmcc-cs_cn\/prd-mgcenter\/ /i then reject(200)
+
+[Mitm]
+hostname = res.app.coc.10086.cn
