@@ -1,0 +1,9 @@
+#!name=bilibili
+#!desc=bilibili特殊处理
+#!author = Jacob
+#!tag = Jacob
+#!icon=https://github.com/Semporia/Hand-Painted-icon/raw/master/Google_Suite/Admin.png
+#!date=2026-11-14 14:06:00
+
+[Script]
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/bilibili-HD.js, requires-body=true, tag=Bilibili Magic
