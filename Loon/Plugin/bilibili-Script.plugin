@@ -6,4 +6,4 @@
 #!date=2026-11-14 14:06:00
 
 [Script]
-http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/bilibili_mine_myinfo.js, requires-body=true, tag=Bilibili Magic
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/bilibili_mine_myinfo.js, requires-body=true, tag=Bilibili Magic
