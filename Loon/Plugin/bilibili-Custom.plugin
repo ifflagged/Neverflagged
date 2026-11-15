@@ -1,0 +1,17 @@
+#!name=bilibili
+#!desc=bilibili特殊处理
+#!author = Jacob
+#!tag = Jacob
+#!icon=https://github.com/Semporia/Hand-Painted-icon/raw/master/Google_Suite/Admin.png
+#!date=2026-11-15 16:23:00
+
+[Rewrite]
+# 首页及底部 Tab 精简
+^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? response-body-json-jq jq-path="https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/tab_Bilibili_remove_ads.jq"
+
+[Script]
+# 我的页面及账号信息处理（已包含 mine 接口，无需再挂 jq）
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://github.com/ifflagged/Neverflagged/raw/main/Loon/Scripts/bilibili_mine_myinfo.js, requires-body=true, tag=Bilibili Magic
+
+[MitM]
+hostname = app.bilibili.com
